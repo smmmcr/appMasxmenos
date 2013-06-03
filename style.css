@@ -1,0 +1,24 @@
+* {
+padding: 0;
+margin: 0;
+text-decoration:none;
+list-style-type:none;
+}
+body {
+background: #000;
+font-size:arial;
+}
+p{
+color: rgb(247, 11, 11);
+font-weight: bold;
+font-size: 133.4%;
+position: relative;
+}
+.ui-header img{
+margin-left:25%;
+width:50%;
+}
+.ui-content{
+background:url(img/bgSombraFlor.png) no-repeat;
+height:auto;
+}
