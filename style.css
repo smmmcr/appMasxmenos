@@ -21,4 +21,35 @@ width:50%;
 .ui-content{
 background:url(img/bgSombraFlor.png) no-repeat;
 height:auto;
+background-size: 100% 100%;
+}
+.ui-header{
+box-shadow: 0px 3px 18px 1px #000;
+}
+.ui-footer{
+box-shadow: 0px 6px 30px 9px #000;
+}
+/* solo en caso de usar menu con letras en la imagen
+#menuP :nth-child(2) :nth-child(2){
+padding-left: 27px;
+}
+#menuP :nth-child(3) :nth-child(2){
+padding-left: 27px;
+}*/
+#menuP {
+width:98%
+}
+#menuP img{
+width:100%
+}
+.ui-bar-a{
+background-image: url(img/header.png)!important;
+background-size: 100%!important;
+border:none;
+}
+.ui-footer{
+background-image: url(img/footer.png)!important;
+background-size: 100% 100%!important;
+border:none;
+height: 10%;
 }

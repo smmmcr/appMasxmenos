@@ -110,7 +110,6 @@ ed = ((hoy -fecha)/12/30.5/24/60/60/1000)*12;
 ed = String(ed).split('.');
 edadNacido1=ed[0];
 semapu='1';
-alert(edadNacido1);
 }else if(embarazo!=""){
 embarazoDtos=embarazo;
  }
@@ -225,7 +224,6 @@ uri="https://movilmultimediasa.com/abcMobil/post.php?gen="+id;
 
 }
 function descuentos(){
-
 			uri="https://movilmultimediasa.com/abcMobil/post.php?des=1";
 			$.getJSON(uri + '?function=' + 'check' + '&callback=?', function (json_data) {
 				$(".listaDescuentos").html("");
@@ -255,7 +253,6 @@ function descuentos(){
 		$('.listaDescuentos').disableSelection();
 			});
 $(".listaDeNombreBB").show();
-
 }
 function juegos(){
 uri="https://movilmultimediasa.com/abcMobil/post.php?des=1";
@@ -278,24 +275,6 @@ uri="https://movilmultimediasa.com/abcMobil/post.php?des=1";
 				}
 			});
 $(".listaJuegos").show();
-}
-function inicio(){
-	
-
-}
-function comentar(){
-var comentarios1=$("#comentario").val();
-	$.ajax({
-		type: "POST",
-		 crossDomain: true,
-		url:  "https://movilmultimediasa.com/abcMobil/post.php",  
-		data: {comen: comentarios1,idtema:idtema},
-		success: function(data) {
-		alert("data")				
-		datos1=data;				
-		}
-	});
-
 }
 /*
 function scrollActiv(div,clase,pad){
