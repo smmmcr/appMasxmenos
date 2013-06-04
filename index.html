@@ -3,12 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>jQuery Mobile: Theme Download</title>
+		<title>App Masxmenos</title>
 		<link rel="stylesheet" href="themes/mxm.css" />
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="jquery.mobile.structure-1.3.1.css" />
+		<link rel="stylesheet" type="text/css" href="scrollbar.css" /> 
 		<script src="jquery-1.9.1.js"></script>
 		<script src="jquery.mobile-1.3.1.js"></script>
+		<script type="text/javascript" src="iscroll.js"></script>
 	</head>
 	<body>
 		<div id='home' data-role="page" data-theme="a">
@@ -20,7 +22,7 @@
 				
 				<!--	<fieldset class="ui-grid-a">-->
 					<div class="ui-grid-a">
-					<div class="ui-block-a"><a href="acura.html"><img src='img/btnGuiaCompra.png'></a></div>
+					<div class="ui-block-a"><a href="#guia"><img src='img/btnGuiaCompra.png'></a></div>
 					<div class="ui-block-b"><a href="acura.html"><img src='img/btnsucursales.png'></a></div>
 					</div><!-- /grid-a -->
 					<div class="ui-grid-a">
@@ -39,5 +41,30 @@
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false"></div>
 		</div>
+		<div id='guia' data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+				<img src="img/subheaderguia.png">
+				</div>
+			<div data-role="content" data-theme="a">
+				<div style="height: 300px; width: 500px">
+					<ul class="listaguia" data-role="listview"   data-theme="a"  data-inset="true" id="scrollerTema" data-corners="false">
+						<li id="wrtema"></li><li id="headerintertema"></li>
+						<li><div><img src="imgProductos/p1.png" alt="imagen producto 1"></div></li>
+						<li><div><img src="imgProductos/p2.png" alt="imagen producto 2"></div></li>
+						<li><div><img src="imgProductos/p3.png" alt="imagen producto 3"></div></li>
+						<li><div><img src="imgProductos/p4.png" alt="imagen producto 4"></div></li>
+						<li><div><img src="imgProductos/p5.png" alt="imagen producto 5"></div></li>
+						<li></li><li></li><li id="footerintertema"></li>
+					</ul>
+				</div>
+
+				
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false"></div>
+		</div>
+		<script src="funciones.js"></script>
 	</body>
 </html>
