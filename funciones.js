@@ -20,7 +20,11 @@ $(document).on('pagecreate', function(){
 
 function loadedscroll(headerinter,footerinter,wrapper,scroller) {
 	setHeight(headerinter,footerinter,wrapper);
-	myScroll = new iScroll(scroller, {desktopCompatibility:true, hScrollbar: false,snap: true, momentum: false, vScrollbar: false, vScroll: false });
+	myScroll = new iScroll(scroller, {desktopCompatibility:true, hScrollbar: false,snap: true, momentum: false, vScrollbar: false, vScroll: false, 	onScrollEnd: function () {
+			document.querySelector('#indicator > li.active').className = '';
+			document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+		} 
+		});
 }
 function setHeight(headerinter,footerinter,wrapper) {
 	var headerH = document.getElementById(headerinter).offsetHeight,
@@ -36,8 +40,16 @@ $("#guia").on('pagecreate', function(){
                  .on('selectstart', false);
     };
 		$("#guia ul").disableSelection();
-		$("#guia ul").on('vclick', function(){
-				loadedscroll('headerintertema','footerintertema','wrtema','scrollerTema');
-				});
-
+		
 });
+function loaded() {
+	myScroll = new iScroll('wrapper', {
+		snap: true,
+		momentum: false,
+		hScrollbar: false,
+		onScrollEnd: function () {
+			
+		}
+	 });
+}
+document.addEventListener('DOMContentLoaded', loaded, false);
