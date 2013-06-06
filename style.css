@@ -93,7 +93,7 @@ margin-top: 12%;
 height: 56%;
 }
 #scroller {
-	width:2100px;
+	width:3000px;
 	height:100%;
 	float:left;
 	padding:0;
@@ -115,7 +115,7 @@ height: 56%;
 box-sizing: border-box;
 display: block;
 float: left;
-width: 22%;
+width: 15%;
 text-align: center;
 font-family: georgia;
 font-size: 18px;

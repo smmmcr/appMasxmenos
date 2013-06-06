@@ -36,8 +36,7 @@ $("#guia").on('pagecreate', function(){
                  .css('user-select', 'none')
                  .on('selectstart', false);
     };
-		$("#guia ul").disableSelection();
-		loaded();
+		
 });
 function loaded() {
 	myScroll = new iScroll('wrapper', {
