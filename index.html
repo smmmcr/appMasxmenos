@@ -65,7 +65,8 @@
 			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<a href="index.html">Menu</a><a href="#supermercados">Compartir</a>
+		<div class='btnfooter'><a href="index.html">Menu</a></div>
+		<div class='btnfooter'><a href="">Compartir</a></div>
 		</div>
 		</div>
 		<div id='recetas' data-role="page" data-theme="a">
@@ -89,7 +90,8 @@
 			</ul>
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<a href="index.html">Menu</a><a href="#supermercados">Compartir</a>
+		<div class='btnfooter'><a href="index.html">Menu</a></div>
+		<div class='btnfooter'><a href="">Compartir</a></div>
 		</div>
 		</div>
 		<div id='supermercados' data-role="page" data-theme="a" >
@@ -103,25 +105,27 @@
 				<div id='sliderSuper'>
 				<img src="imagenesSuper/super1.png" alt="SUPERUNO 1">
 				</div>
-				<select name="select1" id="select1" data-mini="true">
-			<option value="standard">Tema del recetario</option>
-			<option value="standard">Tema del recetario</option>
-			<option value="standard">Tema del recetario</option>			
-			</select>
-			<select name="select2" id="select2" data-mini="true">
-			<option value="standard">Tema del recetario</option>
-			<option value="standard">Tema del recetario</option>
-			<option value="standard">Tema del recetario</option>			
-			</select>
-			<select name="select3" id="select3" data-mini="true">
-			<option value="standard">Tema del recetario</option>
-			<option value="standard">Tema del recetario</option>
-			<option value="standard">Tema del recetario</option>			
-			</select>
-				
+				<div id='selectores'>
+					<select name="select1" id="select1" data-mini="true">
+					<option value="standard">Tema del recetario</option>
+					<option value="standard">Tema del recetario</option>
+					<option value="standard">Tema del recetario</option>			
+					</select>
+					<select name="select2" id="select2" data-mini="true">
+					<option value="standard">Tema del recetario</option>
+					<option value="standard">Tema del recetario</option>
+					<option value="standard">Tema del recetario</option>			
+					</select>
+					<select name="select3" id="select3" data-mini="true">
+					<option value="standard">Tema del recetario</option>
+					<option value="standard">Tema del recetario</option>
+					<option value="standard">Tema del recetario</option>			
+					</select>
+				</div>
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<a href="index.html">Menu</a><a href="#supermercados">Compartir</a>
+		<div class='btnfooter'><a href="index.html">Menu</a></div>
+		<div class='btnfooter'><a href="">Compartir</a></div>
 		</div>
 		</div>
 		<div id='contacto' data-role="page" data-theme="a" >
@@ -132,31 +136,23 @@
 			<img src="img/subheaderubicanos.png">
 			</div>
 			<div data-role="content" data-theme="a">
-				<div data-role="fieldcontain">
+			
 
-				<select name="select-choice-8" id="select-choice-nc">
-				<optgroup label="FedEx">
-				<option value="firstOvernight">First Overnight</option>
-				<option value="expressSaver">Express Saver</option>
-				<option value="ground">Ground</option>
-				</optgroup>
-				<optgroup label="UPS">
-				<option value="firstOvernight">First Overnight</option>
-				<option value="expressSaver">Express Saver</option>
-				<option value="ground">Ground</option>
-				</optgroup>
-				<optgroup label="US Mail">
-				<option value="standard">Standard: 7 day</option>
-				<option value="rush">Rush: 3 days</option>
-				<option value="express">Express: next day (disabled)</option>
-				<option value="overnight">Overnight</option>
-				</optgroup>
-				</select>
-				</div>
 				
+				<a href='' data-role="button" data-theme="a" >Búsqueda rápida por supermercado</a>
+			
+					<div id='btnsgeneralLlama'>
+					<a href=''  data-role="button" data-theme="a">SAC Servicio al cliente    800 - 8000 - 722</a>
+					<img src='img/btnllamar.png' alt='llamar'/>
+					<a href='' data-role="button" data-theme="a">Servicio a domicilio Jacó   2248 - 1740</a>
+					<img src='img/btnllamar.png' alt='llamar'/>
+					<a href='' data-role="button" data-theme="a">Servicio a domicilio Sabana   2643 - 3611</a>
+					<img src='img/btnllamar.png' alt='llamar'/>
+					</div>
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<a href="index.html">Menu</a><a href="#supermercados">Compartir</a>
+		<div class='btnfooter'><a href="index.html">Menu</a></div>
+		<div class='btnfooter'><a href="">Compartir</a></div>
 		</div>
 		</div>
 		<script src="funciones.js"></script>

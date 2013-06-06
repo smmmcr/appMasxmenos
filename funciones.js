@@ -15,9 +15,6 @@ $(document).on('pagecreate', function(){
                  .on('selectstart', false);
     };
 });
-
-
-
 function loadedscroll(headerinter,footerinter,wrapper,scroller) {
 	setHeight(headerinter,footerinter,wrapper);
 	myScroll = new iScroll(scroller, {desktopCompatibility:true, hScrollbar: false,snap: true, momentum: false, vScrollbar: false, vScroll: false, 	onScrollEnd: function () {
@@ -40,7 +37,7 @@ $("#guia").on('pagecreate', function(){
                  .on('selectstart', false);
     };
 		$("#guia ul").disableSelection();
-		
+		loaded();
 });
 function loaded() {
 	myScroll = new iScroll('wrapper', {

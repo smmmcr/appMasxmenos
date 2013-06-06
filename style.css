@@ -178,3 +178,42 @@ position: relative;
 #sliderSuper img{
 width: 100%;
 }
+.btnfooter{
+width: 50%;
+float: left;
+margin-top: 15px;
+color: #fff!important;
+}
+.btnfooter a{
+color: #fff!important;
+}
+.footer  div:nth-child(2){
+width: 19%;
+margin-left: 30%;
+}
+#selectores{
+width: 85%;
+margin-left: 8%;
+margin-top: 26%;
+margin-bottom: 40%;
+}
+#busquedarapida{
+margin-left: 12%;
+}
+#btnsgeneralLlama{
+float: left;
+margin-top: 23%;
+margin-left: 14%;
+}
+#btnsgeneralLlama{
+float: left;
+margin-top: 23%;
+margin-left: 14%;
+}
+#btnsgeneralLlama a{
+box-shadow: 3px 5px 22px 0px #000;
+}
+#btnsgeneralLlama img{
+margin-top: 13px;
+margin-left: 16%;
+}
