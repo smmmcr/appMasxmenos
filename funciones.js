@@ -41,8 +41,9 @@ $("#guia").on('pagecreate', function(){
 function loaded() {
 	myScroll = new iScroll('wrapper', {
 		snap: true,
-		momentum: false,
-		hScrollbar: false,
+
+		hScrollbar: true,
+		vScrollbar: true,
 		onScrollEnd: function () {
 			
 		}
