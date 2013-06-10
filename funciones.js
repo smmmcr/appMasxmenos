@@ -15,19 +15,21 @@ $(document).on('pagecreate', function(){
                  .on('selectstart', false);
     };
 });
-function loadedscroll(headerinter,footerinter,wrapper,scroller) {
-	setHeight(headerinter,footerinter,wrapper);
-	myScroll = new iScroll(scroller, {desktopCompatibility:true, hScrollbar: false,snap: true, momentum: false, vScrollbar: false, vScroll: false, 	onScrollEnd: function () {
-			document.querySelector('#indicator > li.active').className = '';
-			document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
-		} 
-		});
+var myScroll;
+var a = 0;
+function loadedscroll() {
+	setHeight();	// Set the wrapper height. Not strictly needed, see setHeight() function below.
+
+	// Please note that the following is the only line needed by iScroll to work. Everything else here is to make this demo fancier.
+	myScroll = new iScroll('scrollercontacto', {desktopCompatibility:true});
 }
-function setHeight(headerinter,footerinter,wrapper) {
-	var headerH = document.getElementById(headerinter).offsetHeight,
-		footerH = document.getElementById(footerinter).offsetHeight,
+
+// Change wrapper height based on device orientation. Not strictly needed by iScroll, you may also use pure CSS techniques.
+function setHeight() {
+	var headerH = document.getElementById('headerinter1').offsetHeight,
+		footerH = document.getElementById('footerinter1').offsetHeight,
 		wrapperH = window.innerHeight - headerH - footerH;
-		document.getElementById(wrapper).style.height = wrapperH + 'px';
+	document.getElementById('wrapper1').style.height = wrapperH + 'px';
 }
 $("#guia").on('pagecreate', function(){
  $.fn.disableSelection = function() {
@@ -35,8 +37,16 @@ $("#guia").on('pagecreate', function(){
                  .attr('unselectable', 'on')
                  .css('user-select', 'none')
                  .on('selectstart', false);
-    };
-		
+    };		
+});
+$("#busquedaRapidaContacto").on('pagecreate', function(){
+ $.fn.disableSelection = function() {
+        return this
+                 .attr('unselectable', 'on')
+                 .css('user-select', 'none')
+                 .on('selectstart', false);
+    };	
+loadedscroll();	
 });
 function loaded() {
 	myScroll = new iScroll('wrapper', {
@@ -44,8 +54,7 @@ function loaded() {
 		momentum: false,
 		hScrollbar: false,
 		vScrollbar: false,
-		onScrollEnd: function () {
-			
+		onScrollEnd: function () {		
 		}
 	 });
 }
