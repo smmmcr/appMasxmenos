@@ -67,7 +67,7 @@ function loaded() {
 document.addEventListener('DOMContentLoaded', loaded, false);
 $("#recetas").on('pagecreate', function(){
 db.transaction(function(tx) {
-//tx.executeSql('DROP TABLE generoNinnos ');
+//tx.executeSql('DROP TABLE menurecetas ');
 tx.executeSql('create table if not exists menurecetas(id,nombretipo)');
 });
 version1=0 ;
@@ -85,14 +85,15 @@ tx.executeSql('SELECT * FROM menurecetas', [], function (tx, results) {
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?p=1";
 $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 	db.transaction(function(tx) {
+					//tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?)', ["1","2"]);
 		for(index in json_data){
 				idIn=json_data[index].id;
 				//alert(idIn);
 				var nombreIn=String(json_data[index].nombretipo);	
-				/*if(json_data[index].version!=version1){*/
-				//	tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?,?)', [json_data[index].id,json_data[index].nombretipo]);
-					tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?,?)', ["1","2"]);
-				/* }		  			*/
+				//if(json_data[index].version!=version1){
+					//tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?)', ["2","dd"]);
+					tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?)', [json_data[index].id,json_data[index].nombretipo]);
+				// }		 
 		}
 	});
 		db.transaction(function(tx) {
