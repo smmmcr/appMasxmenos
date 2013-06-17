@@ -82,18 +82,30 @@ tx.executeSql('SELECT * FROM menurecetas', [], function (tx, results) {
                  .css('user-select', 'none')
                  .on('selectstart', false);
     };	
+	//$.mobile.selectmenu.prototype.options.nativeMenu = false;
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?p=1";
 $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
-	db.transaction(function(tx) {
+		
+		for(index in json_data){
+			$("#selectrecetas").append("<option value='"+json_data[index].id+"'>"+json_data[index].nombretipo+"</option>");	
+		}
+		myselect=$("#selectrecetas");
+		myselect[0].selectedIndex = 1;
+		myselect.selectmenu("refresh");
+		//$("#menurecetas").append("");	
+		/*[json_data[index].id,json_data[index].nombretipo
+			/*	db.transaction(function(tx) {
 					//tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?)', ["1","2"]);
 		for(index in json_data){
 				idIn=json_data[index].id;
-				//alert(idIn);
+				tx.executeSql('SELECT * FROM menurecetas where id="'+idIn+'"', [], function (tx, results) {
+				/*if(results.rows.length==0){*/
+		/*		alert(results.rows.length);
+				alert(rjson_data[index].nombretipo);
 				var nombreIn=String(json_data[index].nombretipo);	
-				//if(json_data[index].version!=version1){
-					//tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?)', ["2","dd"]);
 					tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?)', [json_data[index].id,json_data[index].nombretipo]);
-				// }		 
+				/*}		*/	
+			/*	}, null);				
 		}
 	});
 		db.transaction(function(tx) {
@@ -109,7 +121,35 @@ $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 
 				}  
 				}, null);
+		});*/
+		
+	});
+	
+	$("#selectrecetas").change(function(){
+	idcat=$(this).val();
+	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?menu="+idcat;
+		$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
+				for(index in json_data){
+					clases='ui-li ui-li-static ui-btn-up-a';
+					if(index==0){ clases='ui-li ui-li-static ui-btn-up-a ui-first-child';	}
+					if(index==(json_data.length-1)){ clases='ui-li ui-li-static ui-btn-up-a ui-last-child';	}
+					$("#listaRecetas ul").append("<li onclick='agregarContenido("+json_data[index].id+")' class='"+clases+"'>"+json_data[index].nombre+"</li>");	
+				}
+				
 		});
+	});
 });
-
+function agregarContenido(id){
+	
+$.mobile.changePage( "#recetaSelec", {
+  transition: "pop",
+  reverse: false,
+  changeHash: false
 });
+	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?receta="+id;
+		$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
+		$("#recetafinal").html("<h3 id='nombrereceta'>"+json_data[0].nombre+"</h3><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+json_data[0].img+"' alt='imgreceta' />"+
+								"<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+json_data[0].ingredientes+"</div>");
+				
+		});
+}

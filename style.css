@@ -232,3 +232,49 @@ height: 59px;
 #footerinter1 span {display:block;font-size:30px;font-weight:bold;}
 #wrapper1 {display:none; width:100%;}
 #scrollercontacto {/*	-webkit-touch-callout:none;*/	-webkit-tap-highlight-color:rgba(0,0,0,0);float:left;width:100%;padding:0;/*webkit-box-shadow:0 0 8px #555;	/* Don't use box shadows, they slow down drastically CSS animations */}
+#selectrecetas{
+cursor: pointer;
+left: 0;
+top: 0;
+
+width: 100%;
+height: 100%;
+opacity: 0;
+-ms-filter: "alpha(opacity=0)";
+filter: alpha(opacity=0);
+}
+#menurecetas{
+position:relative;
+width:100%;
+height:50px;
+}
+#recetafinal{
+width: 100%;
+background: rgba(226, 226, 226, 0.89);
+border-radius: 12px;
+box-shadow: 0px 7px 53px 8px #000;
+position: relative;
+height: 569px;
+margin-top: 54px;
+}
+#recetafinal img{
+width: 100%;
+height: 200px;
+margin-top: 17px;
+}
+#nombrereceta {
+margin: auto;
+width: 45%;
+color: #0B75BA!important;
+}
+#tituingre{
+margin-left: 0px;
+color: #000;
+
+width: 45%;
+}
+#recetafinal p {
+margin: auto;
+width: 45%;
+color: #000;
+}
