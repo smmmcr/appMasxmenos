@@ -16,17 +16,15 @@ $(document).on('pagecreate', function(){
     };
 });
 
-function loadedscroll() {
-	setHeight();
-	myScroll = new iScroll('scrollercontacto', {desktopCompatibility:true});
+function loadedscroll(headerinter,footerinter,wrapper,scroller) {
+	setHeight(headerinter,footerinter,wrapper);
+	myScroll = new iScroll(scroller, {desktopCompatibility:true});
 }
-
-// Change wrapper height based on device orientation. Not strictly needed by iScroll, you may also use pure CSS techniques.
-function setHeight() {
-	var headerH = document.getElementById('headerinter1').offsetHeight,
-		footerH = document.getElementById('footerinter1').offsetHeight,
+function setHeight(headerinter,footerinter,wrapper) {
+	var headerH = document.getElementById(headerinter).offsetHeight,
+		footerH = document.getElementById(footerinter).offsetHeight,
 		wrapperH = window.innerHeight - headerH - footerH;
-	document.getElementById('wrapper1').style.height = wrapperH + 'px';
+		document.getElementById(wrapper).style.height = wrapperH + 'px';
 }
 $("#guia").on('pagecreate', function(){
  $.fn.disableSelection = function() {
@@ -126,21 +124,12 @@ $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 	});
 	
 	$("#selectrecetas").change(function(){
-	idcat=$(this).val();
-	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?menu="+idcat;
-		$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
-				for(index in json_data){
-					clases='ui-li ui-li-static ui-btn-up-a';
-					if(index==0){ clases='ui-li ui-li-static ui-btn-up-a ui-first-child';	}
-					if(index==(json_data.length-1)){ clases='ui-li ui-li-static ui-btn-up-a ui-last-child';	}
-					$("#listaRecetas ul").append("<li onclick='agregarContenido("+json_data[index].id+")' class='"+clases+"'>"+json_data[index].nombre+"</li>");	
-				}
-				
-		});
+		idcat=$(this).val();	
+		mostrarlista(idcat);
 	});
 });
 function agregarContenido(id){
-	
+
 $.mobile.changePage( "#recetaSelec", {
   transition: "pop",
   reverse: false,
@@ -148,8 +137,42 @@ $.mobile.changePage( "#recetaSelec", {
 });
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?receta="+id;
 		$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
-		$("#recetafinal").html("<h3 id='nombrereceta'>"+json_data[0].nombre+"</h3><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+json_data[0].img+"' alt='imgreceta' />"+
-								"<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+json_data[0].ingredientes+"</div>");
+		
+		$("#recetafinal").append("<a id='regresar' href='javascript:volverreceta("+json_data[0].tiporeceta+");'>Regresar</p>");
+		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+json_data[0].nombre+"</h3></div><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+json_data[0].img+"' alt='imgreceta' />");
+		$("#recetafinal ul").append("<li id='wr1'></li><li id='headerinter1'></li>");
+		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+json_data[0].ingredientes+"</div>");
+		$("#recetafinal ul").append("<li></li><li></li><li id='footerinter1'></li>");
+		loadedscroll('headerinter1','footerinter1','wr1','scrolle1');
 				
 		});
+}
+function volverreceta(id){
+top.location="#recetas";
+/*
+$.mobile.changePage( "index.html", {
+  transition: "pop",
+  reverse: false,
+  changeHash: false
+});*/
+$("#recetaSelec").css("display","none");
+$.mobile.changePage( "#recetas", {
+  transition: "pop",
+  reverse: false,
+  changeHash: false
+});
+$("#recetas").show();
+//mostrarlista(id);
+}
+function mostrarlista(idcat){
+	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?menu="+idcat;
+	$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
+			for(index in json_data){
+				clases='ui-li ui-li-static ui-btn-up-a';
+				if(index==0){ clases='ui-li ui-li-static ui-btn-up-a ui-first-child';	}
+				if(index==(json_data.length-1)){ clases='ui-li ui-li-static ui-btn-up-a ui-last-child';	}
+				$("#listaRecetas ul").append("<li onclick='agregarContenido("+json_data[index].id+")' class='"+clases+"'>"+json_data[index].nombre+"</li>");	
+			}
+			
+	});
 }
