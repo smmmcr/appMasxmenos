@@ -43,14 +43,14 @@ $("#busquedaRapidaContacto").on('pagecreate', function(){
     };	
 
 });
-$("#busquedaRapidaContacto").on('vclick', function(){
+$("#busquedaRapidaContacto").on('pagecreate', function(){
  $.fn.disableSelection = function() {
         return this
                  .attr('unselectable', 'on')
                  .css('user-select', 'none')
                  .on('selectstart', false);
     };	
-loadedscroll();
+loadedscroll('headerinter2','footerinter2','wrapper2','scrollercontacto');
 });
 function loaded() {
 	myScroll = new iScroll('wrapper', {
