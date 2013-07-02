@@ -84,6 +84,7 @@ tx.executeSql('SELECT * FROM menurecetas', [], function (tx, results) {
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?p=1";
 $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 		
+			$("#selectrecetas").html("");	
 		for(index in json_data){
 			$("#selectrecetas").append("<option value='"+json_data[index].id+"'>"+json_data[index].nombretipo+"</option>");	
 		}
@@ -136,9 +137,12 @@ $.mobile.changePage( "#recetaSelec", {
   changeHash: false
 });
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?receta="+id;
-		$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
-		
-		$("#recetafinal").append("<a id='regresar' href='javascript:volverreceta("+json_data[0].tiporeceta+");'>Regresar</p>");
+		$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {		
+		//$("#recetafinal").html("");
+		$("#tituloreceta").html("");
+		$("#recetafinal ul").html("");
+		/*$("#recetafinal").append("<a id='regresar' href='javascript:volverreceta("+json_data[0].tiporeceta+");'>Regresar</p>");*/
+		$("#recetafinal").append("<a id='regresar' href='#recetas'>Regresar</a>");
 		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+json_data[0].nombre+"</h3></div><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+json_data[0].img+"' alt='imgreceta' />");
 		$("#recetafinal ul").append("<li id='wr1'></li><li id='headerinter1'></li>");
 		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+json_data[0].ingredientes+"</div>");
@@ -148,7 +152,7 @@ $.mobile.changePage( "#recetaSelec", {
 		});
 }
 function volverreceta(id){
-top.location="#recetas";
+location.href="#recetas";
 /*
 $.mobile.changePage( "index.html", {
   transition: "pop",
@@ -167,6 +171,7 @@ $("#recetas").show();
 function mostrarlista(idcat){
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?menu="+idcat;
 	$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
+	$("#listaRecetas ul").html("");
 			for(index in json_data){
 				clases='ui-li ui-li-static ui-btn-up-a';
 				if(index==0){ clases='ui-li ui-li-static ui-btn-up-a ui-first-child';	}
