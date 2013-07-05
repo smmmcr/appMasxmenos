@@ -43,7 +43,7 @@ $("#busquedaRapidaContacto").on('pagecreate', function(){
     };	
 
 });
-$("#busquedaRapidaContacto").on('pagecreate', function(){
+$("#busquedaRapidaContacto").on('pagecreate.', function(){
  $.fn.disableSelection = function() {
         return this
                  .attr('unselectable', 'on')
@@ -180,4 +180,129 @@ function mostrarlista(idcat){
 			}
 			
 	});
+}
+$("#supermercados").on('pagecreate', function(){
+$("#select2 option").css("display","none");
+$("#select3 option").css("display","none");
+$("#select3 option").attr("disabled");
+
+		
+	$("#select1").change(function(){
+		idcat=$(this).val();
+			clase=$("#select2 ."+idcat);
+			$("#select2 option").css("display","none");
+			clase.css("display","block");
+			$("#select2 option").attr("disabled");
+			clase.removeAttr("disabled");
+
+	});
+	$("#select2").change(function(){
+		idcat=$(this).val();
+			clase=$("#select3 ."+idcat);
+			$("#select3 option").css("display","none");
+			clase.css("display","block");
+			$("#select3 option").attr("disabled");
+			clase.removeAttr("disabled");
+
+	});
+	$("#select3").change(function(){
+		idcat=$(this).val();
+		localStorage.id=idcat;
+			$.mobile.changePage( "#mostrarmapa", {
+			transition: "pop",
+			reverse: false,
+			changeHash: false
+			});
+
+	});
+});
+  $("#mostrarmapa").on("pagecreate",function () {
+                var centerLocation = new google.maps.LatLng('9.940361', '-84.097939');
+
+        var myOptions = {
+            center: centerLocation,
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            callback: function () { alert('callback'); }
+        };
+		mapdata="'9.940361','-84.097939'";
+
+				
+			
+        map_element = document.getElementById("map_canvas");
+
+
+
+
+        map = new google.maps.Map(map_element, myOptions);
+					lat="9.940361";
+					longi="-84.097939";
+					nombre="prueba";
+					marker= new google.maps.Marker({						
+					position: new google.maps.LatLng(lat,longi)
+					, map: map				
+					, icon: 'http://movilmultimediasa.com/masxmenos/ubicanos/images/bullet.png'
+					});
+					marker.setTitle(nombre+"*"+this.direccion);
+					attachSecretMessage(marker);
+
+        var mapwidth = $(window).width();
+        var mapheight = $(window).height();
+        $("#map_canvas").height(mapheight);
+        $("#map_canvas").width(mapwidth);
+        google.maps.event.trigger(map, 'resize');
+
+            });
+			function attachSecretMessage(marker) {
+
+	  contTD=String(marker.getTitle()).split("*");
+	  titulo=contTD[0];  
+	  direccion=contTD[1];    
+	  marker.setTitle(titulo);
+	  var infowindow = new google.maps.InfoWindow(	
+		  { content: direccion,
+			size: new google.maps.Size(50,50)
+		  });
+	  google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+		map.setZoom(15);
+		map.setCenter(marker.getPosition());
+		});
+
+	pos=String(marker.getPosition());
+	pos=pos.split("(");
+	pos=pos[1].split(")");
+	pos=pos[0].split(",");
+	pos1=pos[0];
+	pos2=pos[1];
+	moveToDarwin(pos1,pos2);
+}
+
+function moveToDarwin(lat,longi) {
+  var darwin = new google.maps.LatLng(lat,longi);
+  map.setCenter(darwin);
+}
+
+function GoToLocation(lat,longi) {
+ var message = ["This","is","the","secret","message"];
+  contTD=String(marker.getTitle()).split("*");
+  titulo=contTD[0];  
+  direccion=contTD[1];    
+  marker.setTitle(titulo);
+  var infowindow = new google.maps.InfoWindow(	
+      { content: direccion,
+        size: new google.maps.Size(50,50)
+      });
+	$(function(){
+    infowindow.open(map,marker);
+	map.setZoom(15);
+	map.setCenter(marker.getPosition());	
+	});
+	moveToDarwin(lat,longi)
+}
+
+function centrado(lat,longi) {
+  var darwin = new google.maps.LatLng(lat,longi);
+ map.setCenter(darwin);
+
 }

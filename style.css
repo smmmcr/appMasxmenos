@@ -196,8 +196,18 @@ margin-left: 27%;
 #selectores{
 width: 85%;
 margin-left: 8%;
-margin-top: 26%;
+margin-top: 26px;
 margin-bottom: 40%;
+}
+#selectores select{
+cursor: pointer;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+-ms-filter: "alpha(opacity=0)";
+filter: alpha(opacity=0);
 }
 #busquedarapida{
 margin-left: 12%;
@@ -242,6 +252,7 @@ opacity: 0;
 -ms-filter: "alpha(opacity=0)";
 filter: alpha(opacity=0);
 }
+
 #menurecetas{
 position:relative;
 width:100%;
@@ -307,4 +318,18 @@ border: 1px solid rgba(141, 131, 131, 0.56);
 #contenidoulbusqueda{
 height: 539px;
 position:relative;
+}
+#select2 option, 
+#select3 option {
+display:none;
+}
+#map_canvas{
+height: 259px!important;
+width: 421px!important;
+position: relative;
+background-color: rgb(229, 227, 223);
+overflow: hidden;
+-webkit-transform: translateZ(0);
+border-bottom: 6px solid rgb(211, 143, 21);
+}
 }
