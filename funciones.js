@@ -207,6 +207,7 @@ $("#select3 option").attr("disabled");
 	});
 	$("#select3").change(function(){
 		idcat=$(this).val();
+		
 		localStorage.id=idcat;
 			$.mobile.changePage( "#mostrarmapa", {
 			transition: "pop",
@@ -217,29 +218,97 @@ $("#select3 option").attr("disabled");
 	});
 });
   $("#mostrarmapa").on("pagecreate",function () {
-                var centerLocation = new google.maps.LatLng('9.940361', '-84.097939');
+	idfinal=localStorage.id;
+		$.ajax({
+		type: "GET",
+		url: "tiendas.xml",
+		dataType: "xml",
+		success: function(xml) {
+				alert("dd");
+				$('#load').fadeOut();
+				$(xml).find("informacion").each(function () {	
+				$.each(this.attributes, function(i, attrib){
+				itemId = attrib.value;
+				});
+				if(itemId==idfinal){
+				alert(itemId);
+				lat=$(this).find("lat").text();
+				longi=$(this).find("longi").text();
+				nombre=$(this).find("nombre").text();
+				direccion=$(this).find("direccion").text();
+				telefono=$(this).find("telefono").text();
+				horario=$(this).find("horario").text();
+				 $("#listatiendas ul").append('<li><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\')">'+ $(this).find("nombre").text() + '</a></li>');
+				}
+				});
+				}
+		});
+	});
+	function attachSecretMessage(marker) {
+		contTD=String(marker.getTitle()).split("*");
+		titulo=contTD[0];  
+		direccion=contTD[1];    
+		marker.setTitle(titulo);
+		var infowindow = new google.maps.InfoWindow(	
+		{ content: direccion,
+		size: new google.maps.Size(50,50)
+		});
+		google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+		map.setZoom(15);
+		map.setCenter(marker.getPosition());
+		});
 
+		pos=String(marker.getPosition());
+		pos=pos.split("(");
+		pos=pos[1].split(")");
+		pos=pos[0].split(",");
+		pos1=pos[0];
+		pos2=pos[1];
+		moveToDarwin(pos1,pos2);
+	}
+	function moveToDarwin(lat,longi) {
+	var darwin = new google.maps.LatLng(lat,longi);
+	map.setCenter(darwin);
+	}
+
+	function GoToLocation(lat,longi) {
+	var message = ["This","is","the","secret","message"];
+	contTD=String(marker.getTitle()).split("*");
+	titulo=contTD[0];  
+	direccion=contTD[1];    
+	marker.setTitle(titulo);
+	var infowindow = new google.maps.InfoWindow(	
+	{ content: direccion,
+	size: new google.maps.Size(50,50)
+	});
+	$(function(){
+	infowindow.open(map,marker);
+	map.setZoom(15);
+	map.setCenter(marker.getPosition());	
+	});
+	moveToDarwin(lat,longi)
+	}
+	function centrado(lat,longi) {
+	var darwin = new google.maps.LatLng(lat,longi);
+	map.setCenter(darwin);
+	}	
+function visulamapainfo(lat,longi,nombre,direccion,horario,telefono){
+ var centerLocation = new google.maps.LatLng("9.996513","-84.118924");
         var myOptions = {
             center: centerLocation,
             zoom: 8,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             callback: function () { alert('callback'); }
         };
-		mapdata="'9.940361','-84.097939'";
-
-				
-			
+		mapdata='"9.996513","-84.118924"';			
         map_element = document.getElementById("map_canvas");
-
-
-
-
         map = new google.maps.Map(map_element, myOptions);
-					lat="9.940361";
-					longi="-84.097939";
+					lat=lat;
+					longi=longi;
 					nombre="prueba";
 					marker= new google.maps.Marker({						
-					position: new google.maps.LatLng(lat,longi)
+					position: new google.maps.LatLng('"9.996513","-84.118924"')
 					, map: map				
 					, icon: 'http://movilmultimediasa.com/masxmenos/ubicanos/images/bullet.png'
 					});
@@ -251,58 +320,4 @@ $("#select3 option").attr("disabled");
         $("#map_canvas").height(mapheight);
         $("#map_canvas").width(mapwidth);
         google.maps.event.trigger(map, 'resize');
-
-            });
-			function attachSecretMessage(marker) {
-
-	  contTD=String(marker.getTitle()).split("*");
-	  titulo=contTD[0];  
-	  direccion=contTD[1];    
-	  marker.setTitle(titulo);
-	  var infowindow = new google.maps.InfoWindow(	
-		  { content: direccion,
-			size: new google.maps.Size(50,50)
-		  });
-	  google.maps.event.addListener(marker, 'click', function() {
-		infowindow.open(map,marker);
-		map.setZoom(15);
-		map.setCenter(marker.getPosition());
-		});
-
-	pos=String(marker.getPosition());
-	pos=pos.split("(");
-	pos=pos[1].split(")");
-	pos=pos[0].split(",");
-	pos1=pos[0];
-	pos2=pos[1];
-	moveToDarwin(pos1,pos2);
-}
-
-function moveToDarwin(lat,longi) {
-  var darwin = new google.maps.LatLng(lat,longi);
-  map.setCenter(darwin);
-}
-
-function GoToLocation(lat,longi) {
- var message = ["This","is","the","secret","message"];
-  contTD=String(marker.getTitle()).split("*");
-  titulo=contTD[0];  
-  direccion=contTD[1];    
-  marker.setTitle(titulo);
-  var infowindow = new google.maps.InfoWindow(	
-      { content: direccion,
-        size: new google.maps.Size(50,50)
-      });
-	$(function(){
-    infowindow.open(map,marker);
-	map.setZoom(15);
-	map.setCenter(marker.getPosition());	
-	});
-	moveToDarwin(lat,longi)
-}
-
-function centrado(lat,longi) {
-  var darwin = new google.maps.LatLng(lat,longi);
- map.setCenter(darwin);
-
 }
