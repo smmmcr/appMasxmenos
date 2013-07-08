@@ -241,8 +241,8 @@ $("#select3 option").attr("disabled");
 				telefono=$(this).find("telefono").text();
 				horario=$(this).find("horario").text();	
 				 $("#listatiendas ul").append('<li><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\')" >'+ $(this).find("nombre").text() + '</a></li>');
-				 $("#direccion").append('<li> '+ $(this).find("direccion").text() + '</li>');
-				 $("#horario").append('<li> '+ $(this).find("horario").text() + '</li>');
+				 $("#direccion").append($(this).find("direccion").text() + '</li>');
+				 $("#horario").append(+ $(this).find("horario").text() + '</li>');
 				 $("#telefono").append('<li> '+ $(this).find("telefono").text() + '</li>');
 				
 				}
