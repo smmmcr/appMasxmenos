@@ -54,34 +54,21 @@ background-size: 100% 100%!important;
 border:none;
 height: 10%;
 }
-.headerGuia img{
-box-shadow: 0px 6px 28px 7px #000;
-width:100%;
+.headerGuia{
+background:url(img/subheader_bg.png);
+min-height:50px;
+background-size:100% 100%;
+text-align:center;
+padding-top:10px;
 }
 
-#wrapper img{
+#wrapper_guia img{
 width: 72%;
 }
-/*
-#wrapper {
-	width:300px;
-	height:160px;
-	float:left;
-	position:relative;	/* On older OS versions "position" and "z-index" must be defined, */
-/*	z-index:1;			/* it seems that recent webkit is less picky and works anyway. */
-/*	overflow:hidden;
-	background:#aaa;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
-	-o-border-radius:10px;
-	border-radius:10px;
-	background:#e3e3e3;
-}*/
-#wrapper {	
-/*width: 95%;*/
-width: 434px;
+
+#wrapper_guia {	
 float: left;
-position: absolute;
+position: relative;
 z-index: 1;
 overflow: hidden;
 background: #aaa;
@@ -91,10 +78,9 @@ background: #aaa;
 border-radius: 10px;
 background: #e3e3e3;
 margin-top: 12%;
-height: 56%;
+height: 290px;
 }
 #scroller {
-	width:3000px;
 	height:100%;
 	float:left;
 	padding:0;
@@ -116,7 +102,6 @@ height: 56%;
 box-sizing: border-box;
 display: block;
 float: left;
-width: 14%;
 text-align: center;
 font-family: georgia;
 font-size: 18px;
@@ -124,6 +109,27 @@ line-height: 140%;
 position: relative;
 margin-left: 0%;
 margin-top: 2%;
+}
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+#scroller li {
+	width: 300px;
+	height: 290px;
+}
+#wrapper_guia {	
+width: 300px;
+}
+}
+@media only screen 
+and (min-width : 600px) {
+#scroller li {
+	width: 580px;
+}
+#wrapper_guia {	
+width: 580px;
+height: 500px;
+}
 }
 #nav {
 	width:300px;
@@ -324,12 +330,23 @@ position:relative;
 display:none;
 }
 #map_canvas{
-height: 259px!important;
-width: 421px!important;
+height: 320px!important;
+width: 426px!important;
 position: relative;
 background-color: rgb(229, 227, 223);
 overflow: hidden;
 -webkit-transform: translateZ(0);
 border-bottom: 6px solid rgb(211, 143, 21);
+margin-top: 50px;
 }
+.gluten {
+background:url(img/bg_celiacos.jpg) repeat;
+}
+ .gluten .ui-content{
+ background:none;
+ }
+ #listatiendasinfo{
+ width: 91%;
+margin-left: 24px;
+margin-top: 27px;
 }

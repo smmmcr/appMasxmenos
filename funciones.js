@@ -51,9 +51,10 @@ $("#busquedaRapidaContacto").on('pagecreate.', function(){
                  .on('selectstart', false);
     };	
 loadedscroll('headerinter2','footerinter2','wrapper2','scrollercontacto');
+//loadedscroll();
 });
 function loaded() {
-	myScroll = new iScroll('wrapper', {
+/*	myScroll = new iScroll('wrapper', {
 		snap: true,
 		momentum: false,
 		hScrollbar: false,
@@ -61,6 +62,7 @@ function loaded() {
 		onScrollEnd: function () {		
 		}
 	 });
+*/	 
 }
 document.addEventListener('DOMContentLoaded', loaded, false);
 $("#recetas").on('pagecreate', function(){
@@ -224,26 +226,58 @@ $("#select3 option").attr("disabled");
 		url: "tiendas.xml",
 		dataType: "xml",
 		success: function(xml) {
-				alert("dd");
+	
 				$('#load').fadeOut();
 				$(xml).find("informacion").each(function () {	
 				$.each(this.attributes, function(i, attrib){
 				itemId = attrib.value;
 				});
 				if(itemId==idfinal){
-				alert(itemId);
+			
 				lat=$(this).find("lat").text();
 				longi=$(this).find("longi").text();
 				nombre=$(this).find("nombre").text();
 				direccion=$(this).find("direccion").text();
 				telefono=$(this).find("telefono").text();
-				horario=$(this).find("horario").text();
-				 $("#listatiendas ul").append('<li><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\')">'+ $(this).find("nombre").text() + '</a></li>');
+				horario=$(this).find("horario").text();	
+				 $("#listatiendas ul").append('<li><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\')" >'+ $(this).find("nombre").text() + '</a></li>');
+				 $("#direccion").append('<li> '+ $(this).find("direccion").text() + '</li>');
+				 $("#horario").append('<li> '+ $(this).find("horario").text() + '</li>');
+				 $("#telefono").append('<li> '+ $(this).find("telefono").text() + '</li>');
+				
 				}
+					$("#tiendas2").listview('refresh');		
 				});
 				}
 		});
 	});
+	function visulamapainfo(lat,longi,nombre,direccion,horario,telefono){
+ var centerLocation = new google.maps.LatLng(lat,longi);
+        var myOptions = {
+            center: centerLocation,
+            zoom: 10,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            callback: function () { alert('callback'); }
+        };
+		mapdata=lat+","+longi;			
+        map_element = document.getElementById("map_canvas");
+        map = new google.maps.Map(map_element, myOptions);
+			
+					nombre="prueba";
+					marker= new google.maps.Marker({						
+					position: new google.maps.LatLng(lat,longi)
+					, map: map				
+					, icon: 'http://movilmultimediasa.com/masxmenos/ubicanos/images/bullet.png'
+					});
+					marker.setTitle(nombre);
+					attachSecretMessage(marker);
+
+        var mapwidth = $(window).width();
+        var mapheight = $(window).height();
+        $("#map_canvas").height(mapheight);
+        $("#map_canvas").width(mapwidth);
+        google.maps.event.trigger(map, 'resize');
+}
 	function attachSecretMessage(marker) {
 		contTD=String(marker.getTitle()).split("*");
 		titulo=contTD[0];  
@@ -293,31 +327,3 @@ $("#select3 option").attr("disabled");
 	var darwin = new google.maps.LatLng(lat,longi);
 	map.setCenter(darwin);
 	}	
-function visulamapainfo(lat,longi,nombre,direccion,horario,telefono){
- var centerLocation = new google.maps.LatLng("9.996513","-84.118924");
-        var myOptions = {
-            center: centerLocation,
-            zoom: 8,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            callback: function () { alert('callback'); }
-        };
-		mapdata='"9.996513","-84.118924"';			
-        map_element = document.getElementById("map_canvas");
-        map = new google.maps.Map(map_element, myOptions);
-					lat=lat;
-					longi=longi;
-					nombre="prueba";
-					marker= new google.maps.Marker({						
-					position: new google.maps.LatLng('"9.996513","-84.118924"')
-					, map: map				
-					, icon: 'http://movilmultimediasa.com/masxmenos/ubicanos/images/bullet.png'
-					});
-					marker.setTitle(nombre+"*"+this.direccion);
-					attachSecretMessage(marker);
-
-        var mapwidth = $(window).width();
-        var mapheight = $(window).height();
-        $("#map_canvas").height(mapheight);
-        $("#map_canvas").width(mapwidth);
-        google.maps.event.trigger(map, 'resize');
-}
