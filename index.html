@@ -9,10 +9,11 @@
 		<link rel="stylesheet" href="themes/mxm.css" />
 		<link rel="stylesheet" href="jquery.mobile.structure-1.3.1.css" />
 		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" type="text/css" href="scrollbar.css" /> 
+		<link rel="stylesheet" type="text/css" href="scrollbar.css" />
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
 		<script src="jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="iscroll.js"></script>
-		<script src="jquery.mobile-1.3.1.js"></script>
+		<script src="jquery.mobile-1.3.1.min.js"></script>
 	</head>
 	<body>
 		<div id='home' data-role="page" data-theme="a" >
@@ -366,7 +367,7 @@
 					<a href="#gluten2" data-role="button" data-icon="arrow-r" data-iconpos="right">Primeros pasos con un Celíaco</a>
 					<a href="#gluten3" data-role="button" data-icon="arrow-r" data-iconpos="right">Variedad en Gluten Free</a>
 				</div>
-				<img src="img/logo_celiacos.png">
+				<img src="img/logo_celiacos.png" class="logo_celiacos">
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -537,9 +538,6 @@
 			</div>
 		</div>
 		<script src="funciones.js"></script>
-		<script type="text/javascript"
-    src="https://maps.google.com/maps/api/js?sensor=false">
-</script>
 		<script src="glutenDB.js"></script>
 		<script>
 		$( "#gluten" ).on( "pagecreate", function( event ) {
@@ -548,7 +546,7 @@
 		$( "#gluten3" ).on( "pagebeforecreate", function( event ) {
 		 GlutenVariedad();
 		});
-		$( "#guia" ).on( "pagecreate", function( event ) {
+		$( "#guia" ).on( "pagebeforeshow", function( event ) {
 			var cant = $("#thelist li").size();
 			var width = $(window).width() - 20;
 			var width_overview =  width * cant;
