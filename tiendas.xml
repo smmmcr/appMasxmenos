@@ -6,7 +6,7 @@
 <direccion>Calle 42 avenida 5 San José.</direccion>
 <lat>9.940361</lat><longi>-84.097939</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00am, Domingo: 7:00am a 9:00pm</horario>
-<telefono>2248-0968</telefono>
+<telefono><a href="tel:+50622480968">2248-0968</a></telefono>
 </tienda>
 </informacion>
 <informacion id="71">
@@ -15,7 +15,7 @@
 <direccion>300mts este de la Clínica de Coronado</direccion>
 <lat>9.977642</lat><longi>-84.010391</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00pm, Domingo: 7:00am a 9:00pm</horario>
-<telefono>2229-8627 / 2229-8456</telefono>
+<telefono><a href="tel:+50622298627">2229-8627</a> <a href="tel:+50622298456">/ 2229-8456</a></telefono>
 </tienda>
 </informacion>
 <informacion id="133">
@@ -24,7 +24,7 @@
 <direccion>De la Basílica 300mts norte y 200mts este, Santo Domingo de Heredia</direccion>
 <lat>10.013482</lat><longi>-84.079742</longi>
 <horario>Lunes a Sábado: 6:30am a 12:00am, Domingo: 6:30:am a 10:00pm</horario>
-<telefono>2244-8180/82/83</telefono>
+<telefono><a href="tel:+50622448180">2244-8180</a>/82/83</telefono>
 </tienda>
 </informacion>
 <informacion id="122">
@@ -32,7 +32,7 @@
 <direccion>Costado oeste del Mercado Central, 50mts oeste frente a panadería Leandro en Heredia.</direccion>
 <lat>9.996513</lat><longi>-84.118924</longi>
 <horario>Lunes a Sábado: 6:30am a 12:00pm, Domingo: 6:00am a 9:00pm</horario>
-<telefono>2261-0007//06//08</telefono>
+<telefono><a href="tel:+50622610007">22610007</a>//06//08</telefono>
 </tienda>
 </informacion>
 <informacion id="445">
@@ -40,7 +40,7 @@
 <direccion>50mts sur de la sucursal del Banco Nacional de Jacó  </direccion>
 <lat>9.622414</lat><longi>-84.627342</longi>
 <horario>Lunes a Sábado: 6:00am a 12:00pm, Domingo 7:00am a 10:00pm</horario>
-<telefono>2643-3027 / 2643-2528 /(Express) 2643-3611</telefono>
+<telefono><a href="tel:+50626433027">26433027</a> / <a href="tel:+50626432528">2643-2528</a> /(Express) <a href="tel:+50626433611">2643-3611</a></telefono>
 </tienda>
 </informacion>
 <informacion id="169">
@@ -59,7 +59,7 @@
 <lat>10.016646</lat>
 <longi>-84.215671</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00pm, Domingo: 7:00am a 9:00pm</horario>
-<telefono>2443-4041 / 2441-7676  / 2243-4090</telefono>
+<telefono><a href="tel:+50626432528">2643-2528</a> <a href="tel:+50624434041">2443-4041</a> /<a href="tel:+50624417676">2441-7676</a> / <a href="tel:+50622434090">22434090</a></telefono>
 </tienda>
 </informacion>
 <informacion id="159">
@@ -68,7 +68,7 @@
 <direccion>Centro comercial Mall Paseo De Las Flores, frente a universidad Interamericana, carretera principal hacia Heredia.</direccion>
 <lat>9.985567</lat><longi>-8.411077</longi>
 <horario>Lunes a Sábado: 7:00am a 9:00pm, Domingo: 7:00am a 8:00pm</horario>
-<telefono>2237-3215/17/24</telefono>
+<telefono><a href="tel:+50622373215">2237-3215</a>/17/24</telefono>
 </tienda>
 </informacion>
 <informacion id="9">
@@ -76,7 +76,7 @@
 <direccion>Centro comercial plaza Rohrmoser, 250mts este de la embajada Estados Unidos de América</direccion>
 <lat>9.940488</lat><longi>-84.121456</longi>
 <horario>Lunes a Sábado: 8:00am a 12:00pm, Domingo: 8:00am a 9:00pm</horario>
-<telefono>2231-3815  /  2231-3936//3691</telefono>
+<telefono><a href="tel:+50622313815">2231-3815</a>  /<a href="tel:+50622313936">2231-3936</a> //3691</telefono>
 </tienda>
 </informacion>
 <informacion id="162">
@@ -84,7 +84,7 @@
 <direccion>Carretera a santo domingo de Heredia</direccion>
 <lat>9.988578</lat><longi>-8.409884</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00pm, Domingo: 7:00am a 9:00pm</horario>
-<telefono>2260-7163 / 2260-7024///63</telefono>
+<telefono><a href="tel:+50622607163"> 2260-7163</a> / <a href="tel:+50622607024"> 2260-7024</a>///63</telefono>
 </tienda>
 </informacion>
 <informacion id="158">
@@ -93,7 +93,7 @@
 <direccion>800mts este Iglesia Católica, frente a Pedregal</direccion>
 <lat>9.980128</lat><longi>-84.1788025293461</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00pm, Domingo: 7:00am a 10:00pm</horario>
-<telefono>2239-7795</telefono>
+<telefono><a href="tel:+50622397795"> 2239-7795</a> </telefono>
 </tienda>
 </informacion>
 <informacion id="53">
@@ -102,7 +102,7 @@
 <direccion>Centro comercial Novacentro, del cruce de Moravia, 125mts al norte</direccion>
 <lat>9.951346</lat><longi>-8.405004</longi>
 <horario>Lunes a Sábado: 9:00am a 12:00am, Domingo: 8:00am a 9:00pm</horario>
-<telefono>2224-2140</telefono>
+<telefono><a href="tel:+50622242140"> 2224-2140</a> </telefono>
 </tienda>
 </informacion>
 <informacion id="1">
@@ -110,7 +110,7 @@
 <direccion>Pie de Cuesta de Moras, calle 11 y 13, avenida central</direccion>
 <lat>9.93378</lat><longi>-84.073313</longi>
 <horario>Lunes a Sábado: 8:00am a12:00am, Domingo: 8:00am a 10:00pm</horario>
-<telefono>2233-7811/2255-3194</telefono>
+<telefono><a href="tel:+50622337811">2233-7811</a> /<a href="tel:+50622553194">2255-3194</a> </telefono>
 </tienda>
 </informacion>
 <informacion id="447">
@@ -119,7 +119,7 @@
 <direccion>Diagonal al costado noroeste del Mercado Municipal de Limón</direccion>
 <lat>9.993544</lat><longi>-8.302807</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00pm, Domingo: 8:00am a 10:00pm</horario>
-<telefono>2798-1985 / 2798-0070</telefono>
+<telefono><a href="tel:+50627981985">2798-1985</a>  / <a href="tel:+50627980070">27980070</a></telefono>
 </tienda>
 </informacion>
 <informacion id="14">
@@ -128,7 +128,7 @@
 <direccion>Centro comercial de Escazú, San Rafael de Escazú</direccion>
 <lat>9.928834</lat><longi>-84.134138</longi>
 <horario>Lunes a Sábado: 8:00am a 9:00pm, Domingo: 8:00am a 8:00pm</horario>
-<telefono>2228-0954</telefono>
+<telefono><a href="tel:+50622280954">2228-0954</a> </telefono>
 </tienda>
 </informacion>
 <informacion id="60">
@@ -137,7 +137,7 @@
 <direccion>400mts norte de la Cruz Roja de Santa Ana</direccion>
 <lat>9.937112</lat><longi>-84.188286</longi>
 <horario>Lunes a Sábado: 6:30am a 12:00pm, Domingo: 6:30am a 9:00pm</horario>
-<telefono>2582-0211 / 2582-0213 / 2582-0215 / 2582-0217</telefono>
+<telefono><a href="tel:+50625820211">2582-0211</a> / <a href="tel:+50625820213">2582-0213</a>/ <a href="tel:+50625820215">2582-0215</a> / <a href="tel:+50625820217"> 2582-0217</a></telefono>
 </tienda>
 </informacion>
 <informacion id="81">
@@ -146,7 +146,7 @@
 <direccion>Centro Comercial Feria Del Norte Tibás</direccion>
 <lat>9.958368</lat><longi>-84.077286</longi>
 <horario>Lunes a Sábado: 6:30am a 12:00am, Domingo: 7:00am a 9:00pm</horario>
-<telefono>2235-0535/2297-2838</telefono>
+<telefono><a href="tel:+50622350535">2235-0535</a>/<a href="tel:+50622972838">2297-2838</a></telefono>
 </tienda>
 </informacion>
 <informacion id="451">
@@ -155,7 +155,7 @@
 <direccion>800mts este de la Iglesia Católica de Guápiles</direccion>
 <lat>10.213484</lat><longi>-83.784552</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00pm, Domingo: 7:00am a 9:00pm</horario>
-<telefono>2710-3146//45</telefono>
+<telefono><a href="tel:+50627103146">2710-3146</a>//45</telefono>
 </tienda>
 </informacion>
 <informacion id="19">
@@ -164,7 +164,7 @@
 <direccion>Frente al cementerio de San Antonio de Desamparados.</direccion>
 <lat>9.898004263477752</lat><longi>-84.05344804875575</longi>
 <horario>Lunes a Sábado: 7:00am a 9:00pm, Domingo: 7:00am a 8:00pm</horario>
-<telefono>2219-0137 </telefono>
+<telefono><a href="tel:+50622190137">2219-0137 </a></telefono>
 </tienda>
 </informacion>
 <informacion id="86">
@@ -183,7 +183,7 @@
 <direccion>Centro Comercial Desamparados, frente al Liceo Monseñor Sanabria Odio.</direccion>
 <lat>989.957</lat><longi>-84.068271</longi>
 <horario>Lunes a Sábado: 10:00am a 9:00pm, Domingo: 10:00am a 8:00pm</horario>
-<telefono>2250-3355</telefono>
+<telefono><a href="tel:+50622503355">2250-3355 </a></telefono>
 </tienda>
 </informacion>
 <informacion id="89">
@@ -192,7 +192,7 @@
 <direccion>Barrio La Granja contiguo a Bomba el Higuerón</direccion>
 <lat>9.931061</lat><longi>-84.047207</longi>
 <horario>Lunes a Sábado: 8:00am a 12:00pm, Domingo: 8:00am a 10:00pm</horario>
-<telefono>2225-0636</telefono>
+<telefono><a href="tel:+50622250636">2225-0636</a></telefono>
 </tienda>
 </informacion>
 <informacion id="53">
@@ -201,7 +201,7 @@
 <direccion>225mts oeste del Parque Central de Guadalupe, contiguo a la Municipalidad</direccion>
 <lat>9.945833</lat><longi>-84.055879</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00pm, Domingo: 7:00am a 9:00pm</horario>
-<telefono>2225-1758 / 2283-5341</telefono>
+<telefono><a href="tel:+50622251758">2225-1758</a> /<a href="tel:+50622835341">2283-5341</a> </telefono>
 </tienda>
 </informacion>
 <informacion id="90">
@@ -210,7 +210,7 @@
 <direccion>50mts oeste de la Iglesia Católica de Sabanilla Montes De Oca</direccion>
 <lat>9.944303</lat><longi>-84.034413</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00pm, Domingo: 8:00am a 9:00pm</horario>
-<telefono>2280-5106  /  2280-5221  /  2283-5761</telefono>
+<telefono><a href="tel:+50622805106">2280-5106</a>  / <a href="tel:+50622805221">2280-5221</a>   / <a href="tel:+50622835761">2283-5761</a>  </telefono>
 </tienda>
 
 </informacion>
@@ -220,7 +220,7 @@
 <direccion>100mts este cementerio de Tres Ríos ruta 251 (calle 5)</direccion>
 <lat>9.908584080520237</lat><longi>-83.98884395417697</longi>
 <horario>Lunes a Sábado: 7:00am a 12:00am, Domingo: 7:00am a 9:00pm</horario>
-<telefono>2279-7453 </telefono>
+<telefono><a href="tel:+50622797453">2279-7453</a>  </telefono>
 </tienda>
 </informacion> 
 </tiendas>  

@@ -330,14 +330,15 @@ position:relative;
 display:none;
 }
 #map_canvas{
-height: 320px!important;
-width: 426px!important;
+height: 175px!important;
+width: 380px!important;
 position: relative;
 background-color: rgb(229, 227, 223);
 overflow: hidden;
 -webkit-transform: translateZ(0);
 border-bottom: 6px solid rgb(211, 143, 21);
-margin-top: 50px;
+margin-top: 4px;
+border-radius: 0px;
 }
 .gluten {
 background:url(img/bg_celiacos.jpg) repeat;
@@ -350,7 +351,7 @@ background:url(img/bg_celiacos.jpg) repeat;
 margin-left: 24px;
 margin-top: 27px;
 }
-img.logo_celiacos{
-margin: 10px auto;
-display: block;
+#tiendasinfo p {
+color: rgb(87, 82, 82);
 }
+#

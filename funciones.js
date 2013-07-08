@@ -187,8 +187,15 @@ $("#supermercados").on('pagecreate', function(){
 $("#select2 option").css("display","none");
 $("#select3 option").css("display","none");
 $("#select3 option").attr("disabled");
-
-		
+clase=$("#select2 .1");
+	$("#select2 option").css("display","none");
+		clase.css("display","block");
+		clase.removeAttr("disabled");
+			clase=$("#select3 .15");
+			$("#select3 option").css("display","none");
+			clase.css("display","block");
+			$("#select3 option").attr("disabled");
+			clase.removeAttr("disabled");
 	$("#select1").change(function(){
 		idcat=$(this).val();
 			clase=$("#select2 ."+idcat);
@@ -241,10 +248,17 @@ $("#select3 option").attr("disabled");
 				telefono=$(this).find("telefono").text();
 				horario=$(this).find("horario").text();	
 				 $("#listatiendas ul").append('<li><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\')" >'+ $(this).find("nombre").text() + '</a></li>');
-				 $("#direccion").append('<li> '+ $(this).find("direccion").text() + '</li>');
-				 $("#horario").append('<li> '+ $(this).find("horario").text() + '</li>');
-				 $("#telefono").append('<li> '+ $(this).find("telefono").text() + '</li>');
+				$("#direccion").html("");
+				 $("#horario").html("");
+				 $("#telefono").html("");
+				$("#direccion").append("<h3>Direccion:</h3></br>");
+				$("#direccion").append("<p>"+$(this).find("direccion").text()+"</p>");
+				 $("#horario").append("<h3>Horario:</h3></br>");
+				 $("#horario").append("<p>"+$(this).find("horario").text()+"</p>");
+				 $("#telefono").append("<h3>Telefono:</h3></br>");
+				 $("#telefono").append("<p>"+$(this).find("telefono").text()+"</p>");
 				
+				visulamapainfo(lat,longi,nombre,direccion,horario,telefono);				
 				}
 					$("#tiendas2").listview('refresh');		
 				});
