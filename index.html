@@ -13,6 +13,7 @@
 		<script src="jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="iscroll.js"></script>
 		<script src="jquery.mobile-1.3.1.min.js"></script>
+		<script src="cordova-2.2.0.js"></script>
 	</head>
 	<body>
 		<div id='home' data-role="page" data-theme="a" >
@@ -31,7 +32,7 @@
 					<div class="ui-block-b"><a href="#recetas"><img src='img/btnrecetas.png'></a></div>
 					</div><!-- /grid-b -->
 					<div class="ui-grid-a">
-					<div class="ui-block-a"><a href="#"><img src='img/btnMiercoles.png'></a></div>
+					<div class="ui-block-a"><a href="#miercoles"><img src='img/btnMiercoles.png'></a></div>
 					<div class="ui-block-b"><a href="#gluten"><img src='img/btnGluten.png'></a></div>
 					</div><!-- /grid-b -->					
 					<!--	</fieldset>-->			
@@ -50,6 +51,33 @@
 			<div data-role="content" data-theme="a" data-iscroll="enable">	
 				<div id="contenidoScroll">
 				<div id="wrapper_guia">
+					<div id="scroller">
+						<ul id="thelist">					
+							<li><img src="imgProductos/p1.png" alt="imagen producto 1"></li>
+							<li><img src="imgProductos/p2.png" alt="imagen producto 2"></li>
+							<li><img src="imgProductos/p3.png" alt="imagen producto 3"></li>
+							<li><img src="imgProductos/p4.png" alt="imagen producto 4"></li>
+							<li><img src="imgProductos/p5.png" alt="imagen producto 5"></li>
+						</ul>
+					</div>
+				</div>			
+				</div>			
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		<div class='btnfooter'><a href="index.html">Menu</a></div>
+		<div class='btnfooter'><a href="">Compartir</a></div>
+		</div>
+		</div>
+		<div id='miercoles' data-role="page" data-theme="a" data-iscroll="enable">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+				<h3>Miercoles Frescos</h3>
+				</div>
+			<div data-role="content" data-theme="a" data-iscroll="enable">	
+				<div id="contenidoScroll">
+				<div id="wrapper_miercoles">
 					<div id="scroller">
 						<ul id="thelist">					
 							<li><img src="imgProductos/p1.png" alt="imagen producto 1"></li>
@@ -102,8 +130,11 @@
 				<div id="recetafinal">
 					<div id="tituloreceta"></div>
 					<div id="contenidoreceta">
-					<ul data-role="listview"   data-theme="a"  data-inset="true" id="scrolle1" data-corners="false">
-					</ul>
+					<div id="scroller">
+						<ul data-role="listview"   data-theme="a"  data-inset="true" id="scrolle1" data-corners="false">
+						
+						</ul>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -128,12 +159,11 @@
 							<option value="1">San José</option>
 							<option value="2">Heredia</option>
 							<option value="3">Alajuela</option>
-							<option value="4">Cartago</option>
 							<option value="6">Puntarenas</option>
 							<option value="7">Limón</option>
 					</select>
 					<select name="select2" id="select2" data-mini="true">
-						<option value="" disabled class="df" >Canton</option>
+						<option value="" disabled>Canton</option>
 						<option value="15" class="1" disabled>Montes de Oca</option>
 						<option value="14" class="1" disabled>Moravia</option>
 						<option value="11" class="1" disabled>Vázquez de Coronado</option>
@@ -155,7 +185,7 @@
 						<option value="76" class="7" disabled>Limón</option>						
 					</select>
 					<select name="select3" id="select3" data-mini="true">
-					<option value="" class="df">Seleccione Distrito</option>
+					<option value="">Seleccione Distrito</option>
 					<option value="1" class="1">Carmen</option>
 					<option value="9" class="1">Pavas</option>
 					<option value="8" class="1">Mata Redonda</option>
@@ -224,9 +254,8 @@
 				</div>	
 			<div data-role="content" data-theme="a" >	
 				<div id="contenidoulbusqueda">
-				<ul data-role="listview" data-inset="true" data-theme="a" data-filter="true" id="scrollercontacto" data-corners="false">
-					<li id="wrapper2"></li>
-					<li id="headerinter2"></li>
+				<div id="scroller">
+				<ul data-role="listview" data-inset="true" data-theme="a" data-filter="true" data-filter-placeholder="Filtrar Supermercados..." id="scrollercontacto" data-corners="false">
 					<li>
 						<h3 class="h3tel">Masxmenos Alajuela</h3>
 						<p class="ptel"><a href="tel:+50624434959">2443-4959</a> <b>ó</b> <a href="tel:+50624434975">2443-4975</a></p>
@@ -339,12 +368,8 @@
 						<h3 class="h3tel">Masxmenos Tres Ríos</h3>
 						<p class="ptel"><a href="tel:+50622797453">2279-7453</a></p>
 					</li>
-					<li>
-					</li>
-					<li>
-					</li>
-					<li id="footerinter2"></li>
 				</ul>
+				</div>
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -366,7 +391,7 @@
 					<a href="#gluten2" data-role="button" data-icon="arrow-r" data-iconpos="right">Primeros pasos con un Celíaco</a>
 					<a href="#gluten3" data-role="button" data-icon="arrow-r" data-iconpos="right">Variedad en Gluten Free</a>
 				</div>
-				<img src="img/logo_celiacos.png">
+				<img src="img/logo_celiacos.png" class="logo_celiacos">
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -409,7 +434,7 @@
 				</div>			
 			<div data-role="content" data-theme="a">	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
-				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Recetas..." data-inset="true"data-divider-theme="a">
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Recetas..." data-inset="true" data-divider-theme="a">
 					<li data-role="list-divider">NOMBRE CATEGORIA</li>
 					<li><a href="#glutenRecetasDetail">Galletitas</a></li>
 					<li><a href="#glutenRecetasDetail">Panes</a></li>
@@ -456,15 +481,25 @@
 				</div>	
 			<div data-role="content" data-theme="a">	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
-						<ul data-role="listview" data-inset="true">
-						<li><a href="#">¿Qué es la enfermedad celiaca?</a></li>
-						<li><a href="#">¿Qué puede o no comer un celiaco?</a></li>
-						<li><a href="#">Información Básica</a></li>
-						<li><a href="#">¿Cómo preparar la cocina para un Celíaco?</a></li>
-						<li><a href="#">¿Qué es la contaminación cruzada?</a></li>
-						<li><a href="#">¿Cuándo es un niño o niña el celíaco?</a></li>
-						<li><a href="#">Consejos de Nutrición</a></li>
+					<ul data-role="listview" data-inset="true" id="pasos_list">
 					</ul>
+				</div>			
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		<div class='btnfooter'><a href="#gluten2">Anterior</a></div>
+		<div class='btnfooter'><a href="#gluten4">Siguiente</a></div>
+		</div>
+		</div>
+		<div id='glutenPasos' class="gluten" data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+				<h3 id="titulo">Primeros pasos con un Celíaco</h3>
+				</div>	
+			<div data-role="content" data-theme="a">	
+				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
+					<div id="contPasos"></div>
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -481,7 +516,7 @@
 				</div>	
 			<div data-role="content" data-theme="a">	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
-				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorias..." data-inset="true" id="gfcCategorias">
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorias..." data-inset="true" id="gfcCategorias" data-divider-theme="a">
 				</ul>
 				</div>			
 			</div>
@@ -490,7 +525,7 @@
 		<div class='btnfooter'><a href="#gluten">Siguiente</a></div>
 		</div>
 		</div>
-		<div id='gluten5' class="gluten" data-role="page" data-theme="a">
+		<div id='glutenVariedadList' class="gluten" data-role="page" data-theme="a">
 			<div data-role="header" data-position="inline">
 				<img src="img/logohedermasxmenos.png">
 			</div>
@@ -499,11 +534,25 @@
 				</div>	
 			<div data-role="content" data-theme="a">	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
-				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Productos..." data-inset="true" id="gfcProductos">
-				<li data-role="list-divider">NOMBRE CATEGORIA</li>
-					<li><a href="#glutenRecetasDetail">PRODUCTO X</a></li>
-					<li><a href="#glutenRecetasDetail">PRODUCTO Y</a></li>
+				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Productos..." data-inset="true" id="gfcProductos" data-divider-theme="a">
 				</ul>
+				</div>			
+			</div>
+		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		<div class='btnfooter'><a href="#gluten3">Anterior</a></div>
+		<div class='btnfooter'><a href="#gluten">Siguiente</a></div>
+		</div>
+		</div>
+		<div id='glutenVariedadDetail' class="gluten" data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<img src="img/logohedermasxmenos.png">
+			</div>
+				<div class="headerGuia" data-position="inline">
+				<h2>Variedad Gluten Free</h2>
+				</div>	
+			<div data-role="content" data-theme="a">	
+				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
+
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -520,16 +569,13 @@
 				</div>	
 			<div data-role="content" data-theme="a">
 				<div id="listatiendas"><ul id="tiendas2" data-role="listview"></ul></div>
-				<div >
 				
-				</div>
 				<div id="listatiendasinfo"><ul id="tiendasinfo" data-role="listview" class="ui-corner-all ui-shadow">
-				<li id='map_canvas' class="ui-li ui-li-static ui-btn-up-a ui-first-child"></li>
-				<li id="direccion"></li>
-				
-				<li id="horario"></li>
-				<li id="telefono" class="ui-li ui-li-static ui-btn-up-a ui-first-child"></li>
-				
+				<li id='map_canvas'></li>
+				<li id="direccion" class="ui-li ui-li-static ui-btn-up-a ui-first-child">Frente al costado norte del Mercado Municipal, Alajuela</li>
+				<li id="horario">Lunes a Sábado: 7:00am a 12:00pm, Domingo: 7:00am a 9:00pm</li>
+				<li id="telefono" class="ui-li ui-li-static ui-btn-up-a ui-first-child">2443-4041 / 2441-7676  / 2243-4090</li>
+				<li id="servicios"></li>
 				</ul></div>
 			</div>
 			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -549,19 +595,54 @@
 		$( "#gluten3" ).on( "pagebeforecreate", function( event ) {
 		 GlutenVariedad();
 		});
-		$( "#guia" ).on( "pagecreate", function( event ) {
-			var cant = $("#thelist li").size();
+		$( "#gluten2" ).on( "pagebeforecreate", function( event ) {
+		 GlutenPasos();
+		});
+		$( "#guia" ).on( "pagebeforeshow", function( event ) {
+			var cant = $("#guia #thelist li").size();
 			var width = $(window).width() - 20;
 			var width_overview =  width * cant;
-			$('#scroller').css('width', width_overview+'px');
+			$('#guia #scroller').css('width', width_overview+'px');
 			setTimeout( function() {
-				var myScroll2 = new iScroll('wrapper_guia', {
+				var myScroll1 = new iScroll('wrapper_guia', {
 								snap: true,
 								momentum: false,
 								hScrollbar: false,
 								vScrollbar: false });
 			}, 500);
 								
+		});
+		$( "#miercoles" ).on( "pagebeforeshow", function( event ) {
+			var cant = $("#miercoles #thelist li").size();
+			var width = $(window).width() - 20;
+			var width_overview =  width * cant;
+			$('#miercoles #scroller').css('width', width_overview+'px');
+			setTimeout( function() {
+				var myScroll2 = new iScroll('wrapper_miercoles', {
+								snap: true,
+								momentum: false,
+								hScrollbar: false,
+								vScrollbar: false });
+			}, 500);
+								
+		});
+		$( "#recetaSelec" ).on( "pagebeforeshow", function( event ) {
+			setTimeout( function() {
+				myScroll3 = new iScroll('contenidoreceta', {hScrollbar: false});
+			}, 500);
+			setTimeout(function () {myScroll3.refresh();}, 0);	
+		});
+		$( "#busquedaRapidaContacto" ).on( "pagebeforeshow", function( event ) {
+			setTimeout( function() {
+				var myScroll4 = new iScroll('contenidoulbusqueda', {hScrollbar: false});
+			}, 500);
+		});
+		
+		$( "#glutenPasos" ).on( "pagebeforeshow", function( event ) {
+			setTimeout( function() {
+				myScrol5 = new iScroll('contPasos', {hScrollbar: false});
+			}, 500);
+			setTimeout(function () {myScroll5.refresh();}, 0);	
 		});
 		</script>	
 	</body>

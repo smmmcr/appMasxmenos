@@ -146,13 +146,11 @@ $.mobile.changePage( "#recetaSelec", {
 		/*$("#recetafinal").append("<a id='regresar' href='javascript:volverreceta("+json_data[0].tiporeceta+");'>Regresar</p>");*/
 		$("#recetafinal").append("<a id='regresar' href='#recetas'>Regresar</a>");
 		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+json_data[0].nombre+"</h3></div><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+json_data[0].img+"' alt='imgreceta' />");
-		$("#recetafinal ul").append("<li id='wr1'></li><li id='headerinter1'></li>");
 		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+json_data[0].ingredientes+"</div>");
-		$("#recetafinal ul").append("<li></li><li></li><li id='footerinter1'></li>");
-		loadedscroll('headerinter1','footerinter1','wr1','scrolle1');
 				
 		});
 }
+
 function volverreceta(id){
 location.href="#recetas";
 /*
@@ -226,6 +224,9 @@ clase=$("#select2 .1");
 
 	});
 });
+  $("#recetas").on("pagecreate",function () { 
+mostrarlista(12);
+  });
   $("#mostrarmapa").on("pagecreate",function () {
 	idfinal=localStorage.id;
 		$.ajax({
@@ -251,13 +252,19 @@ clase=$("#select2 .1");
 				$("#direccion").html("");
 				 $("#horario").html("");
 				 $("#telefono").html("");
+				imagenes =$(this).find("imagenes").text().split(",");
+	
 				$("#direccion").append("<h3>Direccion:</h3></br>");
 				$("#direccion").append("<p>"+$(this).find("direccion").text()+"</p>");
 				 $("#horario").append("<h3>Horario:</h3></br>");
 				 $("#horario").append("<p>"+$(this).find("horario").text()+"</p>");
 				 $("#telefono").append("<h3>Telefono:</h3></br>");
 				 $("#telefono").append("<p>"+$(this).find("telefono").text()+"</p>");
-				
+				 $("#servicios").append("<h3>Servicios:</h3>");
+				$.each(imagenes, function(i, imagen){ 
+
+				 $("#servicios").append("<img src=' img/"+imagen+".png '/>");
+				});
 				visulamapainfo(lat,longi,nombre,direccion,horario,telefono);				
 				}
 					$("#tiendas2").listview('refresh');		

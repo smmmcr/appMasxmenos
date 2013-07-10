@@ -13,8 +13,10 @@
         /*CREACION TABLA CLIENTES*/
 		tx.executeSql('DROP TABLE IF EXISTS glutenComCat');
 		tx.executeSql('DROP TABLE IF EXISTS glutenComProd');
+		tx.executeSql('DROP TABLE IF EXISTS glutenPrimerosPasos');
          tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComCat (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, pais TEXT)');
          tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComProd (id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT)');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS glutenPrimerosPasos (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, info TEXT)');
          //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
 		 SincronizarDB();
     }
@@ -22,7 +24,7 @@
     // Transaction error callback
     //
     function errorCB(tx, err) {
-        alert("Error processing SQL: "+err);
+        console.log("Error processing SQL: "+err);
     }
 
     // Transaction success callback
@@ -51,8 +53,33 @@
 				});
 			});
 		});
+		/*SINCRONIZA Pasos*/
+		$.getJSON(url,{accion:"comprasPasos"}).done(function( data ) {
+			console.log('Iniciando Sincronizacion de Primeros Pasos...');
+			$.each(data, function(index, item) {			
+				db.transaction(function (tx) {  
+				  tx.executeSql('INSERT INTO glutenPrimerosPasos (id,nombre, info) VALUES (?,?,?)', [item.id,item.tema,item.info]);
+				});
+			});
+		});
 	}
 	
+	function GlutenRecetas(){
+		var data = new Array();
+		db.transaction(function (tx) {  
+			tx.executeSql('SELECT * FROM glutenComCat', [], function (tx, results) {
+				var len = results.rows.length;
+				for (var i=0; i<len; i++){
+					data[i] = results.rows.item(i);
+				}
+			$('#gfcCategorias').empty();
+			  $.each(data, function(index, item) {		
+				  $('#gfcCategorias').append('<li><a href="javascript:ShowSubGF('+item.id+','+"'variedad'"+')">'+item.nombre+'</a></li>');
+				  });
+				  $("#gfcCategorias").listview("refresh");
+				});
+			});	
+	}	
 	function GlutenVariedad(){
 		var data = new Array();
 		db.transaction(function (tx) {  
@@ -63,31 +90,85 @@
 				}
 			$('#gfcCategorias').empty();
 			  $.each(data, function(index, item) {		
-				  $('#gfcCategorias').append('<li><a href="javascript:ShowProdCATGF('+item.id+')">'+item.nombre+'</a></li>');
+				  $('#gfcCategorias').append('<li><a href="javascript:ShowSubGF('+item.id+','+"'variedad'"+')">'+item.nombre+'</a></li>');
 				  });
 				  $("#gfcCategorias").listview("refresh");
 				});
 			});	
 	}
-	function ShowProdCATGF(id){
-	$.mobile.changePage("#gluten5");
-	/*
-	$( "#gluten5" ).on( "pagebeforecreate,pagebeforeshow", function( event ) {		
+	function GlutenPasos(){
 		var data = new Array();
 		db.transaction(function (tx) {  
-			tx.executeSql('SELECT * FROM glutenComProd WHERE id_categoria = ?', [id], function (tx, results) {
+			tx.executeSql('SELECT * FROM glutenPrimerosPasos', [], function (tx, results) {
 				var len = results.rows.length;
 				for (var i=0; i<len; i++){
 					data[i] = results.rows.item(i);
 				}
-			$('#gfcProductos').empty();
+			$('#pasos_list').empty();
 			  $.each(data, function(index, item) {		
-				  $('#gfcProductos').append('<li><a href="javascript:ShowProdGF('+item.id+')">'+item.nombre+'</a></li>');
+				  $('#pasos_list').append('<li><a href="javascript:ShowItemGF('+item.id+', '+"'pasos'"+' )">'+item.nombre+'</a></li>');
 				  });
+				  $("#pasos_list").listview("refresh");
+				});
+			});	
+	}
+	function ShowSubGF(id, categoria){	
+		var data = new Array();
+		var pagina;
+		var contenedor;
+		var tabla;
+		var campo;
+		switch(categoria){
+			case 'variedad':
+				pagina = '#glutenVariedadList';
+				contenedor = '#gfcProductos';
+				tabla = 'glutenComProd';
+				campo = 'id_categoria';
+			break;
+			}
+		db.transaction(function (tx) {  
+			tx.executeSql('SELECT * FROM '+tabla+' WHERE '+campo+' = ?', [id], function (tx, results) {
+				var len = results.rows.length;
+				for (var i=0; i<len; i++){
+					data[i] = results.rows.item(i);
+				}
+			$(contenedor).empty();
+			$(contenedor).html('<li data-role="list-divider">'+data[0].categoria+'</li>');
+			  $.each(data, function(index, item) {		
+				  $(contenedor).append('<li><a href="javascript:ShowProdGF('+item.id+')">'+item.nombre+'</a></li>');
+				  });
+					$(contenedor).listview("refresh");
 				});
 			});
-				$("#gfcProductos").listview("refresh");
-		});
-		*/
+			setTimeout( function() {
+				$.mobile.changePage(pagina);
+			}, 500);
+	}
+	function ShowItemGF(id,categoria){
+		var pagina;
+		var campo = 'id';
+		var tabla;
+		var contenedor;
+		var data = new Array();
+		var row = new Array();
+		switch(categoria){
+			case 'pasos':
+				pagina = '#glutenPasos';
+				tabla = 'glutenPrimerosPasos';
+				contenedor = '#contPasos';
+				db.transaction(function (tx) {  
+					tx.executeSql('SELECT * FROM '+tabla+' WHERE '+campo+' = ?', [id], function (tx, results) {
+						var len = results.rows.length;
+						for (var i=0; i<len; i++){
+							data[i] = results.rows.item(i);
+						}
+						  $(contenedor).empty();
+						  $('#titulo').html(data[0].nombre);
+						  $(contenedor).html(data[0].info);
+					});	
+				});	
+			break;
+		}
+		$.mobile.changePage(pagina);	
 	}
 	
