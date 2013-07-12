@@ -5,8 +5,8 @@ var a = 0;
 var db = openDatabase('repapp', '1.0', 'respaldoApp', 100 * 1024);
 $(document).on("mobileinit", function(){
    $.mobile.pushStateEnabled = true;
-		$.mobile.defaultDialogTransition = 'none';
-		$.mobile.defaultPageTransition = 'none';
+		/*$.mobile.defaultDialogTransition = 'none';*/
+		/*$.mobile.defaultPageTransition = 'none';*/
 	$.mobile.allowCrossDomainPages = true;
 	 $.fn.disableSelection = function() {
         return this
