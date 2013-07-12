@@ -106,7 +106,7 @@ and (min-width : 400px) {
 #contenidoScroll, #wrapper_miercoles li, #wrapper_guia li {
 	width: 380px;
 	height: 490px;
-	
+	margin-left: 20px;
 }
 #map_canvas {
 height: 175px!important;

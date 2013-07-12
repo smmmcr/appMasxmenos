@@ -204,8 +204,7 @@ mostrarlista(18);
 				$("#direccion").html("");
 				 $("#horario").html("");
 				 $("#telefono").html("");
-				imagenes =$(this).find("imagenes").text().split(",");
-	
+				imagenes =$(this).find("imagenes").text().split(",");	
 				$("#direccion").append("<h3>Direccion:</h3></br>");
 				$("#direccion").append("<p>"+$(this).find("direccion").text()+"</p>");
 				 $("#horario").append("<h3>Horario:</h3></br>");
@@ -278,7 +277,6 @@ mostrarlista(18);
 	var darwin = new google.maps.LatLng(lat,longi);
 	map.setCenter(darwin);
 	}
-
 	function GoToLocation(lat,longi) {
 	var message = ["This","is","the","secret","message"];
 	contTD=String(marker.getTitle()).split("*");
