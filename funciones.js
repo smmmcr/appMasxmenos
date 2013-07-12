@@ -3,8 +3,8 @@ var idtema;
 var myScroll;
 var a = 0;
 var db = openDatabase('repapp', '1.0', 'respaldoApp', 100 * 1024);
-$(document).on('pagecreate', function(){
-	 $.mobile.pushStateEnabled = true;
+$(document).on("mobileinit", function(){
+   $.mobile.pushStateEnabled = true;
 		$.mobile.defaultDialogTransition = 'none';
 		$.mobile.defaultPageTransition = 'none';
 	$.mobile.allowCrossDomainPages = true;
@@ -15,6 +15,8 @@ $(document).on('pagecreate', function(){
                  .on('selectstart', false);
     };
 });
+
+
 
 function loadedscroll(headerinter,footerinter,wrapper,scroller) {
 	setHeight(headerinter,footerinter,wrapper);
@@ -134,7 +136,6 @@ $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 function agregarContenido(id){
 
 $.mobile.changePage( "#recetaSelec", {
-  transition: "pop",
   reverse: false,
   changeHash: false
 });
@@ -147,6 +148,7 @@ $.mobile.changePage( "#recetaSelec", {
 		$("#recetafinal").append("<a id='regresar' href='#recetas'>Regresar</a>");
 		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+json_data[0].nombre+"</h3></div><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+json_data[0].img+"' alt='imgreceta' />");
 		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+json_data[0].ingredientes+"</div>");
+		$("#recetafinal ul").append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+json_data[0].preparacion+"</div>");
 				
 		});
 }
@@ -161,7 +163,6 @@ $.mobile.changePage( "index.html", {
 });*/
 $("#recetaSelec").css("display","none");
 $.mobile.changePage( "#recetas", {
-  transition: "pop",
   reverse: false,
   changeHash: false
 });
@@ -225,7 +226,7 @@ clase=$("#select2 .1");
 	});
 });
   $("#recetas").on("pagecreate",function () { 
-mostrarlista(12);
+mostrarlista(18);
   });
   $("#mostrarmapa").on("pagecreate",function () {
 	idfinal=localStorage.id;
