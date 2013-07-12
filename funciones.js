@@ -66,15 +66,8 @@ function loaded() {
 	 });
 */	 
 }
-document.addEventListener('DOMContentLoaded', loaded, false);
-/*$("#recetas").on('pagecreate', function(){
- $.fn.disableSelection = function() {
-        return this
-                 .attr('unselectable', 'on')
-                 .css('user-select', 'none')
-                 .on('selectstart', false);
-    };	
-	//$.mobile.selectmenu.prototype.options.nativeMenu = false;
+/*document.addEventListener('DOMContentLoaded', loaded, false);*/
+$("#recetas").on('pagecreate', function(){
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?p=1";
 $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 		
@@ -91,7 +84,7 @@ $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 		idcat=$(this).val();	
 		mostrarlista(idcat);
 	});
-});*/
+});
 function agregarContenido(id){
 
 $.mobile.changePage( "#recetaSelec", {
