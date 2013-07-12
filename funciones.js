@@ -67,17 +67,7 @@ function loaded() {
 */	 
 }
 document.addEventListener('DOMContentLoaded', loaded, false);
-$("#recetas").on('pagecreate', function(){
-db.transaction(function(tx) {
-//tx.executeSql('DROP TABLE menurecetas ');
-tx.executeSql('create table if not exists menurecetas(id,nombretipo)');
-});
-version1=0 ;
-db.transaction(function(tx) {
-tx.executeSql('SELECT * FROM menurecetas', [], function (tx, results) {
-	if(results.rows.length!=0 ){ version1=results.rows.item(0).version; }
-}, null);
-});
+/*$("#recetas").on('pagecreate', function(){
  $.fn.disableSelection = function() {
         return this
                  .attr('unselectable', 'on')
@@ -94,49 +84,17 @@ $.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 		}
 		myselect=$("#selectrecetas");
 		myselect[0].selectedIndex = 1;
-		myselect.selectmenu("refresh");
-		//$("#menurecetas").append("");	
-		/*[json_data[index].id,json_data[index].nombretipo
-			/*	db.transaction(function(tx) {
-					//tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?)', ["1","2"]);
-		for(index in json_data){
-				idIn=json_data[index].id;
-				tx.executeSql('SELECT * FROM menurecetas where id="'+idIn+'"', [], function (tx, results) {
-				/*if(results.rows.length==0){*/
-		/*		alert(results.rows.length);
-				alert(rjson_data[index].nombretipo);
-				var nombreIn=String(json_data[index].nombretipo);	
-					tx.executeSql('insert into menurecetas(id,nombretipo) values(?,?)', [json_data[index].id,json_data[index].nombretipo]);
-				/*}		*/	
-			/*	}, null);				
-		}
-	});
-		db.transaction(function(tx) {
-			tx.executeSql('SELECT * FROM menurecetas', [], function (tx, results) {
-			if(results.rows.length>0){
-			for(var i = 0; i < results.rows.length; i++) {
-				color="colorNormal";
-				
-				$("#selectrecetas").append("<option value='"+results.rows.item(i).id+"'>"+results.rows.item(i).nombretipo+"</option>");	
-							
-				
-				}			
-
-				}  
-				}, null);
-		});*/
-		
+		myselect.selectmenu("refresh");				
 	});
 	
 	$("#selectrecetas").change(function(){
 		idcat=$(this).val();	
 		mostrarlista(idcat);
 	});
-});
+});*/
 function agregarContenido(id){
 
 $.mobile.changePage( "#recetaSelec", {
-  reverse: false,
   changeHash: false
 });
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?receta="+id;
