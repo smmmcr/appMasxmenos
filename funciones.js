@@ -117,54 +117,33 @@ $.mobile.changePage( "#recetas", {
   reverse: false,
   changeHash: false
 });
-$("#recetas").show();
+$("#recetas").css("display","block");
 //mostrarlista(id);
 }
 function mostrarlista(idcat){
 	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?menu="+idcat;
 	$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
 	$("#listaRecetas ul").html("");
-			for(index in json_data){
-				clases='ui-li ui-li-static ui-btn-up-a';
-				if(index==0){ clases='ui-li ui-li-static ui-btn-up-a ui-first-child';	}
-				if(index==(json_data.length-1)){ clases='ui-li ui-li-static ui-btn-up-a ui-last-child';	}
-				$("#listaRecetas ul").append("<li onclick='agregarContenido("+json_data[index].id+")' class='"+clases+"'>"+json_data[index].nombre+"</li>");	
-			}
-			
+		for(index in json_data){
+			clases='ui-li ui-li-static ui-btn-up-a';
+			if(index==0){ clases='ui-li ui-li-static ui-btn-up-a ui-first-child';	}
+			if(index==(json_data.length-1)){ clases='ui-li ui-li-static ui-btn-up-a ui-last-child';	}
+			$("#listaRecetas ul").append("<li onclick='agregarContenido("+json_data[index].id+")' class='"+clases+"'>"+json_data[index].nombre+"</li>");	
+		}			
 	});
 }
-$("#supermercados").on('pagecreate', function(){
-$("#select2 option").css("display","none");
-$("#select3 option").css("display","none");
-$("#select3 option").attr("disabled");
-clase=$("#select2 .1");
-	$("#select2 option").css("display","none");
-		clase.css("display","block");
-		clase.removeAttr("disabled");
-			clase=$("#select3 .15");
-			$("#select3 option").css("display","none");
-			clase.css("display","block");
-			$("#select3 option").attr("disabled");
-			clase.removeAttr("disabled");
-	$("#select1").change(function(){
+$("#supermercados").on( "pagebeforeshow", function( event ) {
+	$("#select1").bind( "change", function(event, ui) {
 		idcat=$(this).val();
-			clase=$("#select2 ."+idcat);
-			$("#select2 option").css("display","none");
-			clase.css("display","block");
-			$("#select2 option").attr("disabled");
-			clase.removeAttr("disabled");
-
+		mostrarcanton(idcat);	
+		$('#select2').selectmenu('refresh', true);
 	});
-	$("#select2").change(function(){
+	$("#select2").bind( "change", function(event, ui) {
 		idcat=$(this).val();
-			clase=$("#select3 ."+idcat);
-			$("#select3 option").css("display","none");
-			clase.css("display","block");
-			$("#select3 option").attr("disabled");
-			clase.removeAttr("disabled");
-
+		mostrarDistrito(idcat);	
+		$('#select3').selectmenu('refresh', true);		
 	});
-	$("#select3").change(function(){
+	$("#select3").bind( "change", function(event, ui) {
 		idcat=$(this).val();
 		
 		localStorage.id=idcat;
@@ -297,4 +276,36 @@ mostrarlista(18);
 	function centrado(lat,longi) {
 	var darwin = new google.maps.LatLng(lat,longi);
 	map.setCenter(darwin);
-	}	
+	}
+	function mostrarcanton(id){
+		var arrCanton =[['	<option value="" >Canton</option><option value="8" class="1" >Montes de Oca</option>'+
+							'<option value="7" class="1" >Moravia</option>'+
+							'<option value="5" class="1" >Vázquez de Coronado</option>'+
+							'<option value="1" class="1" >San José</option>'+
+							'<option value="9" class="1" >Santa Ana</option>'+
+							'<option value="4" class="1" >Goicoechea</option>'+
+							'<option value="6" class="1" >Tibás</option>'+
+							'<option value="3" class="1" >Desamparados</option>'+
+							'<option value="2" class="1" >Escazú</option>'],['<option value="" >Canton</option><option value="9" class="2" >Heredia</option>'+
+							'<option value="10" class="2" >Santo Domingo</option>'+
+							'<option value="13" class="2" >San Pablo</option>'+
+							'<option value="12" class="2" >Flores</option>'+
+							'<option value="11" class="2" >Belén</option>'],['	<option value="" >Canton</option><option value="14" class="3" >Alajuela</option>'],
+							['<option value="" >Canton</option><option value="15" class="6">Garabito</option>'],['<option value="" >Canton</option><option value="17" class="7" >Pococí</option>'+
+						'<option value="16" class="7" >Limón</option>']];
+						/*alert(arrCanton[id-1]);*/
+	$('#select2').html( arrCanton[id-1]);
+	}
+	function mostrarDistrito(id){
+		var arrDistrito= [['<option value="">Seleccione Distrito</option><option value="1" class="1">Carmen</option><option value="9" class="1">Pavas</option><option value="8" class="1">Mata Redonda</option>'],
+					['<option value="">Seleccione Distrito</option><option value="14" class="2">San Rafael</option>'],['<option value="">Seleccione Distrito</option><option value="15" class="3">Desamparados</option><option value="19" class="3">San Antonio</option>'],
+					['<option value="">Seleccione Distrito</option><option value="53" class="4">Guadalupe</option>'],['<option value="">Seleccione Distrito</option><option value="60" class="4">Santa Ana</option>'],
+					['<option value="71" class="5">San Isidro</option>'],['<option value="81" class="6">San Juan</option>'],['<option value="86" class="7">San Vicente</option>'],
+					['<option value="">Seleccione Distrito</option><option value="89" class="8">San Pedro</option><option value="90" class="8">Sabanilla</option>'],['<option value="">Seleccione Distrito</option><option value="122" class="9">Heredia</option>'],
+					['<option value="">Seleccione Distrito</option><option value="133" class="10">Santo Domingo</option>'],['<option value="">Seleccione Distrito</option><option value="158" class="11">La Asunción</option>'],
+					['<option value="">Seleccione Distrito</option><option value="159" class="12">San Joaquín</option>'],['<option value="">Seleccione Distrito</option><option value="162" class="13">San Pablo</option>'],
+					['<option value="">Seleccione Distrito</option><option value="169" class="14">Alajuela</option>'],['<option value="">Seleccione Distrito</option><option value="445" class="15">Jacó</option>'],
+					['<option value="">Seleccione Distrito</option><option value="447" class="16">Limón</option>'],['<option value="">Seleccione Distrito</option><option value="451" class="17">Guápiles</option>']];
+						$('#select3').html( arrDistrito[id-1]);
+				
+	}
