@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <widget  xmlns     = 'http://www.w3.org/ns/widgets'
-        xmlns:gap = 'http://phonegap.com/ns/1.0'
+        xmlns:gap = 'http://phonegap.com/ns/2.7.0'
 		id="ABC" version="1.0">
 
 	<name>AppMasxMenos</name>
@@ -19,13 +19,9 @@
 	<access origin="*" />
 	
 	<!--<feature name="http://api.phonegap.com/1.0/network"/>-->	<preference name="orientation" value="portrait" />
-	<plugin name="Notification" value="org.apache.cordova.Notification"/>
 	<preference name="fullscreen" value="true" />
-	<preference name="target-device" value="universal" />
-  
+	<preference name="target-device" value="universal" />    
 
-    
-	<gap:plugin name="PushPlugin"/>
 	<!-- Optional splash screen image, e.g.: -->
 	<!-- <gap:splash src="splash.png" width="1024" height="768" /> -->
 
