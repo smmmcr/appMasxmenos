@@ -112,6 +112,7 @@
 				});
 			});	
 	}
+
 	function ShowSubGF(id, categoria){	
 		var data = new Array();
 		var pagina;
@@ -135,7 +136,7 @@
 			$(contenedor).empty();
 			$(contenedor).html('<li data-role="list-divider">'+data[0].categoria+'</li>');
 			  $.each(data, function(index, item) {		
-				  $(contenedor).append('<li><a href="javascript:ShowProdGF('+item.id+')">'+item.nombre+'</a></li>');
+				  $(contenedor).append('<li><a href="javascript:ShowItemGF('+item.id+','+"'Productos'"+')">'+item.nombre+'</a></li>');
 				  });
 					$(contenedor).listview("refresh");
 				});
@@ -168,7 +169,29 @@
 					});	
 				});	
 			break;
+			case 'Productos':
+				pagina = '#glutenVariedadDetail';
+				tabla = 'glutenComProd';
+				contenedor = '#contenidoDetail';
+				db.transaction(function (tx) {  
+					tx.executeSql('SELECT * FROM '+tabla+' WHERE '+campo+' = ?', [id], function (tx, results) {
+						var len = results.rows.length;
+						for (var i=0; i<len; i++){
+							data[i] = results.rows.item(i);
+						}
+						//id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT
+						  $('#glutenVariedadDetail h2').html(data[0].nombre);
+						  $('#glutenVariedadDetail #imgproducto img').attr("src","http://movilmultimediasa.com/Celiacos/compras/images/fotosproductos/"+data[0].imagen);
+						  $('#glutenVariedadDetail #GFD_categoria').html('Categoria: '+data[0].categoria);
+						  $('#glutenVariedadDetail #GFD_marca').html('Marca: '+data[0].marca);
+						  $('#glutenVariedadDetail #GFD_fabricante').html('Fabricante: '+data[0].fabricante);
+					});	
+					$("#gfcProductosdetail").listview("refresh");
+				});	
+			break;
 		}
-		$.mobile.changePage(pagina);	
+		setTimeout( function() {
+			$.mobile.changePage(pagina);
+		}, 500);
 	}
 	
