@@ -2,7 +2,6 @@ var contenidoInicial;
 var idtema;
 var myScroll;
 var a = 0;
-var db = openDatabase('repapp', '1.0', 'respaldoApp', 100 * 1024);
 
 $("#guia").on('pagecreate', function(){
  $.fn.disableSelection = function() {
@@ -14,37 +13,8 @@ $("#guia").on('pagecreate', function(){
 });
 
 
-$("#recetas").on('pagecreate', function(){
-	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?p=1";
-$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {		
-			$("#selectrecetas").html("");	
-		for(index in json_data){
-			$("#selectrecetas").append("<option value='"+json_data[index].id+"'>"+json_data[index].nombretipo+"</option>");	
-		}
-		myselect=$("#selectrecetas");
-		myselect[0].selectedIndex = 1;
-		myselect.selectmenu("refresh");				
-	});	
-	$("#selectrecetas").change(function(){
-		idcat=$(this).val();	
-		mostrarlista(idcat);
-	});
-});
-function agregarContenido(id){
-$.mobile.changePage( "#recetaSelec", {
-  changeHash: false
-});
-	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?receta="+id;
-		$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {		
-		$("#tituloreceta").html("");
-		$("#recetafinal ul").html("");
-		$("#recetafinal").append("<a id='regresar' href='#recetas'>Regresar</a>");
-		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+json_data[0].nombre+"</h3></div><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+json_data[0].img+"' alt='imgreceta' />");
-		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+json_data[0].ingredientes+"</div>");
-		$("#recetafinal ul").append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+json_data[0].preparacion+"</div>");
-				
-		});
-}
+
+
 
 function volverreceta(id){
 location.href="#recetas";
@@ -55,18 +25,7 @@ $.mobile.changePage( "#recetas", {
 });
 $("#recetas").css("display","block");
 }
-function mostrarlista(idcat){
-	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?menu="+idcat;
-	$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
-	$("#listaRecetas ul").html("");
-		for(index in json_data){
-			clases='ui-li ui-li-static ui-btn-up-a';
-			if(index==0){ clases='ui-li ui-li-static ui-btn-up-a ui-first-child';	}
-			if(index==(json_data.length-1)){ clases='ui-li ui-li-static ui-btn-up-a ui-last-child';	}
-			$("#listaRecetas ul").append("<li onclick='agregarContenido("+json_data[index].id+")' class='"+clases+"'>"+json_data[index].nombre+"</li>");	
-		}			
-	});
-}
+
 $("#supermercados").on( "pagebeforeshow", function( event ) {
 	$("#select1").bind( "change", function() {
 		idcat=$('#select1').val();
@@ -92,9 +51,7 @@ localStorage.id=idcat;
 			changeHash: false
 			});
 }
-  $("#recetas").on("pagecreate",function () { 
-mostrarlista(18);
-  });
+
   $("#mostrarmapa").on("pagecreate",function () {
 	idfinal=localStorage.id;
 		$.ajax({
@@ -262,3 +219,191 @@ mostrarlista(18);
 						$('#select3').html( arrDistrito[id-1]);
 				
 	}
+		$( "#gluten" ).on( "pagecreate", function( event ) {
+		 GlutenDB();
+		});		
+		$( "#gluten3" ).on( "pagebeforecreate", function( event ) {
+		 GlutenVariedad();
+		});
+		$( "#gluten2" ).on( "pagebeforecreate", function( event ) {
+		 GlutenPasos();
+		});
+		$( "#gluten2" ).on( "pagebeforecreate", function( event ) {
+		 GlutenPasos();
+		});
+		$( "#guia" ).on( "pagebeforeshow", function( event ) {
+			var cant = $("#guia #thelist li").size();
+			var width = $(window).width() - 30;
+			var width_overview =  width * cant;
+			$('#guia #scroller').css('width', width_overview+'px');
+			setTimeout( function() {
+				var myScroll1 = new iScroll('wrapper_guia', {
+								snap: true,
+								momentum: false,
+								hScrollbar: false,
+								vScrollbar: false });
+			}, 500);
+								
+		});
+		$( "#miercoles" ).on( "pagebeforeshow", function( event ) {
+			var cant = $("#miercoles #thelist li").size();
+			var width = $(window).width() - 30;
+			var width_overview =  width * cant;
+			$('#miercoles #scroller').css('width', width_overview+'px');
+			setTimeout( function() {
+				var myScroll2 = new iScroll('wrapper_miercoles', {
+								snap: true,
+								momentum: false,
+								hScrollbar: false,
+								vScrollbar: false });
+			}, 500);
+								
+		});
+		$( "#recetaSelec" ).on( "pagebeforeshow", function( event ) {
+			setTimeout( function() {
+				myScroll3 = new iScroll('contenidoreceta', {hScrollbar: false});
+			}, 500);
+		});
+		$( "#busquedaRapidaContacto" ).on( "pagebeforeshow", function( event ) {
+			setTimeout( function() {
+				myScroll3 = new iScroll('contenidoulbusqueda', {hScrollbar: false});
+			}, 500);
+		});
+		
+		$( "#glutenPasos" ).on( "pagebeforeshow", function( event ) {
+			setTimeout( function() {
+				myScroll3 = new iScroll('contPasos', {hScrollbar: false});
+			}, 500);
+		});
+		$( "#mostrarmapa" ).on( "pagebeforeshow", function( event ) {
+			setTimeout( function() {
+				myScroll3 = new iScroll('wrapper_mapa', {hScrollbar: false});
+			}, 0);
+			setTimeout( function() {
+				myScroll3.refresh();
+			}, 0);
+		});
+		$( "#glutenVariedadDetail" ).on( "pagebeforeshow", function( event ) {
+			setTimeout( function() {
+				myScroll3 = new iScroll('wrapper_gfpro', {hScrollbar: false});
+			}, 500);
+		});
+		$("#recetaSelec,#mostrarmapa,#glutenPasos,#glutenVariedadDetail").on( "pagebeforehide", function( event ) {
+			myScroll3.destroy();
+			myScroll3 = null;
+		});
+			/*recetas*/
+		$( "#recetas" ).on( "pagecreate", function( event ) {
+		 GlutenDB();
+		 mostrarlista(18);
+		});
+		 /* -----------------pasar----------------------------*/ 
+function mostrarlista(idcat){
+	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?menu="+idcat;
+	$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {
+	$("#listaRecetas ul").html("");
+		for(index in json_data){
+			clases='ui-li ui-li-static ui-btn-up-a';
+			if(index==0){ clases='ui-li ui-li-static ui-btn-up-a ui-first-child';	}
+			if(index==(json_data.length-1)){ clases='ui-li ui-li-static ui-btn-up-a ui-last-child';	}
+			$("#listaRecetas ul").append("<li onclick='agregarContenido("+json_data[index].id+")' class='"+clases+"'>"+json_data[index].nombre+"</li>");	
+		}			
+	});
+	
+}
+  $("#recetas").on("pagecreate",function () { 
+
+  });
+  function agregarContenido(id){
+$.mobile.changePage( "#recetaSelec", {
+  changeHash: false
+});
+	uri="https://movilmultimediasa.com/masxmenos/consultasAppMobil/consultas.php?receta="+id;
+		$.getJSON(uri + '&function=' + 'check' + '&callback=?', function (json_data) {		
+		$("#tituloreceta").html("");
+		$("#recetafinal ul").html("");
+		$("#recetafinal").append("<a id='regresar' href='#recetas'>Regresar</a>");
+		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+json_data[0].nombre+"</h3></div><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+json_data[0].img+"' alt='imgreceta' />");
+		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+json_data[0].ingredientes+"</div>");
+		$("#recetafinal ul").append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+json_data[0].preparacion+"</div>");
+				
+		});
+}
+var db;
+    function appDB() {
+        db = window.openDatabase("masxmenos", "1.0", "Masxmenos", 2000000);
+        db.transaction(populateRecetasDB, errorCB, successCB);
+		GlutenDB();
+    }
+    // Populate the database 
+    //
+    function populateRecetasDB(tx) {
+        /*CREACION TABLA CLIENTES*/
+		 tx.executeSql('DROP TABLE IF EXISTS tipoReceta');
+		 tx.executeSql('DROP TABLE IF EXISTS recomendaciones');
+		 tx.executeSql('DROP TABLE IF EXISTS recetas');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS tipoReceta (id INTEGER PRIMARY KEY, nombre TEXT, pais INTEGER, estado INTEGER)');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS recomendaciones (id INTEGER PRIMARY KEY, recomendacion TEXT, estado INTEGER, pais_local INTEGER, idreceta INTEGER)');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS recetas (id INTEGER PRIMARY KEY, pais_local TEXT, nombre TEXT,ingredientes TEXT,preparacion TEXT, img TEXT, estado INTEGER,nombreChef TEXT,actvsemana INTEGER,tiporeceta INTEGER,patrocinador TEXT,dificultad TEXT,tiempo TEXT,porciones TEXT,costo TEXT)');
+         //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
+		 SincronizarDBrecetas();
+    }
+
+    // Transaction error callback
+    //
+    function errorCB(tx, err) {
+        console.log("Error processing SQL: "+err);
+    }
+
+    // Transaction success callback
+    //
+    function successCB() {
+        console.log("success create DB!");
+    }
+	
+	function SincronizarDBrecetas(){
+		url = 'http://smmcr.net/fb/masxmenos/recetas/recetas.php?callback=?';
+		/*SINCRONIZA CATEGORIAS*/
+		$.getJSON(url,{accion:"tipoReceta"}).done(function( data ) {
+			$.each(data, function(index, item) {
+				db.transaction(function (tx) {  
+				  tx.executeSql('INSERT INTO tipoReceta (id,nombre,pais,estado) VALUES (?,?,?,?)', [item.id,item.nombretipo,item.pais,item.estado]);
+				});
+			});
+		});
+		/*SINCRONIZA RECOMENDACIONES*/
+		$.getJSON(url,{accion:"recomendaciones"}).done(function( data ) {
+			console.log('Iniciando Sincronizacion de Recomendaciones...');
+			$.each(data, function(index, item) {			
+				db.transaction(function (tx) {  
+				  tx.executeSql('INSERT INTO recomendaciones (recomendacion, estado, pais_local, idreceta) VALUES (?,?,?,?)', [item.id,item.recomendacion,item.estado, item.pais_local, item.idreceta]);
+				});
+			});
+		});
+		/*SINCRONIZA RECETAS*/
+		$.getJSON(url,{accion:"recetas"}).done(function( data ) {
+			console.log('Iniciando Sincronizacion de Recetas...');
+			$.each(data, function(index, item) {			
+				db.transaction(function (tx) {  
+				  tx.executeSql('INSERT INTO recetas (pais_local, nombre,ingredientes ,preparacion , img , estado ,nombreChef ,actvsemana ,tiporeceta ,patrocinador ,dificultad ,tiempo ,porciones ,costo ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [item.pais_local, item.nombre,item.ingredientes ,item.preparacion , item.img , item.estado ,item.nombreChef ,item.actvsemana ,item.tiporeceta ,item.patrocinador ,item.dificultad ,item.tiempo ,item.porciones ,item.costo]);
+				});
+			});
+		});
+	}
+	function obtenerCatRecetas(){
+		var data = new Array();
+		db.transaction(function (tx) {  
+			tx.executeSql('SELECT * FROM tipoReceta', [], function (tx, results) {
+				var len = results.rows.length;
+				for (var i=0; i<len; i++){
+					data[i] = results.rows.item(i);
+				}
+			$('#gfcCategorias').empty();
+			  $.each(data, function(index, item) {		
+				  $('#selectrecetas').append("<option value='"+item.id+"'>"+item.nombre+"</option>");
+				  });
+				  $('#selectrecetas').selectmenu("refresh");
+				});
+			});				
+	}	
+ /* -----------------fin pasar----------------------------*/ 
