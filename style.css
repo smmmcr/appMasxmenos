@@ -136,8 +136,15 @@ height: 565px;
 width: 570px;
 height: 565px;
 position: relative;
+
 }
 #wrapper_miercoles{
+background: yellow;
+}
+#guiaconten{
+background: #e3e3e3;
+}
+#miercolesFrescos{
 background: yellow;
 }
 .contenidoGeneral{
