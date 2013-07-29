@@ -12,10 +12,15 @@
 		tx.executeSql('DROP TABLE IF EXISTS glutenComCat');
 		tx.executeSql('DROP TABLE IF EXISTS glutenComProd');
 		tx.executeSql('DROP TABLE IF EXISTS glutenPrimerosPasos');
-         tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComCat (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, pais TEXT)');
-         tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComProd (id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT)');
-         tx.executeSql('CREATE TABLE IF NOT EXISTS glutenPrimerosPasos (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, info TEXT)');
-         //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
+		tx.executeSql('DROP TABLE IF EXISTS tipoReceta');
+		tx.executeSql('DROP TABLE IF EXISTS recetas');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComCat (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, pais TEXT)');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComProd (id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT)');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenPrimerosPasos (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, info TEXT)');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS tipoRecetaCeliacos (id INTEGER PRIMARY KEY, nombre TEXT, pais INTEGER, estado INTEGER)');
+		tx.executeSql('CREATE TABLE IF NOT EXISTS recetasCeliacos (id INTEGER PRIMARY KEY, pais_local INTEGER, nombre TEXT,ingredientes TEXT,preparacion TEXT, img TEXT, estado INTEGER,nombreChef TEXT,actvsemana INTEGER,tiporeceta INTEGER,patrocinador TEXT,dificultad TEXT,tiempo TEXT,porciones TEXT,costo TEXT)');
+
+	   //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
 		 SincronizarDB();
     }
 
@@ -60,8 +65,41 @@
 				});
 			});
 		});
+		/*SINCRONIZA tipo receta celiacos*/
+		$.getJSON(url,{accion:"tipoReceta"}).done(function( data ) {
+		console.log('Iniciando Sincronizacion tipo receta celiacos...');
+		$.each(data, function(index, item) {
+			db.transaction(function (tx) {  
+			  tx.executeSql('INSERT INTO tipoRecetaCeliacos (id,nombre,pais,estado) VALUES (?,?,?,?)', [item.id,item.nombretipo,item.pais,item.estado]);
+			});
+		});
+	});
+	/*SINCRONIZA RECETAS*/
+	$.getJSON(url,{accion:"recetas"}).done(function( data ) {
+		console.log('Iniciando Sincronizacion de Recetas Celiacos...');
+		$.each(data, function(index, item) {			
+			db.transaction(function (tx) {  
+			  tx.executeSql('INSERT INTO recetasCeliacos (id,pais_local, nombre,ingredientes ,preparacion , img , estado ,nombreChef ,actvsemana ,tiporeceta ,patrocinador ,dificultad ,tiempo ,porciones ,costo ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [item.id,item.pais_local, item.nombre,item.ingredientes ,item.preparacion , item.img , item.estado ,item.nombreChef ,item.actvsemana ,item.tiporeceta ,item.patrocinador ,item.dificultad ,item.tiempo ,item.porciones ,item.costo]);
+			});
+		});
+	});
 	}
-	
+function obtenerCatRecetasGluten(){
+	var data = new Array();
+	db.transaction(function (tx) {  
+	tx.executeSql('SELECT * FROM tipoRecetaCeliacos', [], function (tx, results) {
+		var len = results.rows.length;
+		for (var i=0; i<len; i++){
+			data[i] = results.rows.item(i);
+		}
+	$('#contenidoulbusqueda2 ul').empty();
+	  $.each(data, function(index, item) {	  
+		  $('#contenidoulbusqueda2 ul').append('<li><a href="javascript:ShowSubGF('+item.id+','+"'tiporectaceliacos'"+')">'+item.nombre+'</a></li>');
+		  });
+		  $('#contenidoulbusqueda2 ul').listview("refresh");
+		});
+	});				
+}
 	function GlutenRecetas(){
 		var data = new Array();
 		db.transaction(function (tx) {  
@@ -124,6 +162,13 @@
 				tabla = 'glutenComProd';
 				campo = 'id_categoria';
 			break;
+			
+			case 'tiporectaceliacos':
+				pagina = '#glutenRecetasList';
+				contenedor = '#listaRecetasXCat ul';
+				tabla = 'recetasCeliacos';
+				campo = 'tiporeceta';
+			break;
 			}
 		db.transaction(function (tx) {  
 			tx.executeSql('SELECT * FROM '+tabla+' WHERE '+campo+' = ?', [id], function (tx, results) {
@@ -138,10 +183,11 @@
 				  });
 					$(contenedor).listview("refresh");
 				});
-			});
 			setTimeout( function() {
 				$.mobile.changePage(pagina);
 			}, 500);
+			});
+		
 	}
 	function ShowItemGF(id,categoria){
 		var pagina;

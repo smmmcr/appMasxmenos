@@ -29,7 +29,7 @@
 					data[i] = results.rows.item(i);
 				}
 			$('#pasos_list').empty();
-			  $.each(data, function(index, item) {		
+			  $.each(data, function(index, item) {	  
 				  $('#pasos_list').append('<li><a href="javascript:ShowItemGF('+item.id+', '+"'pasos'"+' )">'+item.nombre+'</a></li>');
 				  });
 				  $("#pasos_list").listview("refresh");
@@ -89,8 +89,9 @@
 						}
 						  $(contenedor).empty();
 						  $('#titulo').html(data[0].nombre);
-						  $(contenedor).html(data[0].info);
+						  $(contenedor).html("<li>"+data[0].info+"</li>");
 					});	
+					$(contenedor).listview("refresh");
 				});	
 			break;
 			case 'Productos':

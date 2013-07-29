@@ -358,14 +358,14 @@
 			<div data-role="content" data-theme="a">	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
 				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorias..." data-inset="true">
-					<li><a href="#glutenRecetasList">Galletitas, Panes, Pastas y Masas Básicas</a></li>
+					<!--<li><a href="#glutenRecetasList">Galletitas, Panes, Pastas y Masas Básicas</a></li>
 					<li><a href="#glutenRecetasList">Entradas y Aderezos Caseros</a></li>
 					<li><a href="#glutenRecetasList">Platos Principales</a></li>
 					<li><a href="#glutenRecetasList">Ensaladas</a></li>
 					<li><a href="#glutenRecetasList">Salsas y Guariniciones</a></li>
 					<li><a href="#glutenRecetasList">Salsas</a></li>
 					<li><a href="#glutenRecetasList">Sopas y Caldos</a></li>
-					<li><a href="#glutenRecetasList">Postres</a></li>
+					<li><a href="#glutenRecetasList">Postres</a></li>-->
 				</ul>
 				</div>			
 			</div>
@@ -381,7 +381,7 @@
 				<h2>Recetas Gluten Free</h2>
 				</div>			
 			<div data-role="content" data-theme="a">	
-				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
+				<div id="listaRecetasXCat" style="width: 100%;position: relative;">
 				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Recetas..." data-inset="true" data-divider-theme="a">
 					<li data-role="list-divider">NOMBRE CATEGORIA</li>
 					<li><a href="#glutenRecetasDetail">Galletitas</a></li>
@@ -443,7 +443,7 @@
 				</div>	
 			<div data-role="content" data-theme="a">	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
-					<div id="contPasos"></div>
+					<ul id="contPasos" data-theme="a"></ul>
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -588,6 +588,9 @@ $( "#glutenPasos" ).on( "pagebeforeshow", function( event ) {
 	setTimeout( function() {
 		myScroll3 = new iScroll('contPasos', {hScrollbar: false});
 	}, 500);
+});
+$( "#glutenRecetasCat" ).on( "pagebeforeshow", function( event ) {
+obtenerCatRecetasGluten();
 });
 /*--------------------------Guia-----------------------------------------------------------*/
 $( "#guia" ).on( "pagebeforeshow", function( event ) {
