@@ -19,7 +19,6 @@
 		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenPrimerosPasos (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, info TEXT)');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS tipoRecetaCeliacos (id INTEGER PRIMARY KEY, nombre TEXT, pais INTEGER, estado INTEGER)');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS recetasCeliacos (id INTEGER PRIMARY KEY, pais_local INTEGER, nombre TEXT,ingredientes TEXT,preparacion TEXT, img TEXT, estado INTEGER,nombreChef TEXT,actvsemana INTEGER,tiporeceta INTEGER,patrocinador TEXT,dificultad TEXT,tiempo TEXT,porciones TEXT,costo TEXT)');
-
 	   //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
 		 SincronizarDB();
     }
@@ -161,13 +160,15 @@ function obtenerCatRecetasGluten(){
 				contenedor = '#gfcProductos';
 				tabla = 'glutenComProd';
 				campo = 'id_categoria';
-			break;
-			
+				categoria = 'Productos';
+			break;			
 			case 'tiporectaceliacos':
 				pagina = '#glutenRecetasList';
 				contenedor = '#listaRecetasXCat ul';
 				tabla = 'recetasCeliacos';
 				campo = 'tiporeceta';
+				categoria = 'tipoRecetaGluten';
+				
 			break;
 			}
 		db.transaction(function (tx) {  
@@ -177,9 +178,23 @@ function obtenerCatRecetasGluten(){
 					data[i] = results.rows.item(i);
 				}
 			$(contenedor).empty();
+			if(	categoria == 'Productos'){
 			$(contenedor).html('<li data-role="list-divider">'+data[0].categoria+'</li>');
+			}else if(categoria == 'tipoRecetaGluten'){
+				/*tx.executeSql('SELECT * FROM tipoRecetaCeliacos WHERE id = ?', [21], function (tx, results) {
+		
+					var len = results.rows.length;
+					for (var i=0; i<len; i++){
+						data[i] = results.rows.item(i);
+					}
+					alert(data[0].nombre);
+				$(contenedor).html('<li data-role="list-divider">'+data[0].nombre+'</li>');
+				});*/
+			}else{
+		//	alert("ninguno");
+			}
 			  $.each(data, function(index, item) {		
-				  $(contenedor).append('<li><a href="javascript:ShowItemGF('+item.id+','+"'Productos'"+')">'+item.nombre+'</a></li>');
+				  $(contenedor).append('<li><a href="javascript:ShowItemGF('+item.id+',\''+categoria+'\')">'+item.nombre+'</a></li>');
 				  });
 					$(contenedor).listview("refresh");
 				});
@@ -232,6 +247,32 @@ function obtenerCatRecetasGluten(){
 					});	
 					$("#gfcProductosdetail").listview("refresh");
 				});	
+			break;
+			case 'tipoRecetaGluten':
+				pagina = '#glutenRecetasDetail';
+				tabla = 'recetasCeliacos';
+				contenedor = '#vistaReceta';
+				db.transaction(function (tx) {  
+					tx.executeSql('SELECT * FROM '+tabla+' WHERE '+campo+' = ?', [id], function (tx, results) {
+						var len = results.rows.length;
+						for (var i=0; i<len; i++){
+							data[i] = results.rows.item(i);
+						}
+						$("#titulorecetaGluten").html("");
+						$(contenedor).html("");
+						$("#recetafinalGluten").append("<a id='regresar' href='#recetas'>Regresar</a>");
+						$("#titulorecetaGluten").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).nombre+"</h3></div>"+
+						"<img src='http://movilmultimediasa.com/Celiacos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' />");
+						$(contenedor).append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes+"</div>");
+						$(contenedor).append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+results.rows.item(0).preparacion+"</div>");
+						$(contenedor).listview('refresh');
+						//id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT
+					
+				});
+				setTimeout( function() {
+					
+						}, 500);
+				});
 			break;
 		}
 		setTimeout( function() {
