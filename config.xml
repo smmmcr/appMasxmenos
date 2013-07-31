@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<widget  xmlns     = 'http://www.w3.org/ns/widgets'
+        xmlns:gap = 'http://phonegap.com/ns/1.0'
+		id="ABC" version="1.0">
+
+	<name>AppMasxMenos</name>
+	<description>AppMasxMenos</description>
+	<author>SMMM</author>	<gap:platforms>
+		<gap:platform name="ios" />
+		<gap:platform name="android" />
+		<gap:platform name="webos" />
+		<gap:platform name="symbian.wrt" />
+		<gap:platform name="blackberry" project="widgets"/>
+	</gap:platforms>	
+
+	<icon src="logoApp.png" width="128" height="128" gap:role="default" />	
+	<preference name="permissions" value="none"/>
+	<preference name="phonegap-version" value="2.7.0" />
+	<access origin="*" />
+	
+	<!--<feature name="http://api.phonegap.com/1.0/network"/>-->	<preference name="orientation" value="portrait" />
+	<plugin name="Notification" value="org.apache.cordova.Notification"/>
+	<preference name="fullscreen" value="true" />
+	<preference name="target-device" value="universal" />
+  
+
+    
+	<gap:plugin name="PushPlugin"/>
+	<gap:plugin name="File" />
+	<gap:plugin name="FileTransfer" />  
+	<!-- Optional splash screen image, e.g.: -->
+	<!-- <gap:splash src="splash.png" width="1024" height="768" /> -->
+
+</widget>

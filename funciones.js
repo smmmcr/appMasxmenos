@@ -4,6 +4,7 @@ var myScroll;
 var a = 0;
 /*-------------------------------------BD-----------------------------------------*/
 var db;
+var fileSystem = {};
 window.addEventListener('load', function() {
 			document.body.addEventListener('touchmove', function(e) {
 				e.preventDefault();
@@ -15,7 +16,12 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';
 	//Inicializamos las BD
 	appDB();
+
 });
+
+
+
+
 function appDB() {
 	db = window.openDatabase("masxmenos", "1.0", "Masxmenos", 2000000);
 	db.transaction(populateRecetasDB, errorCB, successCB);
@@ -27,9 +33,13 @@ function populateRecetasDB(tx) {
 	 tx.executeSql('DROP TABLE IF EXISTS tipoReceta');
 	 tx.executeSql('DROP TABLE IF EXISTS recomendaciones');
 	 tx.executeSql('DROP TABLE IF EXISTS recetas');
+	 tx.executeSql('DROP TABLE IF EXISTS guia');
+	 tx.executeSql('DROP TABLE IF EXISTS miercolesFrescos');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS tipoReceta (id INTEGER PRIMARY KEY, nombre TEXT, pais INTEGER, estado INTEGER)');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS recomendaciones (id INTEGER PRIMARY KEY, recomendacion TEXT, estado INTEGER, pais_local INTEGER, idreceta INTEGER)');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS recetas (id INTEGER PRIMARY KEY, pais_local INTEGER, nombre TEXT,ingredientes TEXT,preparacion TEXT, img TEXT, estado INTEGER,nombreChef TEXT,actvsemana INTEGER,tiporeceta INTEGER,patrocinador TEXT,dificultad TEXT,tiempo TEXT,porciones TEXT,costo TEXT)');
+	 tx.executeSql('CREATE TABLE IF NOT EXISTS guia (id INTEGER PRIMARY KEY, nombreImg TEXT, estado INTEGER)');
+	 tx.executeSql('CREATE TABLE IF NOT EXISTS miercolesFrescos (id INTEGER PRIMARY KEY,  nombreImg TEXT, estado INTEGER)');
 	 //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
 	 SincronizarDBrecetas();
 }
@@ -66,6 +76,24 @@ function SincronizarDBrecetas(){
 		$.each(data, function(index, item) {			
 			db.transaction(function (tx) {  
 			  tx.executeSql('INSERT INTO recetas (id,pais_local, nombre,ingredientes ,preparacion , img , estado ,nombreChef ,actvsemana ,tiporeceta ,patrocinador ,dificultad ,tiempo ,porciones ,costo ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [item.id,item.pais_local, item.nombre,item.ingredientes ,item.preparacion , item.img , item.estado ,item.nombreChef ,item.actvsemana ,item.tiporeceta ,item.patrocinador ,item.dificultad ,item.tiempo ,item.porciones ,item.costo]);
+			});
+		});
+	});
+	/*SINCRONIZA GUIA*/
+	$.getJSON(url,{accion:"guia"}).done(function( data ) {
+		console.log('Iniciando Sincronizacion de guia...');
+		$.each(data, function(index, item) {			
+			db.transaction(function (tx) {  
+			  tx.executeSql('INSERT INTO guia (id,nombreImg,estado) VALUES (?,?,?)', [item.id,item.nombreImg, item.estado]);
+			});
+		});
+	});
+	/*SINCRONIZA GUIA*/
+	$.getJSON(url,{accion:"miercoles"}).done(function( data ) {
+		console.log('Iniciando Sincronizacion de miercoles...');
+		$.each(data, function(index, item) {			
+			db.transaction(function (tx) {  
+			  tx.executeSql('INSERT INTO miercolesFrescos (id,nombreImg,estado) VALUES (?,?,?)', [item.id,item.nombreImg, item.estado]);
 			});
 		});
 	});
@@ -247,6 +275,61 @@ function obtenerCatRecetas(){
 		});
 	});				
 }
+function obtenerGuia(){
+	var data = new Array();
+	db.transaction(function (tx) {  
+	tx.executeSql('SELECT * FROM guia', [], function (tx, results) {
+		var len = results.rows.length;
+		for (var i=0; i<len; i++){
+			data[i] = results.rows.item(i);
+		}
+    	$("#guia #thelist").empty();
+	  $.each(data, function(index, item) {		
+		$("#guia #thelist").append("<li><img src='https://smmcr.net/fb/masxmenos/guia/"+item.nombreImg+"' alt='"+item.nombreImg+"' /></li>");
+		  });
+	var cant = $("#guia #thelist li").size();
+	var width = $(window).width() - 30;
+	var width_overview =  width * cant;
+	$('#guia #scroller').css('width', width_overview+'px');
+		});
+	
+		setTimeout( function() {
+	
+		var myScroll1 = new iScroll('wrapper_guia', {
+			snap: true,
+			momentum: false,
+			hScrollbar: false,
+			vScrollbar: false });
+	}, 500);	
+	});				
+}
+function obtenerMiercoles(){
+	var data = new Array();
+	db.transaction(function (tx) {  
+	tx.executeSql('SELECT * FROM miercolesFrescos', [], function (tx, results) {
+		var len = results.rows.length;
+		for (var i=0; i<len; i++){
+			data[i] = results.rows.item(i);
+		}
+    $("#miercoles #thelist").empty();
+	  $.each(data, function(index, item) {		
+	$("#miercoles #thelist").append("<li><img src='https://smmcr.net/fb/masxmenos/guia/"+item.nombreImg+"' alt='"+item.nombreImg+"' /></li>");
+		  });
+	var cant =   $("#miercoles #thelist li").size();
+	var width = $(window).width() - 30;
+	var width_overview =  width * cant;
+	$('#miercoles #scroller').css('width', width_overview+'px');
+		});
+	
+			setTimeout( function() {
+		var myScroll2 = new iScroll('wrapper_miercoles', {
+						snap: true,
+						momentum: false,
+						hScrollbar: false,
+						vScrollbar: false });
+	}, 500);
+	});				
+}
 function mostrarlista(idcat){
 var data = new Array();			
 db.transaction(function (tx) {
@@ -260,7 +343,7 @@ $('#listaRecetas ul').empty();
 	clases='ui-li ui-li-static ui-btn-up-a';
 		$("#listaRecetas ul").append("<li onclick='agregarContenido("+item.id+")' class='"+clases+"'>"+item.nombre+"</li>");			
 	 });
-	 $("#listaRecetas ul").listview('refresh')
+	 $("#listaRecetas ul").listview('refresh');
 	});
 });				
 }
