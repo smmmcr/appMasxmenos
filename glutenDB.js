@@ -12,8 +12,8 @@
 		tx.executeSql('DROP TABLE IF EXISTS glutenComCat');
 		tx.executeSql('DROP TABLE IF EXISTS glutenComProd');
 		tx.executeSql('DROP TABLE IF EXISTS glutenPrimerosPasos');
-		tx.executeSql('DROP TABLE IF EXISTS tipoReceta');
-		tx.executeSql('DROP TABLE IF EXISTS recetas');
+		tx.executeSql('DROP TABLE IF EXISTS tipoRecetaCeliacos');
+		tx.executeSql('DROP TABLE IF EXISTS recetasCeliacos');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComCat (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, pais TEXT)');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComProd (id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT)');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenPrimerosPasos (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, info TEXT)');
@@ -243,7 +243,7 @@ function obtenerCatRecetasGluten(){
 						}
 						//id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT
 						  $('#glutenVariedadDetail h2').html(data[0].nombre);
-						  $('#glutenVariedadDetail #imgproducto img').attr("src","http://movilmultimediasa.com/Celiacos/compras/images/fotosproductos/"+data[0].imagen);
+						  $('#glutenVariedadDetail #imgproducto img').attr("src","http://smmcr.net/fb/masxmenos/celiacos/compras/images/fotosproductos/"+data[0].imagen);
 						  $('#glutenVariedadDetail #GFD_categoria').html('Categoria: '+data[0].categoria);
 						  $('#glutenVariedadDetail #GFD_marca').html('Marca: '+data[0].marca);
 						  $('#glutenVariedadDetail #GFD_fabricante').html('Fabricante: '+data[0].fabricante);
