@@ -5,6 +5,12 @@ var a = 0;
 /*-------------------------------------BD-----------------------------------------*/
 var db;
 var fileSystem = {};
+document.addEventListener("deviceready", onDeviceReady, false);
+ function onDeviceReady() {
+//Inicializamos las BD
+	appDB();
+    }
+
 window.addEventListener('load', function() {
 			document.body.addEventListener('touchmove', function(e) {
 				e.preventDefault();
@@ -14,9 +20,6 @@ $(document).one("mobileinit", function () {
 	// Setting default page transition to slide
 	$.mobile.defaultPageTransition = 'slide'; 
 	$.mobile.defaultDialogTransition = 'slide';
-	//Inicializamos las BD
-	appDB();
-
 });
 
 
