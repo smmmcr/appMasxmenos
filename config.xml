@@ -26,8 +26,6 @@
 
     
 	<gap:plugin name="PushPlugin"/>
-	<gap:plugin name="File" />
-	<gap:plugin name="FileTransfer" />  
 	<!-- Optional splash screen image, e.g.: -->
 	<!-- <gap:splash src="splash.png" width="1024" height="768" /> -->
 
