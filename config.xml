@@ -20,6 +20,6 @@
 	<preference name="fullscreen" value="true" />
 	<preference name="target-device" value="universal" />
   	<!-- Optional splash screen image, e.g.: -->
-	<!-- <gap:splash src="splash.png" width="1024" height="768" /> -->
+	<gap:splash src="splash.png" width="1024" height="768" />
 
 </widget>

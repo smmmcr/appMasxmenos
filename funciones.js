@@ -55,6 +55,7 @@ function successCB() {
 	console.log("success create DB!");
 }	
 function SincronizarDBrecetas(){
+Carga=0;
 	url = 'http://smmcr.net/fb/masxmenos/recetas/recetas.php?callback=?';
 	/*SINCRONIZA CATEGORIAS*/
 	$.getJSON(url,{accion:"tipoReceta"}).done(function( data ) {
@@ -63,6 +64,7 @@ function SincronizarDBrecetas(){
 			  tx.executeSql('INSERT INTO tipoReceta (id,nombre,pais,estado) VALUES (?,?,?,?)', [item.id,item.nombretipo,item.pais,item.estado]);
 			});
 		});
+		Carga++;
 	});
 	/*SINCRONIZA RECOMENDACIONES*/
 	$.getJSON(url,{accion:"recomendaciones"}).done(function( data ) {
@@ -72,6 +74,7 @@ function SincronizarDBrecetas(){
 			  tx.executeSql('INSERT INTO recomendaciones (recomendacion, estado, pais_local, idreceta) VALUES (?,?,?,?)', [item.id,item.recomendacion,item.estado, item.pais_local, item.idreceta]);
 			});
 		});
+		Carga++;
 	});
 	/*SINCRONIZA RECETAS*/
 	$.getJSON(url,{accion:"recetas"}).done(function( data ) {
@@ -81,6 +84,7 @@ function SincronizarDBrecetas(){
 			  tx.executeSql('INSERT INTO recetas (id,pais_local, nombre,ingredientes ,preparacion , img , estado ,nombreChef ,actvsemana ,tiporeceta ,patrocinador ,dificultad ,tiempo ,porciones ,costo ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [item.id,item.pais_local, item.nombre,item.ingredientes ,item.preparacion , item.img , item.estado ,item.nombreChef ,item.actvsemana ,item.tiporeceta ,item.patrocinador ,item.dificultad ,item.tiempo ,item.porciones ,item.costo]);
 			});
 		});
+		Carga++;
 	});
 	/*SINCRONIZA GUIA*/
 	$.getJSON(url,{accion:"guia"}).done(function( data ) {
@@ -90,6 +94,7 @@ function SincronizarDBrecetas(){
 			  tx.executeSql('INSERT INTO guia (id,nombreImg,estado) VALUES (?,?,?)', [item.id,item.nombreImg, item.estado]);
 			});
 		});
+		Carga++;
 	});
 	/*SINCRONIZA GUIA*/
 	$.getJSON(url,{accion:"miercoles"}).done(function( data ) {
@@ -99,8 +104,19 @@ function SincronizarDBrecetas(){
 			  tx.executeSql('INSERT INTO miercolesFrescos (id,nombreImg,estado) VALUES (?,?,?)', [item.id,item.nombreImg, item.estado]);
 			});
 		});
+		Carga++;
+		if
 	});
+
 }
+function OcultarcontenidoCarga(id){
+	if(id==5){
+	$.mobile.changePage( "#mostrarmapa", {
+			reverse: false,
+			changeHash: false
+			});
+	
+	}
 function mostrarcontenidomapa(idcat){
 localStorage.id=idcat;
 			$.mobile.changePage( "#mostrarmapa", {
