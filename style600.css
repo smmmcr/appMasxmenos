@@ -259,7 +259,7 @@ background: rgba(242, 242, 245, 1);
 border-radius: 12px;
 box-shadow: 0px 7px 53px 8px #000;
 position: relative;
-height: 575px;
+height: 718px;
 }
 #recetafinal img{
 max-width: 570px;
@@ -293,7 +293,7 @@ color: #000;
 }
 #contenidoreceta{
 width: 568px;
-height: 243px;
+height: 389px;
 position: relative;
 }
 #wr1,#wrapper2 {
@@ -308,7 +308,7 @@ color: rgb(9, 41, 167);
 #regresar{
 position: absolute;
 bottom: 0px;
-right: 38%;
+right: 43%;
 font-weight: bold;
 color: rgb(0, 0, 0);
 width: 89px;
