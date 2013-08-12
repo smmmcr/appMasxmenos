@@ -97,6 +97,7 @@ height: 565px;
 width: 570px;
 height: 565px;
 position: relative;
+margin-top: 12%;
 
 }
 #wrapper_miercoles{
@@ -330,7 +331,7 @@ width: 524px;
 margin-left: 24px;
 }
 #wrapper_mapa{
-height: 209px;
+height: 375px;
 }
 /*gluten*/
 #contenidorecetaGluten{
@@ -405,6 +406,7 @@ display: block;
  width: 91%;
 margin-left: 24px;
 margin-top: 15px;
+height:728px;
 }
 #tiendasinfo p {
 color: rgb(87, 82, 82);
@@ -428,4 +430,8 @@ margin-left: 38%!important;
 .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
 min-height: 22px!important;
 }
+#coninfosuper{
+height: 378px;
+}
+
 }
