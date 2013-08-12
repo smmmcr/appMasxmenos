@@ -2,6 +2,7 @@ var contenidoInicial;
 var idtema;
 var myScroll;
 var a = 0;
+var SyncCount=0;
 /*-------------------------------------BD-----------------------------------------*/
 var db;
 var fileSystem = {};
@@ -20,11 +21,8 @@ $(document).one("mobileinit", function () {
 	// Setting default page transition to slide
 	$.mobile.defaultPageTransition = 'slide'; 
 	$.mobile.defaultDialogTransition = 'slide';
+	appDB();
 });
-
-
-
-
 function appDB() {
 	db = window.openDatabase("masxmenos", "1.0", "Masxmenos", 2000000);
 	db.transaction(populateRecetasDB, errorCB, successCB);
@@ -44,7 +42,7 @@ function populateRecetasDB(tx) {
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS guia (id INTEGER PRIMARY KEY, nombreImg TEXT, estado INTEGER)');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS miercolesFrescos (id INTEGER PRIMARY KEY,  nombreImg TEXT, estado INTEGER)');
 	 //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
-	 SincronizarDBrecetas();
+	 SincronizarDBrecetas(finSincro);
 }
 // Transaction error callback
 function errorCB(tx, err) {
@@ -54,8 +52,8 @@ function errorCB(tx, err) {
 function successCB() {
 	console.log("success create DB!");
 }	
-function SincronizarDBrecetas(){
-Carga=0;
+function SincronizarDBrecetas(finSincro){
+
 	url = 'http://smmcr.net/fb/masxmenos/recetas/recetas.php?callback=?';
 	/*SINCRONIZA CATEGORIAS*/
 	$.getJSON(url,{accion:"tipoReceta"}).done(function( data ) {
@@ -64,8 +62,8 @@ Carga=0;
 			  tx.executeSql('INSERT INTO tipoReceta (id,nombre,pais,estado) VALUES (?,?,?,?)', [item.id,item.nombretipo,item.pais,item.estado]);
 			});
 		});
-		Carga++;
-	});
+	
+	},finSincro);
 	/*SINCRONIZA RECOMENDACIONES*/
 	$.getJSON(url,{accion:"recomendaciones"}).done(function( data ) {
 		console.log('Iniciando Sincronizacion de Recomendaciones...');
@@ -74,8 +72,8 @@ Carga=0;
 			  tx.executeSql('INSERT INTO recomendaciones (recomendacion, estado, pais_local, idreceta) VALUES (?,?,?,?)', [item.id,item.recomendacion,item.estado, item.pais_local, item.idreceta]);
 			});
 		});
-		Carga++;
-	});
+		
+	},finSincro);
 	/*SINCRONIZA RECETAS*/
 	$.getJSON(url,{accion:"recetas"}).done(function( data ) {
 		console.log('Iniciando Sincronizacion de Recetas...');
@@ -84,8 +82,8 @@ Carga=0;
 			  tx.executeSql('INSERT INTO recetas (id,pais_local, nombre,ingredientes ,preparacion , img , estado ,nombreChef ,actvsemana ,tiporeceta ,patrocinador ,dificultad ,tiempo ,porciones ,costo ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [item.id,item.pais_local, item.nombre,item.ingredientes ,item.preparacion , item.img , item.estado ,item.nombreChef ,item.actvsemana ,item.tiporeceta ,item.patrocinador ,item.dificultad ,item.tiempo ,item.porciones ,item.costo]);
 			});
 		});
-		Carga++;
-	});
+	
+	},finSincro);
 	/*SINCRONIZA GUIA*/
 	$.getJSON(url,{accion:"guia"}).done(function( data ) {
 		console.log('Iniciando Sincronizacion de guia...');
@@ -94,29 +92,26 @@ Carga=0;
 			  tx.executeSql('INSERT INTO guia (id,nombreImg,estado) VALUES (?,?,?)', [item.id,item.nombreImg, item.estado]);
 			});
 		});
-		Carga++;
-	});
+
+	},finSincro);
 	/*SINCRONIZA GUIA*/
 	$.getJSON(url,{accion:"miercoles"}).done(function( data ) {
 		console.log('Iniciando Sincronizacion de miercoles...');
-		$.each(data, function(index, item) {			
+		$.each(data, function(index, item){			
 			db.transaction(function (tx) {  
 			  tx.executeSql('INSERT INTO miercolesFrescos (id,nombreImg,estado) VALUES (?,?,?)', [item.id,item.nombreImg, item.estado]);
 			});
 		});
-		Carga++;
-		if
-	});
-
-}
-function OcultarcontenidoCarga(id){
-	if(id==5){
-	$.mobile.changePage( "#mostrarmapa", {
-			reverse: false,
-			changeHash: false
-			});
 	
-	}
+	},finSincro);
+}
+function finSincro(){
+SyncCount++; 
+if (SyncCount >= 10){
+
+			$.mobile.changePage( "#home");
+}
+}
 function mostrarcontenidomapa(idcat){
 localStorage.id=idcat;
 			$.mobile.changePage( "#mostrarmapa", {

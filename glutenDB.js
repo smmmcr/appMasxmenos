@@ -20,7 +20,7 @@
 		tx.executeSql('CREATE TABLE IF NOT EXISTS tipoRecetaCeliacos (id INTEGER PRIMARY KEY, nombre TEXT, pais INTEGER, estado INTEGER)');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS recetasCeliacos (id INTEGER PRIMARY KEY, pais_local INTEGER, nombre TEXT,ingredientes TEXT,preparacion TEXT, img TEXT, estado INTEGER,nombreChef TEXT,actvsemana INTEGER,tiporeceta INTEGER,patrocinador TEXT,dificultad TEXT,tiempo TEXT,porciones TEXT,costo TEXT)');
 	   //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
-		 SincronizarDB();
+		 SincronizarDB(finSincro);
     }
 
     // Transaction error callback
@@ -35,7 +35,7 @@
         console.log("success create DB!");
     }
 	
-	function SincronizarDB(){
+	function SincronizarDB(finSincro){
 		url = 'http://smmcr.net/fb/masxmenos/celiacos/appService.php?callback=?';
 		/*SINCRONIZA CATEGORIAS*/
 		$.getJSON(url,{accion:"comprasCat"}).done(function( data ) {
@@ -45,7 +45,7 @@
 				  tx.executeSql('INSERT INTO glutenComCat (id,nombre,pais) VALUES (?,?,?)', [item.id,item.nombre, item.pais]);
 				});
 			});
-		});
+		},finSincro);
 		/*SINCRONIZA PRODUCTOS*/
 		$.getJSON(url,{accion:"comprasProd"}).done(function( data ) {
 			console.log('Iniciando Sincronizacion de Productos...');
@@ -54,7 +54,7 @@
 				  tx.executeSql('INSERT INTO glutenComProd (id_categoria,nombre, categoria, marca, fabricante, pais, imagen, presentacion) VALUES (?,?,?,?,?,?,?,?)', [item.id_categoria,item.nombre,item.categoria, item.marca, item.fabricante, item.pais, item.imagen, item.presentacion]);
 				});
 			});
-		});
+		},finSincro);
 		/*SINCRONIZA Pasos*/
 		$.getJSON(url,{accion:"comprasPasos"}).done(function( data ) {
 			console.log('Iniciando Sincronizacion de Primeros Pasos...');
@@ -63,7 +63,7 @@
 				  tx.executeSql('INSERT INTO glutenPrimerosPasos (id,nombre, info) VALUES (?,?,?)', [item.id,item.tema,item.info]);
 				});
 			});
-		});
+		},finSincro);
 		/*SINCRONIZA tipo receta celiacos*/
 		$.getJSON(url,{accion:"tipoReceta"}).done(function( data ) {
 		console.log('Iniciando Sincronizacion tipo receta celiacos...');
@@ -72,7 +72,7 @@
 			  tx.executeSql('INSERT INTO tipoRecetaCeliacos (id,nombre,pais,estado) VALUES (?,?,?,?)', [item.id,item.nombretipo,item.pais,item.estado]);
 			});
 		});
-	});
+	},finSincro);
 	/*SINCRONIZA RECETAS*/
 	$.getJSON(url,{accion:"recetas"}).done(function( data ) {
 		console.log('Iniciando Sincronizacion de Recetas Celiacos...');
@@ -81,7 +81,7 @@
 			  tx.executeSql('INSERT INTO recetasCeliacos (id,pais_local, nombre,ingredientes ,preparacion , img , estado ,nombreChef ,actvsemana ,tiporeceta ,patrocinador ,dificultad ,tiempo ,porciones ,costo ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [item.id,item.pais_local, item.nombre,item.ingredientes ,item.preparacion , item.img , item.estado ,item.nombreChef ,item.actvsemana ,item.tiporeceta ,item.patrocinador ,item.dificultad ,item.tiempo ,item.porciones ,item.costo]);
 			});
 		});
-	});
+	},finSincro);
 	}
 function obtenerCatRecetasGluten(){
 	var data = new Array();
