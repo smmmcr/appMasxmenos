@@ -191,8 +191,7 @@
 				<div class="headerGuia" data-position="inline">
 				<h2>Contáctenos</h2>
 				</div>	
-			<div data-role="content" data-theme="a" class="contenidoGeneral">
-				
+			<div data-role="content" data-theme="a" class="contenidoGeneral">				
 				<a href='#busquedaRapidaContacto' data-role="button" data-theme="a" >Búsqueda rápida por supermercado</a>			
 					<div id='btnsgeneralLlama'>
 					<a href=''  data-role="button" data-theme="a">SAC Servicio al cliente    800 - 8000 - 722</a>
@@ -456,8 +455,13 @@
 				<h3 id="titulo">Primeros pasos con un Celíaco</h3>
 				</div>	
 			<div data-role="content" data-theme="a" id="contenedorpasos">	
-				<div id="Scrollerpasos" style="width: 100%;position: relative;">
-					<ul id="contPasos"></ul>
+				<div id="Scrollerpasos" style="width: 84%;position: relative;">
+						<div id="scroller" >
+					<div id="scrollerPasos1" >
+							<ul data-role="listview"   data-theme="a"  data-inset="true" id="contPasos" data-corners="false">
+							</ul>
+					</div>			
+						</div>			
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -560,8 +564,7 @@
 						</ul>
 						</div>
 						</li>
-						</ul>
-				
+						</ul>				
 				</div>
 			</div>
 			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -583,8 +586,9 @@ $("#selectrecetas").bind( "change", function() {
 $( "#recetaSelec" ).on( "pagebeforeshow", function( event ) {
 	setTimeout( function() {
 		myScroll3 = new iScroll('contenidoreceta', {hScrollbar: false});
-	}, 500);
+	}, 500);	
 });
+
 /*-------------------------------------------gluten----------------------------------------*/
 $( "#gluten3" ).on( "pagebeforecreate", function( event ) {
 	 GlutenVariedad();
@@ -618,6 +622,9 @@ setTimeout( function() {
     } 
  
  }, 500);
+ setTimeout( function() {
+		myScroll3 = new iScroll('scrollerPasos1', {hScrollbar: false});
+	}, 500);
 });
 /*--------------------------Guia-----------------------------------------------------------*/
 $( "#guia" ).on( "pagebeforeshow", function( event ) {
@@ -714,5 +721,7 @@ $("#mostrarmapa").on("pagecreate",function () {
 				}
 		});
 });
+
+
 	</script>
 </html>

@@ -383,7 +383,14 @@ margin-left: 15px;
 }
 
 }
-#contPasos{
+#Scrollerpasos{
+background: rgba(29, 20, 5, 0.55)!important;
+color: #FFFCFC;
+border-radius: 25px;
+padding-left: 8%;
+padding-right: 8%;
+
+}{
 background: rgba(29, 20, 5, 0.55)!important;
 color: #FFFCFC;
 border-radius: 25px;

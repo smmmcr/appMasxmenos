@@ -296,6 +296,11 @@ width: 568px;
 height: 389px;
 position: relative;
 }
+#scrollerPasos1{
+width: 568px;
+height: 389px;
+position: relative;
+}
 #wr1,#wrapper2 {
 height:4px!important;
 }
@@ -303,7 +308,7 @@ height:4px!important;
 border-bottom: 1px solid;
 }
 #ingredientes,#preparacion{
-color: rgb(9, 41, 167);
+color: #302A2A;
 }
 #regresar{
 position: absolute;
@@ -366,7 +371,7 @@ margin-left: 15px;
 }
 
 
-#contPasos{
+#Scrollerpasos{
 background: rgba(29, 20, 5, 0.55)!important;
 color: #FFFCFC;
 border-radius: 25px;
