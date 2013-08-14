@@ -21,6 +21,7 @@ $(document).one("mobileinit", function () {
 	// Setting default page transition to slide
 	$.mobile.defaultPageTransition = 'slide'; 
 	$.mobile.defaultDialogTransition = 'slide';
+	$("#cargaimg" ).show();
 	appDB();
 });
 function appDB() {
