@@ -108,10 +108,11 @@ function SincronizarDBrecetas(finSincro){
 function finSincro(){
 SyncCount++; 
 if (SyncCount >= 10){
-
+setTimeout( function() {
 			$.mobile.changePage("#home", {
 			reverse: false,
 			changeHash: false});
+			}, 500);
 }
 }
 var tiendas;
