@@ -293,8 +293,13 @@ color: #000;
 }
 #contenidoreceta{
 width: 568px;
-height: 389px;
+height: 629px;
 position: relative;
+}
+#Scrollerpasos{
+width: 84%;
+position: relative;
+height: 642px;
 }
 #scrollerPasos1{
 width: 568px;
@@ -360,7 +365,7 @@ height: 269px;
 }
 #titulorecetaGluten img{
 width: 100%;
-height: 269px;
+height: 242px;
 margin-top: 0px;
 border-bottom: 1px solid;
 z-index: 999;

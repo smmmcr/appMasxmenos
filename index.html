@@ -455,17 +455,17 @@
 				<h3 id="titulo">Primeros pasos con un Celíaco</h3>
 				</div>	
 			<div data-role="content" data-theme="a" id="contenedorpasos">	
-				<div id="Scrollerpasos" style="width: 84%;position: relative;">
+				<div id="Scrollerpasos" >
+				<div id="scrollerPasos1" >
 						<div id="scroller" >
-					<div id="scrollerPasos1" >
 							<ul data-role="listview"   data-theme="a"  data-inset="true" id="contPasos" data-corners="false">
 							</ul>
-					</div>			
-						</div>			
+						</div>		
+				</div>			
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
+		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='gluten3' class="gluten" data-role="page" data-theme="a">
@@ -482,7 +482,7 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
+		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='glutenVariedadList' class="gluten" data-role="page" data-theme="a">
@@ -499,7 +499,7 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
+		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='glutenVariedadDetail' class="gluten" data-role="page" data-theme="a">
@@ -537,7 +537,7 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
+		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='mostrarmapa' data-role="page" data-theme="a" id="mapas" >
@@ -584,6 +584,7 @@ $("#selectrecetas").bind( "change", function() {
 	});
 });
 $( "#recetaSelec" ).on( "pagebeforeshow", function( event ) {
+
 	setTimeout( function() {
 		myScroll3 = new iScroll('contenidoreceta', {hScrollbar: false});
 	}, 500);	
@@ -616,8 +617,9 @@ $( "#glutenPasos" ).on( "pagebeforeshow", function( event ) {
 setTimeout( function() {
  $("#contPasos ul").attr('data-role', 'listview');
  $("#contPasos ul").attr('class', 'listavista');
+ //$(".listavista").listview('refresh', true);
    if ( $(".listavista").hasClass('ui-listview')) {
-   //    $("#guia #thelist").listview('refresh');
+   // $("#guia #thelist").listview('refresh');
    $(".listavista").listview('refresh', true);
     } 
  
@@ -685,8 +687,8 @@ setTimeout( function() {
 	myScroll3.refresh();
 }, 0);
 });
-$("#mostrarmapa").on("pagecreate",function () {
-	idfinal=localStorage.id;
+$("#mostrarmapa").on("pagebeforeshow",function () {
+	idfinal=tiendas;
 		$.ajax({
 		type: "GET",
 		url: "tiendas.xml",
@@ -707,6 +709,7 @@ $("#mostrarmapa").on("pagecreate",function () {
 				telefono=$(this).find("telefono").text();
 				horario=$(this).find("horario").text();	
 				imagenes =$(this).find("imagenes").text();
+				 $("#listatiendas ul").empty();
 				 $("#listatiendas ul").append('<li style="width: 439px;float:left;"><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\',\''+imagenes+'\')" >'+nombre+ '</a></li>');
 				 //$("#listatiendas ul").append('<li style="width: 166px;float: left;" ><a href="waze://?ll='+lat+','+longi+'&z=10&navigate=yes" >Ubicar '+nombre+ ' en Waze</a></li>');
 				 $("#listatiendas ul").append('<li style="width: 85px;float: left;" ><a href="waze://?ll='+lat+','+longi+'&z=10&navigate=yes" ><img src="img/wezeico.png" alt="Ubicar en weze" /></a></li>');

@@ -35,7 +35,7 @@
         console.log("success create DB!");
     }
 	
-	function SincronizarDB(finSincro){
+function SincronizarDB(finSincro){
 		url = 'http://smmcr.net/fb/masxmenos/celiacos/appService.php?callback=?';
 		/*SINCRONIZA CATEGORIAS*/
 		$.getJSON(url,{accion:"comprasCat"}).done(function( data ) {
@@ -95,11 +95,15 @@ function obtenerCatRecetasGluten(){
 	  $.each(data, function(index, item) {	  
 		  $('#contenidoulbusqueda2 ul').append('<li><a href="javascript:ShowSubGF('+item.id+','+"'tiporectaceliacos'"+')">'+item.nombre+'</a></li>');
 		  });
+		    $('#contenidoulbusqueda2 ul').attr('data-role', 'listview');
+		
+		    if (   $('#contenidoulbusqueda2 ul').hasClass('ui-listview')) {
 		  $('#contenidoulbusqueda2 ul').listview("refresh");
+		  }
 		});
 	});				
 }
-	function GlutenRecetas(){
+function GlutenRecetas(){
 		var data = new Array();
 		db.transaction(function (tx) {  
 			tx.executeSql('SELECT * FROM glutenComCat', [], function (tx, results) {
@@ -108,10 +112,18 @@ function obtenerCatRecetasGluten(){
 					data[i] = results.rows.item(i);
 				}
 			$('#gfcCategorias').empty();
+		
 			  $.each(data, function(index, item) {		
 				  $('#gfcCategorias').append('<li><a href="javascript:ShowSubGF('+item.id+','+"'variedad'"+')">'+item.nombre+'</a></li>');
 				  });
-				  $("#gfcCategorias").listview("refresh");
+				  $("#gfcCategorias").attr('data-role', 'listview');
+ $("#gfcCategorias").attr('class', 'listavista');
+  $(".listavista").listview('refresh', true);
+   if (  $("#gfcCategorias").hasClass('ui-listview')) {
+   // $("#guia #thelist").listview('refresh');
+  $("#gfcCategorias").listview('refresh', true);
+    } 
+				 // $("#gfcCategorias").listview("refresh");
 				});
 			});	
 	}	
@@ -127,7 +139,9 @@ function obtenerCatRecetasGluten(){
 			  $.each(data, function(index, item) {		
 				  $('#gfcCategorias').append('<li><a href="javascript:ShowSubGF('+item.id+','+"'variedad'"+')">'+item.nombre+'</a></li>');
 				  });
+				    if (  $("#gfcCategorias").hasClass('ui-listview')) {
 				  $("#gfcCategorias").listview("refresh");
+				  }
 				});
 			});	
 	}
@@ -143,7 +157,10 @@ function obtenerCatRecetasGluten(){
 			  $.each(data, function(index, item) {		
 				  $('#pasos_list').append('<li><a href="javascript:ShowItemGF('+item.id+', '+"'pasos'"+' )">'+item.nombre+'</a></li>');
 				  });
-				  $("#pasos_list").listview("refresh");
+				     if (  $("#pasos_list").hasClass('ui-listview')) {
+				   $("#pasos_list").listview("refresh");
+				  }
+				
 				});
 			});	
 	}
@@ -196,7 +213,9 @@ function obtenerCatRecetasGluten(){
 			  $.each(data, function(index, item) {		
 				  $(contenedor).append('<li><a href="javascript:ShowItemGF('+item.id+',\''+categoria+'\')">'+item.nombre+'</a></li>');
 				  });
+				    if ( $(contenedor).hasClass('ui-listview')) {
 					$(contenedor).listview("refresh");
+					}
 				});
 			setTimeout( function() {
 				$.mobile.changePage(pagina);
@@ -248,7 +267,9 @@ function obtenerCatRecetasGluten(){
 						  $('#glutenVariedadDetail #GFD_marca').html('Marca: '+data[0].marca);
 						  $('#glutenVariedadDetail #GFD_fabricante').html('Fabricante: '+data[0].fabricante);
 					});	
+					 if ( $("#gfcProductosdetail").hasClass('ui-listview')) {
 					$("#gfcProductosdetail").listview("refresh");
+					}
 				});	
 			break;
 			case 'tipoRecetaGluten':

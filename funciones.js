@@ -112,8 +112,9 @@ if (SyncCount >= 10){
 			$.mobile.changePage( "#home");
 }
 }
+var tiendas;
 function mostrarcontenidomapa(idcat){
-localStorage.id=idcat;
+tiendas=idcat;
 			$.mobile.changePage( "#mostrarmapa", {
 			reverse: false,
 			changeHash: false
