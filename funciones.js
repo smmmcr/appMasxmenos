@@ -278,7 +278,7 @@ tx.executeSql('SELECT * FROM recetas where id="'+id+'"', [], function (tx, resul
 function obtenerCatRecetas(){
 	var data = new Array();
 	db.transaction(function (tx) {  
-	tx.executeSql('SELECT * FROM tipoReceta', [], function (tx, results) {
+	tx.executeSql('SELECT * FROM tipoReceta where estado=1', [], function (tx, results) {
 		var len = results.rows.length;
 		for (var i=0; i<len; i++){
 			data[i] = results.rows.item(i);
@@ -349,7 +349,7 @@ function obtenerMiercoles(){
 function mostrarlista(idcat){
 var data = new Array();			
 db.transaction(function (tx) {
-tx.executeSql('SELECT * FROM recetas where tiporeceta="'+idcat+'"', [], function (tx, results) {
+tx.executeSql('SELECT * FROM recetas where estado=1 and tiporeceta="'+idcat+'"', [], function (tx, results) {
 	var len = results.rows.length;
 	for (var i=0; i<len; i++){
 		data[i] = results.rows.item(i);

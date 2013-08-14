@@ -86,7 +86,7 @@ function SincronizarDB(finSincro){
 function obtenerCatRecetasGluten(){
 	var data = new Array();
 	db.transaction(function (tx) {  
-	tx.executeSql('SELECT * FROM tipoRecetaCeliacos', [], function (tx, results) {
+	tx.executeSql('SELECT * FROM tipoRecetaCeliacos where estado=1', [], function (tx, results) {
 		var len = results.rows.length;
 		for (var i=0; i<len; i++){
 			data[i] = results.rows.item(i);
@@ -106,7 +106,7 @@ function obtenerCatRecetasGluten(){
 function GlutenRecetas(){
 		var data = new Array();
 		db.transaction(function (tx) {  
-			tx.executeSql('SELECT * FROM glutenComCat', [], function (tx, results) {
+			tx.executeSql('SELECT * FROM glutenComCat ', [], function (tx, results) {
 				var len = results.rows.length;
 				for (var i=0; i<len; i++){
 					data[i] = results.rows.item(i);
