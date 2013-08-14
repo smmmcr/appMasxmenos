@@ -296,6 +296,11 @@ width: 568px;
 height: 629px;
 position: relative;
 }
+#cargaimg{
+width: 100%;
+position: absolute;
+margin-top: 77px;
+}
 #Scrollerpasos{
 width: 84%;
 position: relative;
