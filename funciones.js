@@ -109,7 +109,9 @@ function finSincro(){
 SyncCount++; 
 if (SyncCount >= 10){
 
-			$.mobile.changePage( "#home");
+			$.mobile.changePage("#home", {
+			reverse: false,
+			changeHash: false});
 }
 }
 var tiendas;
