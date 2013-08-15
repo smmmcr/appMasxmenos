@@ -36,7 +36,6 @@ $(document).one("mobileinit", function () {
             states[Connection.CELL_4G]  = 1;
             states[Connection.CELL]     = 0;
             states[Connection.NONE]     = 0;
-				alert(states[networkState]);
 			if(states[networkState]!=0){
 			appDB();
 			}else{
