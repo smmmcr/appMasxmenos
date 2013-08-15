@@ -36,6 +36,7 @@ $(document).one("mobileinit", function () {
             states[Connection.CELL_4G]  = '4G';
             states[Connection.CELL]     = 'generic';
             states[Connection.NONE]     = 'No_network';
+				alert(states[networkState]);
 			if(states[networkState]!="No_network" || states[networkState]!="Unknown" || states[networkState]!="generic"){
 			appDB();
 			}else{
