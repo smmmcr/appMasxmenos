@@ -22,8 +22,29 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultPageTransition = 'slide'; 
 	$.mobile.defaultDialogTransition = 'slide';
 	$("#cargaimg" ).show();
-	appDB();
+
+checkConnection();
+	
 });
+	 function checkConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown';
+            states[Connection.ETHERNET] = 'Ethernet';
+            states[Connection.WIFI]     = 'WiFi';
+            states[Connection.CELL_2G]  = '2G';
+            states[Connection.CELL_3G]  = '3G';
+            states[Connection.CELL_4G]  = '4G';
+            states[Connection.CELL]     = 'generic';
+            states[Connection.NONE]     = 'No_network';
+			if(states[networkState]!="No_network" || states[networkState]!="Unknown" || states[networkState]!="generic"){
+			appDB();
+			}else{
+			alert("Para utilizar esta aplicación por primera vez necesita conexión a internet");
+			 navigator.app.exitApp();
+			}
+        }
 function appDB() {
 	db = window.openDatabase("masxmenos", "1.0", "Masxmenos", 2000000);
 	db.transaction(populateRecetasDB, errorCB, successCB);
