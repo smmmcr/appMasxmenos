@@ -19,6 +19,10 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="fullscreen" value="true" />
 	<preference name="target-device" value="universal" />
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+
+<feature name="http://api.phonegap.com/1.0/network"/>
+
   	<!-- Optional splash screen image, e.g.: -->
 	<gap:splash src="splash.png" width="1024" height="768" />
 
