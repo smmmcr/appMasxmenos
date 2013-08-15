@@ -28,16 +28,16 @@ $(document).one("mobileinit", function () {
             var networkState = navigator.connection.type;
 
             var states = {};
-            states[Connection.UNKNOWN]  = 'Unknown';
-            states[Connection.ETHERNET] = 'Ethernet';
-            states[Connection.WIFI]     = 'WiFi';
-            states[Connection.CELL_2G]  = '2G';
-            states[Connection.CELL_3G]  = '3G';
-            states[Connection.CELL_4G]  = '4G';
-            states[Connection.CELL]     = 'generic';
-            states[Connection.NONE]     = 'No_network';
+            states[Connection.UNKNOWN]  = 0;
+            states[Connection.ETHERNET] = 1;
+            states[Connection.WIFI]     = 1;
+            states[Connection.CELL_2G]  = 1;
+            states[Connection.CELL_3G]  = 1;
+            states[Connection.CELL_4G]  = 1;
+            states[Connection.CELL]     = 0;
+            states[Connection.NONE]     = 0;
 				alert(states[networkState]);
-			if(states[networkState]!="No_network" || states[networkState]!="Unknown" || states[networkState]!="generic"){
+			if(states[networkState]!=0){
 			appDB();
 			}else{
 			alert("Para utilizar esta aplicación por primera vez necesita conexión a internet");
