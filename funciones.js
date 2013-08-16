@@ -22,7 +22,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultPageTransition = 'slide'; 
 	$.mobile.defaultDialogTransition = 'slide';
 	$("#cargaimg" ).show();
-	
+//	appDB();
 });
 	 function checkConnection() {
             var networkState = navigator.connection.type;
@@ -39,7 +39,7 @@ $(document).one("mobileinit", function () {
 			if(states[networkState]!=0){
 			appDB();
 			}else{
-			alert("Para utilizar esta aplicación por primera vez necesita conexión a internet");
+			alert("Para utilizar esta aplicación necesita conexión a internet");
 			 navigator.app.exitApp();
 			}
         }

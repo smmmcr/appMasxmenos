@@ -6,7 +6,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title>App Masxmenos BETA</title>
-		<script type="text/javascript" src="phonegap.js"></script>
+	<script type="text/javascript" src="phonegap.js"></script>
 		<link rel="stylesheet" href="themes/mxm.css" />
 		<link rel="stylesheet" href="jquery.mobile.structure-1.3.1.css" />
 		<link rel="stylesheet" href="style320.css" /> <!-- 320-->
@@ -68,7 +68,7 @@
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
 		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<div class='btnfooter'><a href="">Compartir</a></div>
+	<!--	<div class='btnfooter'><a href="">Compartir</a></div>-->
 		</div>
 		</div>
 		<div id='miercoles' data-role="page" data-theme="a" data-iscroll="enable">
@@ -90,7 +90,7 @@
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
 		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<div class='btnfooter'><a href="">Compartir</a></div>
+		<!--<div class='btnfooter'><a href="">Compartir</a></div>-->
 		</div>
 		</div>
 		<div id='recetas' data-role="page" data-theme="a">
@@ -114,7 +114,7 @@
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
 		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<div class='btnfooter'><a href="">Compartir</a></div>
+	<!--	<div class='btnfooter'><a href="">Compartir</a></div>-->
 		</div>
 		</div>
 		<div id='recetaSelec' data-role="page" data-theme="a">
@@ -406,11 +406,12 @@
 				</div>			
 			<div data-role="content">	
 				<div id="recetafinalGluten" >
-					<div id="titulorecetaGluten"></div>
+					<div id="titulorecetaprincipal"></div>
 					<div id="contenidorecetaGluten">
 					<div id="scrollergluten"  data-theme="a" >
 						<ul  data-role="listview" id="vistaReceta">
-						
+					
+					
 						</ul>
 					</div>
 					</div>
@@ -560,7 +561,7 @@
 			</div>
 			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
 				<div class='btnfooter'><a href="#home">Menu</a></div>
-				<div class='btnfooter'><a href="">Compartir</a></div>
+				<!--<div class='btnfooter'><a href="">Compartir</a></div>-->
 			</div>
 		</div>
 	</body>
@@ -672,7 +673,7 @@ $("#supermercados").on( "pagebeforeshow", function( event ) {
 });
 $( "#mostrarmapa" ).on( "pagebeforeshow", function( event ) {
 setTimeout( function() {
-	myScroll3 = new iScroll('wrapper_mapa', {hScrollbar: false});
+	myScroll3 = new iScroll('listatiendasinfo', {hScrollbar: false});
 }, 0);
 setTimeout( function() {
 	myScroll3.refresh();
@@ -701,9 +702,9 @@ $("#mostrarmapa").on("pagebeforeshow",function () {
 				horario=$(this).find("horario").text();	
 				imagenes =$(this).find("imagenes").text();
 				 $("#listatiendas ul").empty();
-				 $("#listatiendas ul").append('<li style="width: 439px;float:left;"><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\',\''+imagenes+'\')" >'+nombre+ '</a></li>');
+				 $("#listatiendas ul").append('<li ><a href="javascript:visulamapainfo(\''+lat+'\',\''+longi+'\',\''+nombre+'\',\''+direccion+'\',\''+horario+'\',\''+telefono+'\',\''+imagenes+'\')" >'+nombre+ '</a></li>');
 				 //$("#listatiendas ul").append('<li style="width: 166px;float: left;" ><a href="waze://?ll='+lat+','+longi+'&z=10&navigate=yes" >Ubicar '+nombre+ ' en Waze</a></li>');
-				 $("#listatiendas ul").append('<li style="width: 85px;float: left;" ><a href="waze://?ll='+lat+','+longi+'&z=10&navigate=yes" ><img src="img/wezeico.png" alt="Ubicar en weze" /></a></li>');
+				 $("#listatiendas ul").append('<li  class="weze" ><a href="waze://?ll='+lat+','+longi+'&z=10&navigate=yes" ><img src="img/wezeico.png" alt="Ubicar en weze" /></a></li>');
 				
 				}
 					

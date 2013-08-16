@@ -355,7 +355,8 @@ height: 375px;
 overflow: hidden;
 width: 570px;
 position: relative;
-height: 420px;
+height: 664px;
+color: #302A2A;
 }
 #recetafinalGluten{
 width: 570px;
@@ -369,6 +370,7 @@ height: 720px;
 width: 569px;
 position: relative;
 height: 269px;
+margin-top: 18px;
 }
 #titulorecetaGluten img{
 width: 100%;
@@ -449,7 +451,12 @@ min-height: 22px!important;
 }
 
 #coninfosuper{
-height: 378px;
+height: 580px;
 }
-
+#listatiendas li{
+width: 439px;float:left;
+}
+.weze{
+width: 85px!important;float: left!important;
+}
 }

@@ -5,7 +5,7 @@ text-decoration:none;
 list-style-type:none;
 }
 @media only screen 
-and (max-width : 320px) {
+and (min-width : 320px) {
 body {
 background: #000;
 font-size:arial;-webkit-user-select:none;
@@ -96,9 +96,72 @@ position: relative;
 	width: 290px;
 	height: 290px;
 }
+#recetafinal{
+width: 296px;
+background: rgba(226, 226, 226, 0.89);
+border-radius: 12px;
+box-shadow: 0px 7px 53px 8px #000;
+position: relative;
+height: 585px;
+}
+#recetafinal img {
+width: 100%;
+height: 267px;
+margin-top: 0px;
+border-bottom: 1px solid;
+z-index: 999;
+}
+#tituingre {
+margin-left: 0px;
+color: rgb(8, 30, 100);
+width: 100%;
+}
+#ingredientes, #preparacion {
+color: #302A2A;
+}
+#contenidoreceta {
+width: 293px;
+height: 205px;
+position: relative;
+}
+#miercolesFrescos {
+background: yellow;
+}
+#cargaimg{
+width: 100%;
+position: absolute;
+
+height: 100%;
+
+}
+
+#regresar {
+position: absolute;
+bottom: 0px;
+right: 38%;
+font-weight: bold;
+color: rgb(0, 0, 0);
+width: 89px;
+padding-left: 23px;
+background: rgb(255, 253, 253);
+border: 1px solid rgba(141, 131, 131, 0.56);
+}
+#nombrereceta {
+margin: auto;
+width: 73%;
+color: #0B75BA!important;
+text-align: center;
+}
+#recetafinal img {
+width: 296px;
+height: 215px;
+margin-top: 0px;
+border-bottom: 1px solid;
+z-index: 999;
+}
 #contenidoScroll, #wrapper_guia, #wrapper_miercoles {	
 width: 290px;
-height: 290px;
+height: 383px;
 }
 #nav {
 	width:300px;
@@ -184,15 +247,81 @@ opacity: 0;
 -ms-filter: "alpha(opacity=0)";
 filter: alpha(opacity=0);
 }
+@media only screen 
+and (max-width : 599px) {
+h3, h2 ,#gfcProductosdetail{
+font-size: 14px!important;
+}
+#imgpro {
+max-height: 206px!important;
+max-width: 224px!important;
+margin-top: 18px!important;
+margin-left: 95px!important;
+}
+#wrapper_gfpro{
+height: 480px;
+}
+
+.ui-bar-a {
+
+font-size: 11px;
+}
+.ui-btn-text{
+font-size: 10px;
+}
+#scrollerPasos1 {
+width: 244px;
+height: 416px;
+position: relative;
+}
+#contacto .contenidoGeneral{
+
+font-size: 12px!important;
+}
+#gluten #contenidoulbusqueda2 .ui-btn-text{
+font-size: 14px!important;
+}
+#gluten2 #contenidoulbusqueda2 .ui-btn-text{
+font-size: 14px!important;
+}
+#gluten3 #contenidoulbusqueda2 .ui-btn-text{
+font-size: 14px!important;
+}
+#glutenRecetasCat #contenidoulbusqueda2 .ui-btn-text{
+font-size: 14px!important;
+}
+#recetafinalGluten {
+width: 291px;
+background: rgba(245, 239, 239, 1);
+border-radius: 12px;
+box-shadow: 0px 7px 53px 8px #000;
+position: relative;
+height: 606px;
+}
+#recetafinalGluten img{
+width: 291px;
+height: 217px;
+margin-left: 15px;
+}
+#contenidorecetaGluten {
+overflow: hidden;
+width: 291px;
+position: relative;
+height: 480px;
+color: #302A2A;
+}
+}
+
 #busquedarapida{
 margin-left: 12%;
+
 }
 #btnsgeneralLlama{
 float: left;
 margin-top: 39px;
-margin-left: 37px;
-width: 83%;
-position:relative;
+margin-left: 9px;
+width: 274px;
+position: relative;
 }
 
 #btnsgeneralLlama .sombra{
@@ -221,7 +350,7 @@ position:relative;
 width:100%;
 height:50px;
 }
-@media only screen 
+/*@media only screen 
 and (min-width : 600px) {
 #recetafinal{
 width: 570px;
@@ -291,6 +420,7 @@ height: 800px;
 position:relative;
 }
 /*gluten*/
+/*
 #contenidorecetaGluten{
 overflow: hidden;
 width: 570px;
@@ -310,6 +440,7 @@ width: 569px;
 position: relative;
 height: 269px;
 }
+
 #titulorecetaGluten img{
 width: 100%;
 height: 269px;
@@ -322,21 +453,29 @@ width: 539px;
 margin-left: 15px;
 }
 
-}
+}*/
 #contPasos{
-background: rgba(29, 20, 5, 0.55)!important;
+
 color: #FFFCFC;
 border-radius: 25px;
 padding-left: 8%;
 padding-right: 8%;
 
 }
+#Scrollerpasos {
+background: rgba(29, 20, 5, 0.55)!important;
+color: #FFFCFC;
+border-radius: 25px;
+padding-left: 8%;
+padding-right: 8%;
+}
+
 #contPasos p{
 color: #FFFCFC!important;
 }
 #map_canvas{
-height: 320px!important;
-width: 494px!important;
+height: 211px!important;
+width: 302px!important;
 position: relative;
 background-color: rgb(229, 227, 223);
 overflow: hidden;
@@ -350,26 +489,28 @@ background:url(img/bg_celiacos.jpg) repeat;
  .gluten .ui-content{
  background:none;
  }
- #listatiendasinfo{
- width: 91%;
-margin-left: 24px;
-margin-top: 27px;
-}
+
 img.logo_celiacos{
 margin: 10px auto;
 display: block;
 }
 
  #listatiendasinfo{
- width: 91%;
-margin-left: 24px;
+width: 294px;
+margin-left: 0px!important;
 margin-top: 27px;
+position: relative;
+height: 500px;
+}
+#wrapper_mapa{
+
+font-size: 9px;
 }
 #tiendasinfo p {
 color: rgb(87, 82, 82);
 }
 #servicios img{
-
+width: 67px;
 }
 
 #tiendasinfo li{
@@ -383,7 +524,26 @@ height: 220px!important;
 max-height: 206px!important;
 max-width: 224px!important;
 margin-top: 18px!important;
-margin-left: 38%!important;
+
+}
+#tiendasinfo{
+
+float: left;
+}
+
+#listatiendas li{
+width: 234px;
+float: left
+}
+.weze{
+width: 85px!important;float: left!important;
+height: 45px!important;
+}
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
+min-height: 20px!important;
+}
+#coninfosuper {
+height: 580px;
 
 }
 }

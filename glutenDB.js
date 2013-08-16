@@ -282,11 +282,11 @@ function GlutenRecetas(){
 						for (var i=0; i<len; i++){
 							data[i] = results.rows.item(i);
 						}
-						$("#titulorecetaGluten").html("");
+					$("#titulorecetaprincipal").html("");
 						$(contenedor).html("");
 						$("#recetafinalGluten").append("<a id='regresar' href='#glutenRecetasList'>Regresar</a>");
-						$("#titulorecetaGluten").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).nombre+"</h3></div>"+
-						"<img src='http://movilmultimediasa.com/Celiacos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' />");
+						$("#titulorecetaprincipal").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).nombre+"</h3></div>");
+						$(contenedor).append("<div id='titulorecetaGluten'><img src='http://movilmultimediasa.com/Celiacos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' /></div>");
 						$(contenedor).append("<li id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes+"</li>");
 						$(contenedor).append("<li id='preparacion'><h3 id='tituingre'>Preparación</h3>"+results.rows.item(0).preparacion+"</li>");
 						$("#glutenRecetasDetail ul").listview('refresh');
