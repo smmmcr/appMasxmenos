@@ -129,7 +129,7 @@ function finSincro(){
 SyncCount++; 
 if (SyncCount >= 10){
 
-//$("#cargaimg" ).hide();
+$("#cargaimg" ).hide();
 }
 }
 var tiendas;
