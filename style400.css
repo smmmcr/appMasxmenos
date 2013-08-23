@@ -281,107 +281,30 @@ position:relative;
 width:100%;
 height:50px;
 }
-@media only screen 
-and (min-width : 600px) {
-#recetafinal{
-width: 570px;
-background: rgba(226, 226, 226, 0.89);
+#recetafinalGluten {
+width: 370px;
+background: rgba(245, 239, 239, 1);
 border-radius: 12px;
 box-shadow: 0px 7px 53px 8px #000;
 position: relative;
-height: 795px;
+height: 514px;
 }
-#recetafinal img{
-width: 100%;
-height: 361px;
-margin-top: 0px;
-border-bottom: 1px solid;
-z-index: 999;
-}
-#recetas .contenidoGeneral{
-width:569px!important;
-}
-#contacto .contenidoGeneral{
-width:569px!important;
-}
-
-#nombrereceta {
-margin: auto;
-width: 73%;
-color: #0B75BA!important;
-text-align: center
-}
-#tituingre{
-margin-left: 0px;
-color: rgb(8, 30, 100);
-width: 100%;
-}
-#recetafinal p {
-margin: auto;
-width: 45%;
-color: #000;
-}
-#contenidoreceta{
-width: 568px;
-height: 346px;
+#scrollerPasos1 {
+width: 311px;
+height: 416px;
 position: relative;
 }
-#wr1,#wrapper2 {
-height:4px!important;
-}
-#titulorec1{
-border-bottom: 1px solid;
-}
-#ingredientes,#preparacion{
-color: rgb(9, 41, 167);
-}
-#regresar{
-position: absolute;
-bottom: 0px;
-right: 38%;
-font-weight: bold;
-color: rgb(0, 0, 0);
-width: 89px;
-padding-left: 23px;
-background: rgb(255, 253, 253);
-border: 1px solid rgba(141, 131, 131, 0.56);
-}
-#contenidoulbusqueda{
-height: 800px;
-position:relative;
-}
-/*gluten*/
-#contenidorecetaGluten{
-overflow: hidden;
-width: 570px;
-position: relative;
-height: 288px;
-}
-#recetafinalGluten{
-width: 570px;
-background: rgba(226, 226, 226, 0.89);
-border-radius: 12px;
-box-shadow: 0px 7px 53px 8px #000;
-position: relative;
-height: 583px;
-}
-#titulorecetaGluten{
-width: 569px;
-position: relative;
-height: 269px;
-}
-#titulorecetaGluten img{
-width: 100%;
-height: 269px;
-margin-top: 0px;
-border-bottom: 1px solid;
-z-index: 999;
-}
-#scrollergluten{
-width: 539px;
+#recetafinalGluten img {
+width: 369px;
+height: 217px;
 margin-left: 15px;
 }
-
+#contenidorecetaGluten {
+overflow: hidden;
+width: 366px;
+position: relative;
+height: 480px;
+color: #302A2A;
 }
 #Scrollerpasos{
 background: rgba(29, 20, 5, 0.55)!important;

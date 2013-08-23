@@ -130,9 +130,6 @@ background: yellow;
 #cargaimg{
 width: 100%;
 position: absolute;
-
-height: 100%;
-
 }
 
 #regresar {
@@ -247,8 +244,8 @@ opacity: 0;
 -ms-filter: "alpha(opacity=0)";
 filter: alpha(opacity=0);
 }
-@media only screen 
-and (max-width : 599px) {
+/*@media only screen 
+and (max-width : 599px) {*/
 h3, h2 ,#gfcProductosdetail{
 font-size: 14px!important;
 }
@@ -310,7 +307,8 @@ position: relative;
 height: 480px;
 color: #302A2A;
 }
-}
+
+/*}*/
 
 #busquedarapida{
 margin-left: 12%;
