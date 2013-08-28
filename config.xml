@@ -11,6 +11,8 @@
 	</gap:platforms>	
 
 	<icon src="logoApp.png" width="128" height="128" gap:role="default" />	
+	<icon src="logoApp57.png" width="57" height="57" gap:role="default" />	
+	<icon src="logoApp72.png" width="72" height="72" gap:role="default" />	
 	<!--<preference name="permissions" value="none"/>-->
 	<preference name="phonegap-version" value="2.9.0" />
 	<access origin="*" />
