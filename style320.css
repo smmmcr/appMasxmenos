@@ -4,6 +4,19 @@ margin: 0;
 text-decoration:none;
 list-style-type:none;
 }
+#cargaimg img{
+width: 40%;
+margin-top: 53%;
+margin-left: 29%;
+}
+#wrapper_miercoles{
+background: yellow;
+width: 100%;
+}
+#guiaconten{
+background: #e3e3e3;
+width: 100%;
+}
 @media only screen 
 and (min-width : 320px) {
 body {
@@ -17,6 +30,7 @@ font-weight: bold;
 font-size: 133.4%;
 position: relative;
 }
+
 .ui-header img{
 margin-left:25%;
 width:50%;
@@ -131,6 +145,7 @@ background: yellow;
 width: 100%;
 position: absolute;
 background: #0068a6;
+height: 100%;
 }
 
 #regresar {

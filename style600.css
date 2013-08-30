@@ -102,9 +102,12 @@ margin-top: 12%;
 }
 #wrapper_miercoles{
 background: yellow;
+width: 100%;
 }
 #guiaconten{
 background: #e3e3e3;
+width: 100%;
+}
 }
 #miercolesFrescos{
 background: yellow;
