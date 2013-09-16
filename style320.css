@@ -15,10 +15,10 @@ width: 100%;
 }
 #guiaconten{
 
-width: 100%;
+width: 91%;
 }
 @media only screen 
-and (min-width : 320px) {
+and (min-width :220px)and (max-width :399px) {
 body {
 background: #000;
 font-size:arial;-webkit-user-select:none;
@@ -107,8 +107,8 @@ position: relative;
 /* Smartphones (portrait) ----------- */
 
 #wrapper_miercoles li, #wrapper_guia li {
-	width: 290px;
-	height: 290px;
+	width: 33%;
+height: 290px;
 }
 #recetafinal{
 width: 296px;
@@ -138,16 +138,16 @@ width: 293px;
 height: 205px;
 position: relative;
 }
-#miercolesFrescos {
+#miercolesFrescos, #miercoles {
 background: yellow;
 }
 #cargaimg{
 width: 100%;
 position: absolute;
-background: #0068a6;
+margin-top: 0px;
 height: 100%;
+background: #0068a6;
 }
-
 #regresar {
 position: absolute;
 bottom: 0px;
@@ -173,8 +173,9 @@ border-bottom: 1px solid;
 z-index: 999;
 }
 #contenidoScroll, #wrapper_guia, #wrapper_miercoles {	
-width: 290px;
-height: 383px;
+width: 98%;
+height: 291px;
+float: left;
 }
 #nav {
 	width:300px;
@@ -263,7 +264,7 @@ filter: alpha(opacity=0);
 /*@media only screen 
 and (max-width : 599px) {*/
 h3, h2 ,#gfcProductosdetail{
-font-size: 14px!important;
+font-size: 14pt!important;
 }
 #imgpro {
 max-height: 206px!important;
@@ -277,10 +278,10 @@ height: 480px;
 
 .ui-bar-a {
 
-font-size: 11px;
+font-size: 11pt!important;
 }
 .ui-btn-text{
-font-size: 10px;
+font-size: 10pt;
 }
 #scrollerPasos1 {
 width: 244px;
@@ -487,16 +488,7 @@ padding-right: 8%;
 #contPasos p{
 color: #FFFCFC!important;
 }
-#map_canvas{
-height: 211px!important;
-width: 302px!important;
-position: relative;
-background-color: rgb(229, 227, 223);
-overflow: hidden;
--webkit-transform: translateZ(0);
-border-bottom: 6px solid rgb(211, 143, 21);
-margin-top: 50px;
-}
+
 .gluten {
 background:url(img/bg_celiacos.jpg) repeat;
 }
@@ -509,13 +501,7 @@ margin: 10px auto;
 display: block;
 }
 
- #listatiendasinfo{
-width: 294px;
-margin-left: 0px!important;
-margin-top: 27px;
-position: relative;
-height: 500px;
-}
+
 #wrapper_mapa{
 
 font-size: 9px;
@@ -541,23 +527,64 @@ margin-top: 18px!important;
 
 }
 #tiendasinfo{
-
+width: 100%;
 float: left;
+margin: 0;
 }
 
-#listatiendas li{
-width: 234px;
-float: left
+
+
+#coninfosuper {
+height: 38px;
+width: 100%;
 }
-.weze{
-width: 85px!important;float: left!important;
-height: 45px!important;
+#contenidosuper{
+width: 100%;
+float: left;
+height: auto;
+}
+/***************tiendas mapas**********************/
+#tiendas2{
+float: left;
+width: 100%;
+margin: 0px;
 }
 .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
-min-height: 20px!important;
+min-height: 18px!important;
 }
-#coninfosuper {
-height: 580px;
+.weze{
+width: 30%!important;
+float: left!important;
 
+}
+.weze img{
+width: 47%;
+}
+#listatiendasinfo{
+width: 100%;
+margin-left: 0px!important;
+margin-top: 0%;
+position: relative;
+height: 50px;
+padding: 0px;
+}
+#map_canvas{
+height: 198px!important;
+width: 100%!important;
+position: relative;
+background-color: rgb(229, 227, 223);
+overflow: hidden;
+-webkit-transform: translateZ(0);
+border-bottom: 6px solid rgb(211, 143, 21);
+margin-top: 0px;
+}
+#listatiendas{
+position: relative;
+min-height: 27px;
+width: 100%;
+}
+#listatiendas li{
+width: 70%;
+float: left;
 }
 }

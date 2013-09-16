@@ -6,7 +6,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title>App Masxmenos BETA</title>
-	<script type="text/javascript" src="phonegap.js"></script>
+<!--	<script type="text/javascript" src="phonegap.js"></script>-->
 		<link rel="stylesheet" href="themes/mxm.css" />
 		<link rel="stylesheet" href="jquery.mobile.structure-1.3.1.css" />
 		<link rel="stylesheet" href="style320.css" /> <!-- 320-->
@@ -542,23 +542,28 @@
 				<h2>Supermercados y Servicios</h2>
 				</div>	
 			<div data-role="content" data-theme="a">
-				<div id="listatiendas"><ul id="tiendas2" data-role="listview"></ul></div>
-				
-				<div id="listatiendasinfo">
-				
-						<ul id="tiendasinfo" data-role="listview" class="ui-corner-all ui-shadow">
-						<li id='map_canvas'></li>
-						<li id="coninfosuper">
-						<div id="wrapper_mapa">
-						<ul>
-						<li id="direccion" class="ui-li ui-li-static ui-btn-up-a ui-first-child"></li>
-						<li id="horario" class="ui-li ui-li-static ui-btn-up-a"></li>
-						<li id="telefono" class="ui-li ui-li-static ui-btn-up-a"></li>
-						<li id="servicios" class="ui-li ui-li-static ui-btn-up-a ui-last-child"></li>
-						</ul>
-						</div>
-						</li>
-						</ul>				
+				<div id="contenidosuper">
+					<div id="listatiendas">
+						<ul id="tiendas2" data-role="listview"></ul>
+					</div>
+							<div id='map_canvas'></div>
+					<div id="listatiendasinfo">					
+							<ul id="tiendasinfo" data-role="listview" >							
+							<li > 
+							<div id="wrapper_mapa">				
+							<li id="coninfosuper" data-theme="a" onclick="id()">Información
+								<ul data-role="listview" data-theme="a" id="otro">
+								<li id="direccion" class="ui-li ui-li-static ui-btn-up-a ui-first-child"></li>
+								<li id="horario" class="ui-li ui-li-static ui-btn-up-a"></li>
+								<li id="telefono" class="ui-li ui-li-static ui-btn-up-a"></li>
+								<li id="servicios" class="ui-li ui-li-static ui-btn-up-a ui-last-child"></li>
+									<li ><a href="#" data-rel="back">go back</a></li>
+								</ul>
+							</li>					
+							</div>
+							</li>
+							</ul>				
+					</div>
 				</div>
 			</div>
 			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
@@ -641,7 +646,7 @@ setTimeout( function() {
 	myScroll3 = new iScroll('wrapper_gfpro', {hScrollbar: false});
 }, 500);
 });
-$("#recetaSelec,#mostrarmapa,#glutenPasos,#glutenVariedadDetail").on( "pagebeforehide", function( event ) {
+$("#recetaSelec,#glutenPasos,#glutenVariedadDetail").on( "pagebeforehide", function( event ) {
 myScroll3.destroy();
 myScroll3 = null;
 });
@@ -673,9 +678,10 @@ $("#supermercados").on( "pagebeforeshow", function( event ) {
 
 	});
 });
-$( "#mostrarmapa" ).on( "pagebeforeshow", function( event ) {
+
+$("#scrollerinfo").on("pagebeforeshow",function () {
 setTimeout( function() {
-	myScroll3 = new iScroll('listatiendasinfo', {hScrollbar: false});
+	myScroll3 = new iScroll('scrollerinfo', {hScrollbar: false});
 }, 0);
 setTimeout( function() {
 	myScroll3.refresh();
@@ -718,7 +724,9 @@ $("#mostrarmapa").on("pagebeforeshow",function () {
 				}
 		});
 });
+function id(){
+alert("dd");
 
-
+}
 	</script>
 </html>

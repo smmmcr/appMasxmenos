@@ -64,12 +64,10 @@ background-size:100% 100%;
 text-align:center;
 padding-top:10px;
 }
-
 #wrapper_miercoles img, #wrapper_guia img{
 width: 100%;
 height:100%;
 }
-
 #wrapper_miercoles, #wrapper_guia {	
 position: relative;
 
@@ -108,14 +106,13 @@ width: 100%;
 
 width: 100%;
 }
-}
 #miercolesFrescos{
 background: yellow;
 }
-.contenidoGeneral{
+/*.contenidoGeneral{
 width: 600px;
 height: 800px;
-}
+}*/
 .ui-footer {
 background-image: url(img/footer.png)!important;
 background-size: 100% 100%!important;
@@ -227,7 +224,6 @@ margin-left: 37px;
 width: 83%;
 position:relative;
 }
-
 #btnsgeneralLlama .sombra{
 box-shadow: 3px 5px 22px 0px #000;
 }
@@ -237,7 +233,6 @@ margin-left: 20%;
 width: 61%;
 height: 59px;
 }
-
 #selectrecetas{
 cursor: pointer;
 left: 0;
@@ -248,13 +243,11 @@ opacity: 0;
 -ms-filter: "alpha(opacity=0)";
 filter: alpha(opacity=0);
 }
-
 #menurecetas{
 position:relative;
 width:100%;
 height:50px;
 }
-
 #recetafinal{
 width: 570px;
 /*background: rgba(226, 226, 226, 0.89);*/
@@ -277,7 +270,6 @@ width:569px!important;
 #contacto .contenidoGeneral{
 width:569px!important;
 }
-
 #nombrereceta {
 margin: auto;
 width: 73%;
@@ -302,7 +294,7 @@ position: relative;
 #cargaimg{
 width: 100%;
 position: absolute;
-margin-top: 77px;
+margin-top: 0px;
 height: 100%;
 background: #0068a6;
 
@@ -387,8 +379,6 @@ z-index: 999;
 width: 539px;
 margin-left: 15px;
 }
-
-
 #Scrollerpasos{
 background: rgba(29, 20, 5, 0.55)!important;
 color: #FFFCFC;
@@ -416,7 +406,6 @@ background:url(img/bg_celiacos.jpg) repeat;
  .gluten .ui-content{
  background:none;
  }
-
 img.logo_celiacos{
 margin: 10px auto;
 display: block;
@@ -433,7 +422,6 @@ color: rgb(87, 82, 82);
 #servicios img{
 
 }
-
 #tiendasinfo li{
 position: relative;
 }
@@ -449,7 +437,6 @@ margin-left: 38%!important;
 .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
 min-height: 22px!important;
 }
-
 #coninfosuper{
 height: 580px;
 }
@@ -459,5 +446,6 @@ float:left;
 }
 .weze{
 width: 85px!important;float: left!important;
+}
 }
 }
