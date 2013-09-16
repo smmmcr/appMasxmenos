@@ -430,10 +430,7 @@ padding-left: 23px;
 background: rgb(255, 253, 253);
 border: 1px solid rgba(141, 131, 131, 0.56);
 }
-#contenidoulbusqueda{
-height: 800px;
-position:relative;
-}
+
 /*gluten*/
 /*
 #contenidorecetaGluten{
@@ -586,5 +583,10 @@ width: 100%;
 #listatiendas li{
 width: 70%;
 float: left;
+}
+/********************************Contactenos**********************************/
+#contenidoulbusqueda{
+height: 317px;
+position:relative;
 }
 }
