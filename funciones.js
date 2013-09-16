@@ -246,13 +246,13 @@ function mostrarcanton(id){
 							'<option value="13" class="2" >Flores</option>'+
 							'<option value="12" class="2" >Belén</option>'],['	<option value="" >Canton</option><option value="15" class="3" >Alajuela</option>'],
 							['<option value="" >Canton</option><option value="16" class="6">Garabito</option>'],['<option value="" >Canton</option><option value="18" class="7" >Pococí</option>'+
-						'<option value="17" class="7" >Limón</option>']];
+						'<option value="17" class="7" >Limón</option>'],['<option value="" >Canton</option><option value="19" class="8" >Central </option><option value="20" class="8" >La Unión</option>']];
 						/*alert(arrCanton[id-1]);*/
 	$('#select2').html( arrCanton[id-1]);
 }
 function mostrarDistrito(id){
-		var arrDistrito= [dis1=['<option value="">Seleccione Distrito</option><option value="1" class="1">Carmen</option><option value="9" class="1">Pavas</option><option value="8" class="1">Mata Redonda</option>'],
-		                  dis2=['<option value="">Seleccione Distrito</option><option value="14" class="2">San Rafael</option>'],
+		var arrDistrito= [dis1=['<option value="">Seleccione Distrito</option><option value="1" class="1">Carmen</option><option value="997" class="1">Hatillo</option><option value="9" class="1">Pavas</option><option value="8" class="1">Mata Redonda</option>'],
+		                  dis2=['<option value="">Seleccione Distrito</option><option value="14" class="2">San Rafael</option><option value="998" class="2">Guachipelin</option>'],
 		                  dis3=['<option value="">Seleccione Distrito</option><option value="15" class="3">Desamparados</option><option value="19" class="3">San Antonio</option>'],
 		                  dis4=['<option value="">Seleccione Distrito</option><option value="53" class="4">Guadalupe</option>'],
 		                  dis5=['<option value="">Seleccione Distrito</option><option value="60" class="4">Santa Ana</option>'],
@@ -268,7 +268,11 @@ function mostrarDistrito(id){
 					dis15=['<option value="">Seleccione Distrito</option><option value="169" class="14">Alajuela</option>'],
 					dis16=['<option value="">Seleccione Distrito</option><option value="445" class="15">Jacó</option>'],
 					dis17=['<option value="">Seleccione Distrito</option><option value="447" class="16">Limón</option>'],
-					dis18=['<option value="">Seleccione Distrito</option><option value="451" class="17">Guápiles</option>']];
+					dis18=['<option value="">Seleccione Distrito</option><option value="451" class="17">Guápiles</option>'],
+					dis19=['<option value="">Seleccione Distrito</option><option value="999" class="17">Guadalupe </option>'],
+					dis20=['<option value="">Seleccione Distrito</option><option value="296" class="17">Tres Ríos </option>']
+					
+					];
 						$('#select3').html( arrDistrito[id-1]);
 				
 }

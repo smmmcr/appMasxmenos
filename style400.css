@@ -83,7 +83,6 @@ height:100%;
 
 #wrapper_miercoles, #wrapper_guia {	
 position: relative;
-background: #e3e3e3;
 margin:0;
 padding:0;
 }
@@ -94,7 +93,7 @@ margin:0;
 padding:0;
 }
 #guiaconten{	
-background:#e3e3e3;
+
 }
 #wrapper_miercoles li, #wrapper_guia li {
 	webkit-box-sizing: border-box;
@@ -151,7 +150,7 @@ height: 588px;
 }
 #tiendasinfo {
 position: relative;
-width: 337px;
+width: 100%;
 margin-left: 0px;
 }
 #map_canvas {
@@ -404,7 +403,7 @@ margin-top: 18px!important;
 margin-left: 38%!important;
 }
 #listatiendas li {
-width: 415px;
-float: left;
+width: 73%;
+float:left;
 }
 }

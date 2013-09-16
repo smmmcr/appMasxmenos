@@ -14,7 +14,7 @@ background: yellow;
 width: 100%;
 }
 #guiaconten{
-background: #e3e3e3;
+
 width: 100%;
 }
 @media only screen 
@@ -86,7 +86,7 @@ height:100%;
 
 #wrapper_miercoles, #wrapper_guia {	
 position: relative;
-background: #e3e3e3;
+
 margin:0;
 padding:0;
 }

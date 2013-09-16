@@ -72,7 +72,7 @@ height:100%;
 
 #wrapper_miercoles, #wrapper_guia {	
 position: relative;
-background: #e3e3e3;
+
 margin:0;
 padding:0;
 }
@@ -105,7 +105,7 @@ background: yellow;
 width: 100%;
 }
 #guiaconten{
-background: #e3e3e3;
+
 width: 100%;
 }
 }
@@ -416,20 +416,16 @@ background:url(img/bg_celiacos.jpg) repeat;
  .gluten .ui-content{
  background:none;
  }
- #listatiendasinfo{
- width: 91%;
-margin-left: 24px;
-margin-top: 27px;
-}
+
 img.logo_celiacos{
 margin: 10px auto;
 display: block;
 }
 #listatiendasinfo{
- width: 91%;
+width: 90%;
 margin-left: 24px;
 margin-top: 15px;
-height:728px;
+height: 728px;
 }
 #tiendasinfo p {
 color: rgb(87, 82, 82);
@@ -458,7 +454,8 @@ min-height: 22px!important;
 height: 580px;
 }
 #listatiendas li{
-width: 439px;float:left;
+width: 73%;
+float:left;
 }
 .weze{
 width: 85px!important;float: left!important;
