@@ -115,8 +115,33 @@ h3, h2, #gfcProductosdetail {
 font-size: 17px!important;
 }
 #recetas .contenidoGeneral {
-width: 470px!important;
+width: 93%!important;
 height: 664px;
+}
+#tituingre {
+margin-left: 0px;
+color: rgb(8, 30, 100);
+width: 100%;
+}
+#ingredientes, #preparacion {
+color: #302A2A;
+}
+#nombrereceta {
+margin: auto;
+width: 73%;
+color: #0B75BA!important;
+text-align: center;
+}
+#regresar {
+position: absolute;
+bottom: 0px;
+right: 38%;
+font-weight: bold;
+color: rgb(0, 0, 0);
+width: 89px;
+padding-left: 23px;
+background: rgb(255, 253, 253);
+border: 1px solid rgba(141, 131, 131, 0.56);
 }
 #recetafinal {
 width: 470px;
@@ -124,11 +149,10 @@ background: rgba(226, 226, 226, 0.89);
 border-radius: 12px;
 box-shadow: 0px 7px 53px 8px #000;
 position: relative;
-height: 585px;
+
 
 width: 100%;
-position: absolute;
-background: #0068a6;
+
 height: 100%;
 }
 #recetafinal img {
