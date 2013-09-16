@@ -342,8 +342,8 @@ height: 570px;
 color: #302A2A;
 }
 #Scrollerpasos{
-background: rgba(29, 20, 5, 0.55)!important;
-color: #FFFCFC;
+background: rgba(255, 255, 255, 1)!important;
+color: rgba(0, 0, 0, 0.98);
 border-radius: 25px;
 padding-left: 8%;
 padding-right: 8%;
