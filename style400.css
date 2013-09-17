@@ -379,6 +379,10 @@ padding-right: 8%;
 
 }
 
+#contPasos {
+box-shadow: 0 0 0 0;
+border: none;
+}
 #contPasos p{
 color: #FFFCFC!important;
 }

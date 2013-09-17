@@ -3,6 +3,8 @@ padding: 0;
 margin: 0;
 text-decoration:none;
 list-style-type:none;
+box-shadow: 0 0 0 0;
+border:none;
 }
 #cargaimg img{
 width: 40%;
@@ -472,7 +474,8 @@ color: #FFFCFC;
 border-radius: 25px;
 padding-left: 8%;
 padding-right: 8%;
-
+box-shadow: 0 0 0 0;
+border: none;
 }
 #Scrollerpasos{
 background: rgba(255, 255, 255, 1)!important;

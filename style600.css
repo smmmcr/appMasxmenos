@@ -272,7 +272,6 @@ width: 93%!important;
 height: 664px;
 margin: 0 auto;
 }
-
 #nombrereceta {
 margin: auto;
 width: 73%;
@@ -312,7 +311,6 @@ width: 587px;
 height: 609px;
 position: relative;
 margin: 0 auto;
-}
 }
 #wr1,#wrapper2 {
 height:4px!important;
@@ -391,7 +389,10 @@ padding-left: 8%;
 padding-right: 8%;
 
 }
-
+#contPasos {
+box-shadow: 0 0 0 0;
+border: none;
+}
 #contPasos p{
 color: #FFFCFC!important;
 }
@@ -408,7 +409,7 @@ margin-top: 1px;
 .gluten {
 background:url(img/bg_celiacos.jpg) repeat;
 }
- .gluten .ui-content{
+.gluten .ui-content{
  background:none;
  }
 img.logo_celiacos{
@@ -442,16 +443,12 @@ margin-left: 38%!important;
 .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
 min-height: 22px!important;
 }
-#coninfosuper{
-
-}
 #listatiendas li{
 width: 73%;
 float:left;
 }
 .weze{
 width: 85px!important;float: left!important;
-}
 }
 #tiendas2{
 float: left;
