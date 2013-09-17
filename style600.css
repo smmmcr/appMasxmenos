@@ -88,14 +88,15 @@ line-height: 140%;
 position: relative;
 }
 #wrapper_miercoles li, #wrapper_guia li {
-width: 570px;
-height: 565px;
+width: 25%;
+height: 100%;
 }
 #contenidoScroll, #wrapper_guia, #wrapper_miercoles {	
-width: 570px;
-height: 565px;
 position: relative;
 margin-top: 12%;
+width: 74%!important;
+height: 621px;
+margin: 0 auto;
 
 }
 #wrapper_miercoles{
@@ -103,8 +104,9 @@ background: yellow;
 width: 100%;
 }
 #guiaconten{
-
 width: 100%;
+height: 100%;
+position: fixed;
 }
 #miercolesFrescos{
 background: yellow;
@@ -256,6 +258,7 @@ border-radius: 12px;
 box-shadow: 0px 7px 53px 8px #000;
 position: relative;
 height: 718px;
+margin: 0 auto;
 }
 #recetafinal img{
 max-width: 570px;
@@ -265,11 +268,11 @@ border-bottom: 1px solid;
 z-index: 999;
 }
 #recetas .contenidoGeneral{
-width:569px!important;
+width: 93%!important;
+height: 664px;
+margin: 0 auto;
 }
-#contacto .contenidoGeneral{
-width:569px!important;
-}
+
 #nombrereceta {
 margin: auto;
 width: 73%;
@@ -344,18 +347,17 @@ width: 524px;
 margin-left: 24px;
 }
 #wrapper_mapa{
-height: 375px;
 }
 /*gluten*/
 #contenidorecetaGluten{
 overflow: hidden;
-width: 570px;
+width: 100%;
 position: relative;
 height: 664px;
 color: #302A2A;
 }
 #recetafinalGluten{
-width: 570px;
+width: 91%;
 background: rgba(245, 239, 239, 1);
 border-radius: 12px;
 box-shadow: 0px 7px 53px 8px #000;
@@ -363,7 +365,7 @@ position: relative;
 height: 720px;
 }
 #titulorecetaGluten{
-width: 569px;
+width: 100%;
 position: relative;
 height: 269px;
 margin-top: 18px;
@@ -376,7 +378,7 @@ border-bottom: 1px solid;
 z-index: 999;
 }
 #scrollergluten{
-width: 539px;
+width: 91%;
 margin-left: 15px;
 }
 #Scrollerpasos{
@@ -438,7 +440,7 @@ margin-left: 38%!important;
 min-height: 22px!important;
 }
 #coninfosuper{
-height: 580px;
+
 }
 #listatiendas li{
 width: 73%;
@@ -447,5 +449,50 @@ float:left;
 .weze{
 width: 85px!important;float: left!important;
 }
+}
+#tiendas2{
+float: left;
+width: 100%;
+margin: 0px;
+}
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
+min-height: 27px!important;
+}
+.weze{
+width: 30%!important;
+float: left!important;
+
+}
+.weze img{
+width: 24%;
+margin: 0 auto;
+}
+#listatiendasinfo{
+width: 100%;
+margin-left: 0px!important;
+margin-top: 0%;
+position: relative;
+height: 50px;
+padding: 0px;
+}
+#map_canvas{
+height: 317px!important;
+width: 100%!important;
+position: relative;
+background-color: rgb(229, 227, 223);
+overflow: hidden;
+-webkit-transform: translateZ(0);
+border-bottom: 23px solid rgb(211, 143, 21);
+margin-top: 0px;
+}
+#listatiendas{
+position: relative;
+min-height: 27px;
+width: 100%;
+}
+#listatiendas li{
+width: 70%;
+float: left;
+height: 50px;
 }
 }
