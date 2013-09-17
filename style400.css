@@ -317,6 +317,10 @@ position:relative;
 #btnsgeneralLlama .sombra{
 box-shadow: 3px 5px 22px 0px #000;
 }
+#tiendas2{
+width: 100%;
+margin: 0 auto;
+}
 #btnsgeneralLlama img{
 margin-top: 13px;
 margin-left: 20%;

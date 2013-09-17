@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -22,7 +22,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultPageTransition = 'slide'; 
 	$.mobile.defaultDialogTransition = 'slide';
 	$("#cargaimg" ).show();
-	//appDB();
+	appDB();
 });
 	 function checkConnection() {
             var networkState = navigator.connection.type;

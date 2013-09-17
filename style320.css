@@ -474,12 +474,13 @@ padding-left: 8%;
 padding-right: 8%;
 
 }
-#Scrollerpasos {
-background: rgba(29, 20, 5, 0.55)!important;
-color: #FFFCFC;
+#Scrollerpasos{
+background: rgba(255, 255, 255, 1)!important;
+color: rgba(0, 0, 0, 0.98);
 border-radius: 25px;
 padding-left: 8%;
 padding-right: 8%;
+
 }
 
 #contPasos p{
@@ -542,9 +543,8 @@ height: auto;
 }
 /***************tiendas mapas**********************/
 #tiendas2{
-float: left;
 width: 100%;
-margin: 0px;
+margin: 0 auto;
 }
 .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
 min-height: 18px!important;
