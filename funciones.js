@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
 		}, false);		
 $(document).one("mobileinit", function () {
 	// Setting default page transition to slide
-	/*$.mobile.defaultPageTransition = 'slide'; 
+/*	$.mobile.defaultPageTransition = 'slide'; 
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
