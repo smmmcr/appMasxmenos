@@ -10,6 +10,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
 checkConnection();
+
     }
 
 window.addEventListener('load', function() {
@@ -19,8 +20,9 @@ window.addEventListener('load', function() {
 		}, false);		
 $(document).one("mobileinit", function () {
 	// Setting default page transition to slide
-	$.mobile.defaultPageTransition = 'slide'; 
-	$.mobile.defaultDialogTransition = 'slide';
+	/*$.mobile.defaultPageTransition = 'slide'; 
+	$.mobile.defaultDialogTransition = 'slide';*/
+	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
 	//appDB();
 });

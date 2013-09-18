@@ -39,9 +39,10 @@ width:50%;
 margin-top: 5px;
 }
 .ui-content{
-background:url(img/bgSombraFlor.png) no-repeat;
-height:auto;
+background: url(img/bgSombraFlor.png) no-repeat;
+height: 100%;
 background-size: 100% 100%;
+position: fixed;
 }
 .ui-header{
 box-shadow: 0px 3px 18px 1px #000;
@@ -73,14 +74,36 @@ background-size: 100% 100%!important;
 border:none;
 height: 10%;
 }
-.headerGuia{
-background:url(img/subheader_bg.png);
-min-height:50px;
-background-size:100% 100%;
-text-align:center;
-padding-top:10px;
-}
 
+/********************************** scroll Guía y miercoles frescos  *****************************************/
+@media only screen 
+and (min-width :238px)and (max-width :319px) {
+#wrapper_guia, #wrapper_miercoles {	
+width: 217px;
+height: 291px;
+overflow: hidden!important;
+margin: auto auto!important;
+}
+#wrapper_miercoles li, #wrapper_guia li {
+width: 217px;
+height: 290px;
+margin: 0 auto;
+}
+}
+@media only screen 
+and (min-width :320px) {
+#wrapper_guia, #wrapper_miercoles {	
+width: 290px;
+height: 291px;
+overflow: hidden!important;
+margin: auto auto!important;
+}
+#wrapper_miercoles li, #wrapper_guia li {
+width: 290px;
+height: 290px;
+margin: 0 auto;
+}
+}
 #wrapper_miercoles img, #wrapper_guia img{
 width: 100%;
 height:100%;
@@ -105,13 +128,26 @@ font-size: 18px;
 line-height: 140%;
 position: relative;
 }
+/**************************************** Fin scroll Guía y miercoles frescos *****************************************************/
 
-/* Smartphones (portrait) ----------- */
 
-#wrapper_miercoles li, #wrapper_guia li {
-	width: 33%;
-height: 290px;
+
+
+
+.headerGuia{
+background:url(img/subheader_bg.png);
+min-height:50px;
+background-size:100% 100%;
+text-align:center;
+padding-top:10px;
 }
+
+
+
+
+
+
+
 #recetafinal{
 width: 100%;
 background: rgba(226, 226, 226, 0.89);
@@ -174,11 +210,7 @@ margin-top: 0px;
 border-bottom: 1px solid;
 z-index: 999;
 }
-#contenidoScroll, #wrapper_guia, #wrapper_miercoles {	
-width: 98%;
-height: 291px;
-float: left;
-}
+
 #nav {
 	width:300px;
 	float:left;
@@ -283,7 +315,7 @@ height: 480px;
 font-size: 11pt!important;
 }
 .ui-btn-text{
-font-size: 10pt;
+font-size: 11pt;
 }
 #scrollerPasos1 {
 width: 244px;
