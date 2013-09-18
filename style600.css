@@ -86,14 +86,14 @@ height: 74px!important;
 and (min-width :600px)and (max-width :767px) {
 #wrapper_guia, #wrapper_miercoles {	
 width: 542px;
-height: 480px;
+height: 440px;
 overflow: hidden!important;
 margin: auto auto!important;
 margin-top: 7%!important;
 }
 #wrapper_miercoles li, #wrapper_guia li {
 width: 542px;
-height: 480px;
+height: 440px;
 margin: 0 auto;
 }
 }

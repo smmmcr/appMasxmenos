@@ -629,7 +629,10 @@ setTimeout( function() {
 });
 /*--------------------------Guia-----------------------------------------------------------*/
 $( "#guia" ).on( "pagebeforeshow", function( event ) {
- obtenerGuia();							
+ obtenerGuia();
+ setTimeout( function() {
+ alert($( "#guia .headerGuia" ).css("width"));
+ 	}, 500);
 });
 /*-------------------------Miercoles Frescos----------------------------------------------*/
 $( "#miercoles" ).on( "pagebeforeshow", function( event ) {
