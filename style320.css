@@ -93,6 +93,11 @@ width: 217px;
 height: 290px;
 margin: 0 auto;
 }
+#wrapper_miercoles img, #wrapper_guia img{
+width: 217px;
+height: 291px;
+}
+
 }
 @media only screen 
 and (min-width :320px) {
@@ -107,10 +112,11 @@ width: 290px;
 height: 290px;
 margin: 0 auto;
 }
-}
 #wrapper_miercoles img, #wrapper_guia img{
-width: 100%;
-height:100%;
+width: 290px;
+height: 291px;
+}
+
 }
 
 #wrapper_miercoles, #wrapper_guia {	

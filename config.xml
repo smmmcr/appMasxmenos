@@ -3,8 +3,8 @@
         xmlns:gap = 'http://phonegap.com/ns/1.0'
 		id="masxmenos" version="1.0">
 
-	<name>AppMasxMenos BETA</name>
-	<description>AppMasxMenos BETA</description>
+	<name>Masxmenos</name>
+	<description>Masxmenos</description>
 	<author>SMMM</author>	<gap:platforms>
 		<gap:platform name="ios" />
 		<gap:platform name="android" />
