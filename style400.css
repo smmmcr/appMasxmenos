@@ -1,4 +1,4 @@
-* {
+/** {
 padding: 0;
 margin: 0;
 text-decoration:none;
@@ -14,7 +14,7 @@ font-size:arial;
 -webkit-user-select:none;
 -webkit-text-size-adjust:none;
 }*/
-p{
+/*p{
 color: rgb(247, 11, 11);
 font-weight: bold;
 font-size: 133.4%;
