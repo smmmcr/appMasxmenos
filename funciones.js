@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
 
     }
 
@@ -24,7 +24,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	//appDB();
+	appDB();
 });
 	 function checkConnection() {
             var networkState = navigator.connection.type;
@@ -338,7 +338,7 @@ function obtenerGuia(){
 	
 		var myScroll1 = new iScroll('wrapper_guia', {
 			snap: true,
-			momentum: false,
+			momentum: true,
 			hScrollbar: false,
 			vScrollbar: false });
 	}, 500);	
@@ -365,7 +365,7 @@ function obtenerMiercoles(){
 			setTimeout( function() {
 		var myScroll2 = new iScroll('wrapper_miercoles', {
 						snap: true,
-						momentum: false,
+						momentum: true,
 						hScrollbar: false,
 						vScrollbar: false });
 	}, 500);

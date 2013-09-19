@@ -424,8 +424,8 @@ background: #0068a6;
 /********************************** scroll Guía y miercoles frescos  *****************************************/
 @media only screen and (min-width :400px) and (max-width :450px) {
 	#wrapper_guia, #wrapper_miercoles {	
-	width: 362px!important;
-	height: 359px!important;
+	width: 362px;
+	height: 359px;
 	overflow: hidden!important;
 	margin: auto auto!important;
 	margin-top: 15%!important;
@@ -434,11 +434,15 @@ background: #0068a6;
 	width: 362px!important;
 	height: 359px!important;
 	margin: 0 auto;
+	position: relative;
+	display: block;
+	float:left;
 	}
 	#wrapper_miercoles img, #wrapper_guia img{
 	width: 362px;
 	height: 359px;
-
+	
+	float: left;
 	}
 }
 @media only screen and (min-width :451px) and (max-width :515px){
@@ -453,6 +457,9 @@ background: #0068a6;
 	width: 411px;
 	height: 396px;
 	margin: 0 auto;
+	position: relative;
+	display: block;
+	float:left;
 	}
 	#wrapper_miercoles img, #wrapper_guia img{
 	width: 411px;
@@ -470,7 +477,6 @@ background: #0068a6;
 	#wrapper_miercoles li, #wrapper_guia li {
 	width: 465px;
 	height: 430px;
-
 	margin: 0 auto;
 	position: relative;
 	display: block;
@@ -479,7 +485,6 @@ background: #0068a6;
 	#wrapper_miercoles img, #wrapper_guia img{
 	width: 465px;
 	height: 430px;
-
 	}
 }
 
