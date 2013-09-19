@@ -80,7 +80,7 @@ height: 10%;
 }
 
 /********************************** scroll Guía y miercoles frescos  *****************************************/
-@media only screen 
+/*@media only screen 
 and (min-width :238px)and (max-width :319px) {
 #wrapper_guia, #wrapper_miercoles {	
 width: 217px;
