@@ -114,6 +114,9 @@ margin-top: 7%!important;
 width: 600px;
 height: 580px;
 margin: 0 auto;
+position: relative;
+display: block;
+float: left;
 }
 #wrapper_miercoles img, #wrapper_guia img{
 width: 600px;
@@ -122,26 +125,6 @@ height: 580px;
 }
 
 
-
-#wrapper_miercoles, #wrapper_guia {	
-position: relative;
-
-margin:0;
-padding:0;
-}
-/*#wrapper_miercoles li, #wrapper_guia li {
-	webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
--o-box-sizing: border-box;
-box-sizing: border-box;
-display: block;
-float: left;
-text-align: center;
-font-family: georgia;
-font-size: 18px;
-line-height: 140%;
-position: relative;
-}
 /**************************************** Fin scroll Guía y miercoles frescos *****************************************************/
 #map_canvas{
 height: 300px!important;

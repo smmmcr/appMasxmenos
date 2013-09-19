@@ -6,7 +6,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title>App Masxmenos BETA</title>
-	<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="phonegap.js"></script>
 		<link rel="stylesheet" href="themes/mxm.css" />
 		<link rel="stylesheet" href="jquery.mobile.structure-1.3.1.css" />
 		<link rel="stylesheet" href="style320.css" /> <!-- 320-->
@@ -60,7 +60,9 @@
 				<div id="wrapper_guia">
 					<div id="scroller">
 						<ul id="thelist">					
-						
+							<!--<li><img src="imgProductos/p1.png" alt="imagen producto 1"></li>
+							<li><img src="imgProductos/p2.png" alt="imagen producto 2"></li>
+							<li><img src="imgProductos/p5.png" alt="imagen producto 5"></li>-->
 						</ul>
 					</div>			
 				</div>			
@@ -586,7 +588,6 @@ $( "#recetaSelec" ).on( "pagebeforeshow", function( event ) {
 		myScroll3 = new iScroll('contenidoreceta', {hScrollbar: false});
 	}, 500);	
 });
-
 /*-------------------------------------------gluten----------------------------------------*/
 $( "#gluten3" ).on( "pagebeforecreate", function( event ) {
 	 GlutenVariedad();
@@ -628,9 +629,9 @@ setTimeout( function() {
 /*--------------------------Guia-----------------------------------------------------------*/
 $( "#guia" ).on( "pagebeforeshow", function( event ) {
  obtenerGuia();
- setTimeout( function() {
+ /*setTimeout( function() {
  alert($( "#guia .headerGuia" ).css("width"));
- 	}, 500);
+ 	}, 500);*/
 });
 /*-------------------------Miercoles Frescos----------------------------------------------*/
 $( "#miercoles" ).on( "pagebeforeshow", function( event ) {
