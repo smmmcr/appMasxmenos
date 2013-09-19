@@ -98,8 +98,10 @@ height: 359px!important;
 margin: 0 auto;
 }
 #wrapper_miercoles img, #wrapper_guia img{
-width: 362px;
-height: 359px;
+/*width: 362px;
+height: 359px;*/
+width: 50px;
+height: 50px;
 }
 }
 @media only screen 
