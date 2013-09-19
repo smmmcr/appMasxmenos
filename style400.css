@@ -8,19 +8,19 @@ list-style-type:none;
 background: yellow;
 }
 @media only screen and (min-width: 400px){
-body {
+/*body {
 background: #000;
 font-size:arial;
 -webkit-user-select:none;
 -webkit-text-size-adjust:none;
-}
+}*/
 p{
 color: rgb(247, 11, 11);
 font-weight: bold;
 font-size: 133.4%;
 position: relative;
 }
-.ui-header img{
+/*.ui-header img{
 margin-left:25%;
 width:50%;
 margin-top: 5px;
