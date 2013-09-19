@@ -100,8 +100,8 @@ margin: 0 auto;
 #wrapper_miercoles img, #wrapper_guia img{
 /*width: 362px;
 height: 359px;*/
-width: 50px;
-height: 50px;
+width: 50px!important;
+height: 50px!important;
 }
 }
 @media only screen 
@@ -119,8 +119,10 @@ height: 396px;
 margin: 0 auto;
 }
 #wrapper_miercoles img, #wrapper_guia img{
-width: 411px;
-height: 396px;
+/*width: 411px;
+height: 396px;*/
+width: 50px!important;
+height: 50px!important;
 }
 }
 @media only screen 
@@ -133,16 +135,20 @@ margin: auto auto!important;
 margin-top: 14%!important;
 }
 #wrapper_miercoles li, #wrapper_guia li {
-width: 465px;
-height: 430px;
+/*width: 465px;
+height: 430px;*/
+width: 50px!important;
+height: 50px!important;
 margin: 0 auto;
 position: relative;
 display: block;
 float: left;
 }
 #wrapper_miercoles img, #wrapper_guia img{
-width: 465px;
-height: 430px;
+/*width: 465px;
+height: 430px;*/
+width: 50px!important;
+height: 50px!important;
 }
 }
 
