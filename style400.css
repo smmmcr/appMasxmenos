@@ -8,7 +8,7 @@ list-style-type:none;
 background: yellow;
 }
 @media only screen and (min-width: 400px){
-body {
+/*body {
 background: #000;
 font-size:arial;
 -webkit-user-select:none;
