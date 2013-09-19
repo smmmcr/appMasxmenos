@@ -148,7 +148,7 @@ position: relative;
 margin:0;
 padding:0;
 }
-#wrapper_miercoles li, #wrapper_guia li {
+/*#wrapper_miercoles li, #wrapper_guia li {
 	webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 -o-box-sizing: border-box;
