@@ -4,7 +4,7 @@ margin: 0;
 text-decoration:none;
 list-style-type:none;
 }*/
-#miercoles{
+/*#miercoles{
 background: yellow;
 }
 @media only screen and (min-width: 400px){
@@ -84,8 +84,8 @@ padding-top:10px;
 @media only screen 
 and (min-width :400px)and (max-width :450px) {
 #wrapper_guia, #wrapper_miercoles {	
-width: 362px;
-height: 359px;
+width: 362px!important;
+height: 359px!important;
 overflow: hidden!important;
 margin: auto auto!important;
 margin-top: 15%!important;
