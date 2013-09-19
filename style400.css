@@ -93,8 +93,8 @@ margin: auto auto!important;
 margin-top: 15%!important;
 }
 #wrapper_miercoles li, #wrapper_guia li {
-width: 362px;
-height: 359px;
+width: 362px!important;
+height: 359px!important;
 margin: 0 auto;
 }
 #wrapper_miercoles img, #wrapper_guia img{
