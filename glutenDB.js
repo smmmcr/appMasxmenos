@@ -243,7 +243,8 @@ function GlutenRecetas(){
 						}
 						  $(contenedor).empty();
 						  $('#titulo').html(data[0].nombre);
-						  $(contenedor).html(data[0].info);
+						  $(contenedor).append(data[0].info);
+						  $(contenedor).append('<div class="clear"><li class="clear"></li></div>');
 					});	
 						 $("#contPasos ul").attr('data-role', 'listview');
 					 
@@ -289,6 +290,7 @@ function GlutenRecetas(){
 						$(contenedor).append("<div id='titulorecetaGluten'><img src='http://movilmultimediasa.com/Celiacos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' /></div>");
 						$(contenedor).append("<li id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes+"</li>");
 						$(contenedor).append("<li id='preparacion'><h3 id='tituingre'>Preparación</h3>"+results.rows.item(0).preparacion+"</li>");
+						$(contenedor).append('<div class="clear"><li class="clear"></li></div>');
 						$("#glutenRecetasDetail ul").listview('refresh');
 						//id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT
 					

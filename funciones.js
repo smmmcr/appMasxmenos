@@ -9,8 +9,10 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
+
     }
+
 window.addEventListener('load', function() {
 			document.body.addEventListener('touchmove', function(e) {
 				e.preventDefault();
@@ -22,7 +24,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	//appDB();
+	appDB();
 });
 	 function checkConnection() {
             var networkState = navigator.connection.type;
@@ -292,6 +294,7 @@ tx.executeSql('SELECT * FROM recetas where id="'+id+'"', [], function (tx, resul
 		"<img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' />");
 		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes+"</div>");
 		$("#recetafinal ul").append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+results.rows.item(0).preparacion+"</div>");
+		$("#recetafinal ul").append("<div class='clear'><li class='clear'></li></div>");
 
 	 $("#recetafinal ul").listview('refresh')
 	});

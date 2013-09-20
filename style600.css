@@ -180,11 +180,10 @@ filter: alpha(opacity=0);
 margin-left: 12%;
 }
 #btnsgeneralLlama{
-float: left;
-margin-top: 39px;
-margin-left: 37px;
+margin: 0 auto;
 width: 83%;
-position:relative;
+position: relative;
+margin-top: 25px;
 }
 #btnsgeneralLlama .sombra{
 box-shadow: 3px 5px 22px 0px #000;
@@ -250,8 +249,9 @@ color: #000;
 }
 #contenidoreceta{
 width: 568px;
-height: 390px;
+height: 377px;
 position: relative;
+padding-bottom: 44px;
 }
 #cargaimg{
 width: 100%;
@@ -259,7 +259,9 @@ position: absolute;
 margin-top: 0px;
 height: 100%;
 background: #0068a6;
-
+}
+.clear{
+height:100px;
 }
 #Scrollerpasos{
 width: 84%;
@@ -272,7 +274,13 @@ position: relative;
 margin: auto auto;
 height: 500px;
 padding-bottom: 50px;
-margin-top: 56px;
+padding-top: 56px;
+}
+.ui-mobile [data-url="mostrarmapa&ui-page=otro"]{
+background:url(img/bgSombraFlor.png) no-repeat;
+height:auto;
+background-size: 100% 100%;
+
 }
 #otro p{ 
 color:#000!important;

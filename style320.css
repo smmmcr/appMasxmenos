@@ -261,13 +261,27 @@ font-size: 11pt;
 width: 100%;
 position: relative;
 margin: auto auto;
-height: 350px;
-padding-bottom: 50px;
-margin-top: 56px;
+height: 395px;
+padding-top: 29px;
+}
+.ui-mobile [data-url="mostrarmapa&ui-page=otro"]{
+background:url(img/bgSombraFlor.png) no-repeat;
+height:auto;
+background-size: 100% 100%;
+
+}
+.clear{
+height:100px;
+}
+#contacto .contenidoGeneral {
+width: 83%!important;
+height: 460px;
+margin: 0 auto;
+font-size: 12px!important;
 }
 #contacto .contenidoGeneral{
 
-font-size: 12px!important;
+
 }
 #gluten #contenidoulbusqueda2 .ui-btn-text{
 font-size: 13pt!important;
@@ -316,12 +330,15 @@ color: #302A2A;
 margin-left: 12%;
 
 }
-#btnsgeneralLlama{
-float: left;
-margin-top: 39px;
-margin-left: 9px;
-width: 274px;
+#contenidoulbusqueda {
+height: 450px;
 position: relative;
+}
+#btnsgeneralLlama{
+margin: 0 auto;
+width: 83%;
+position: relative;
+margin-top: 25px;
 }
 
 #btnsgeneralLlama .sombra{

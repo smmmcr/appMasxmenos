@@ -265,12 +265,15 @@ filter: alpha(opacity=0);
 #busquedarapida{
 margin-left: 12%;
 }
+#contenidoulbusqueda {
+height: 500px;
+position: relative;
+}
 #btnsgeneralLlama{
-float: left;
-margin-top: 39px;
-margin-left: 37px;
+margin: 0 auto;
 width: 83%;
-position:relative;
+position: relative;
+margin-top: 25px;
 }
 
 #btnsgeneralLlama .sombra{
@@ -320,7 +323,7 @@ position: relative;
 margin: auto auto;
 height: 450px;
 padding-bottom: 50px;
-margin-top: 56px;
+padding-top: 56px;
 }
 #otro p{ 
 color:#000!important;
@@ -396,6 +399,15 @@ color: rgb(87, 82, 82);
 }
 #servicios img{
 
+}
+.ui-mobile [data-url="mostrarmapa&ui-page=otro"]{
+background:url(img/bgSombraFlor.png) no-repeat;
+height:auto;
+background-size: 100% 100%;
+
+}
+.clear{
+height:100px;
 }
 .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb {
 min-height: 23px!important
