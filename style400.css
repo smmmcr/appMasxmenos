@@ -319,6 +319,9 @@ width: 100%;
 position: relative;
 margin: auto auto;
 }
+#otro p{ 
+color:#000!important;
+}
 #recetafinalGluten img {
 width: 369px;
 height: 217px;

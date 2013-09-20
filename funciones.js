@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
 
     }
 
@@ -24,7 +24,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	//appDB();
+	appDB();
 });
 	 function checkConnection() {
             var networkState = navigator.connection.type;
@@ -173,11 +173,11 @@ function visulamapainfo(lat,longi,nombre,direccion,horario,telefono,imagenes){
 		 $("#telefono").html("");
 		 $("#servicios").html("");
 		 imagenes=imagenes.split(",");
-		$("#direccion").append("<h3>Direccion:</h3></br>");
+		$("#direccion").append("<h3>Direccion:</h3>");
 		$("#direccion").append("<p>"+direccion+"</p>");
-		 $("#horario").append("<h3>Horario:</h3></br>");
+		 $("#horario").append("<h3>Horario:</h3>");
 		 $("#horario").append("<p>"+horario+"</p>");
-		 $("#telefono").append("<h3>Telefono:</h3></br>");
+		 $("#telefono").append("<h3>Telefono:</h3>");
 		 $("#telefono").append("<p>"+telefono+"</p>");
 		 $("#servicios").append("<h3>Servicios:</h3>");
 		$.each(imagenes, function(i, imagen){ 
