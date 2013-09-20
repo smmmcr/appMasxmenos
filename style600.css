@@ -267,10 +267,9 @@ position: relative;
 height: 642px;
 }
 #scrollerPasos1{
-width: 587px;
-height: 609px;
+width: 100%;
 position: relative;
-margin: 0 auto;
+margin: auto auto;
 }
 #wr1,#wrapper2 {
 height:4px!important;

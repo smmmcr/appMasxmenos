@@ -235,7 +235,7 @@ filter: alpha(opacity=0);
 /*@media only screen 
 and (max-width : 599px) {*/
 h3, h2 ,#gfcProductosdetail{
-font-size: 14pt!important;
+font-size: 13pt!important;
 }
 #imgpro {
 max-height: 206px!important;
@@ -255,9 +255,9 @@ font-size: 11pt!important;
 font-size: 11pt;
 }
 #scrollerPasos1 {
-width: 244px;
-height: 416px;
+width: 100%;
 position: relative;
+margin: auto auto;
 }
 #contacto .contenidoGeneral{
 
@@ -284,9 +284,9 @@ position: relative;
 height: 606px;
 }
 #recetafinalGluten img{
-width: 291px;
+width: 100%;
 height: 217px;
-margin-left: 15px;
+margin: 0 auto!important;
 }
 #contenidorecetaGluten {
 overflow: hidden;
@@ -457,6 +457,10 @@ float: left;
 #contenidoulbusqueda{
 height: 317px;
 position:relative;
+}
+#listasuperdisp2{
+
+background:#000;
 }
 }
 
