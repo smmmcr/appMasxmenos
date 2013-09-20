@@ -318,6 +318,9 @@ padding-bottom: 5%;
 width: 100%;
 position: relative;
 margin: auto auto;
+height: 450px;
+padding-bottom: 50px;
+margin-top: 56px;
 }
 #otro p{ 
 color:#000!important;
@@ -395,7 +398,7 @@ color: rgb(87, 82, 82);
 
 }
 .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb {
-min-height: 18px!important;
+min-height: 23px!important
 }
 .ui-btn-text {
 font-size: 13pt;

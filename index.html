@@ -541,7 +541,7 @@
 		</div>
 		<div id='mostrarmapa' data-role="page" data-theme="a" id="mapas" >
 			<div data-role="header" data-position="inline">
-				<img src="img/logohedermasxmenos.png">
+				<img src="img/logohedermasxmenos.png" />
 			</div>
 				<div class="headerGuia" data-position="inline">
 				<h2>Supermercados y Servicios</h2>
@@ -551,29 +551,22 @@
 					<div id="listatiendas">
 						<ul id="tiendas2" data-role="listview"></ul>
 					</div>
-							<div id='map_canvas'></div>
-					<div id="listatiendasinfo">					
-							<ul id="tiendasinfo" data-role="listview" >							
-							<li > 
-							<div id="wrapper_mapa">				
-							<li id="coninfosuper" data-theme="a" onclick="id()">Información
-								<ul data-role="listview" data-theme="a" id="otro">
-								<li id="direccion" class="ui-li ui-li-static ui-btn-up-a ui-first-child"></li>
-								<li id="horario" class="ui-li ui-li-static ui-btn-up-a"></li>
-								<li id="telefono" class="ui-li ui-li-static ui-btn-up-a"></li>
-								<li id="servicios" class="ui-li ui-li-static ui-btn-up-a ui-last-child"></li>
-									<li ><a href="#" data-rel="back">Regresar</a></li>
-								</ul>
-							</li>					
-							</div>
-							</li>
-							</ul>				
-					</div>
+					<div id='map_canvas'></div>						
+					<ul id="tiendasinfo" data-role="listview" >								
+					<li id="coninfosuper" data-theme="a" >Información
+						<ul data-role="listview" data-theme="a" id="otro">
+						<li id="direccion" class="ui-li ui-li-static ui-btn-up-a ui-first-child"></li>
+						<li id="horario" class="ui-li ui-li-static ui-btn-up-a"></li>
+						<li id="telefono" class="ui-li ui-li-static ui-btn-up-a"></li>
+						<li id="servicios" class="ui-li ui-li-static ui-btn-up-a ui-last-child"></li>
+							<li ><a href="#" data-rel="back">Regresar</a></li>
+						</ul>
+					</li>					
+					</ul>				
 				</div>
 			</div>
 			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-				<div class='btnfooter'><a href="#home">Menu</a></div>
-				<!--<div class='btnfooter'><a href="">Compartir</a></div>-->
+				<div class='btnfooter'><a  href="#" data-rel="back">Menu</a></div>
 			</div>
 		</div>
 	</body>
@@ -623,6 +616,7 @@ setTimeout( function() {
  //$(".listavista").listview('refresh', true);
    if ( $(".listavista").hasClass('ui-listview')) {
    // $("#guia #thelist").listview('refresh');
+   
    $(".listavista").listview('refresh', true);
     } 
  
@@ -653,7 +647,7 @@ setTimeout( function() {
 	myScroll3 = new iScroll('wrapper_gfpro', {hScrollbar: false});
 }, 500);
 });
-$("#recetaSelec,#glutenPasos,#glutenVariedadDetail").on( "pagebeforehide", function( event ) {
+$("#recetaSelec,#glutenPasos,#glutenVariedadDetail,#glutenRecetasDetail").on( "pagebeforehide", function( event ) {
 myScroll3.destroy();
 myScroll3 = null;
 });

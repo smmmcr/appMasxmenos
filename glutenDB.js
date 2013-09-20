@@ -158,7 +158,7 @@ function GlutenRecetas(){
 				  $('#pasos_list').append('<li><a href="javascript:ShowItemGF('+item.id+', '+"'pasos'"+' )">'+item.nombre+'</a></li>');
 				  });
 				     if (  $("#pasos_list").hasClass('ui-listview')) {
-				   $("#pasos_list").listview("refresh");
+				   $("#pasos_list").listview("refresh", true);
 				  }
 				
 				});

@@ -10,9 +10,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
 checkConnection();
-
     }
-
 window.addEventListener('load', function() {
 			document.body.addEventListener('touchmove', function(e) {
 				e.preventDefault();
@@ -338,7 +336,7 @@ function obtenerGuia(){
 	
 		var myScroll1 = new iScroll('wrapper_guia', {
 			snap: true,
-			momentum: true,
+			momentum: false,
 			hScrollbar: false,
 			vScrollbar: false });
 	}, 500);	
@@ -365,7 +363,7 @@ function obtenerMiercoles(){
 			setTimeout( function() {
 		var myScroll2 = new iScroll('wrapper_miercoles', {
 						snap: true,
-						momentum: true,
+						momentum: false,
 						hScrollbar: false,
 						vScrollbar: false });
 	}, 500);

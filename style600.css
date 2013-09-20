@@ -270,6 +270,9 @@ height: 642px;
 width: 100%;
 position: relative;
 margin: auto auto;
+height: 500px;
+padding-bottom: 50px;
+margin-top: 56px;
 }
 #otro p{ 
 color:#000!important;
@@ -356,7 +359,7 @@ box-shadow: 0 0 0 0;
 border: none;
 }
 #contPasos p{
-color: #FFFCFC!important;
+color: #000000!important;
 }
 #map_canvas{
 height: 228px!important;
