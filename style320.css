@@ -78,60 +78,6 @@ background-size: 100% 100%!important;
 border:none;
 height: 10%;
 }
-
-/********************************** scroll Guía y miercoles frescos  *****************************************/
-@media only screen 
-and (min-width :238px)and (max-width :319px) {
-#wrapper_guia, #wrapper_miercoles {	
-width: 217px;
-height: 291px;
-overflow: hidden!important;
-margin: auto auto!important;
-}
-#wrapper_miercoles li, #wrapper_guia li {
-width: 217px;
-height: 290px;
-margin: 0 auto;
-position: relative;
-display: block;
-float:left;
-}
-#wrapper_miercoles img, #wrapper_guia img{
-width: 217px;
-height: 291px;
-}
-
-}
-@media only screen 
-and (min-width :320px) {
-#wrapper_guia, #wrapper_miercoles {	
-width: 290px;
-height: 291px;
-overflow: hidden!important;
-margin: auto auto!important;
-}
-#wrapper_miercoles li, #wrapper_guia li {
-width: 290px;
-height: 290px;
-margin: 0 auto;
-position: relative;
-display: block;
-float: left;
-}
-#wrapper_miercoles img, #wrapper_guia img{
-width: 290px;
-height: 291px;
-}
-
-}
-
-
-/**************************************** Fin scroll Guía y miercoles frescos *****************************************************/
-
-
-
-
-
 .headerGuia{
 background:url(img/subheader_bg.png);
 min-height:50px;
@@ -139,13 +85,6 @@ background-size:100% 100%;
 text-align:center;
 padding-top:10px;
 }
-
-
-
-
-
-
-
 #recetafinal{
 width: 100%;
 background: rgba(226, 226, 226, 0.89);
@@ -520,3 +459,51 @@ height: 317px;
 position:relative;
 }
 }
+
+/********************************** scroll Guía y miercoles frescos  *****************************************/
+@media only screen 
+and (min-width :238px)and (max-width :319px) {
+#wrapper_guia, #wrapper_miercoles {	
+width: 217px;
+height: 291px;
+overflow: hidden!important;
+margin: auto auto!important;
+}
+#wrapper_miercoles li, #wrapper_guia li {
+width: 217px;
+height: 290px;
+margin: 0 auto;
+position: relative;
+display: block;
+float:left;
+}
+#wrapper_miercoles img, #wrapper_guia img{
+width: 217px;
+height: 291px;
+}
+
+}
+@media only screen 
+and (min-width :320px) {
+#wrapper_guia, #wrapper_miercoles {	
+width: 290px;
+height: 291px;
+overflow: hidden!important;
+margin: auto auto!important;
+}
+#wrapper_miercoles li, #wrapper_guia li {
+width: 290px;
+height: 290px;
+margin: 0 auto;
+position: relative;
+display: block;
+float: left;
+}
+#wrapper_miercoles img, #wrapper_guia img{
+width: 290px;
+height: 291px;
+}
+
+}
+/**************************************** Fin scroll Guía y miercoles frescos *****************************************************/
+
