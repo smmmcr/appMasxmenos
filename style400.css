@@ -126,6 +126,7 @@ margin: 0 auto;
 width: 100%;
 height: 100%;
 padding-bottom: 5%;
+overflow: hidden;
 }
 #recetafinal img {
 width: 100%;
@@ -136,6 +137,12 @@ z-index: 999;
 
 }
 #contenidoreceta {
+width: 100%;
+height: 232px;
+position: relative;
+padding-bottom: 6%;
+}
+#contenidorecetaSugar {
 width: 100%;
 height: 232px;
 position: relative;
@@ -441,6 +448,122 @@ position: absolute;
 margin-top: 0px;
 height: 100%;
 background: #0068a6;
+
+}
+/**************************************** Sugar Free *****************************************************/
+#sugar .headerGuia{
+background: url(img/headerPrinSugarFree.png);
+min-height: 200px;
+background-size: 100% 100%;
+text-align: center;
+padding-top: 10px;
+}
+#sugar .ui-content {
+height: 100%;
+position: fixed;
+background: #FEFCDB;
+}
+#contenidoMenuSugar img {
+width: 80%;
+}
+#aprendamos {
+
+background: #FEFCDB;
+}
+#aprendamos .ui-content {
+height: 100%;
+position: fixed;
+background: #FEFCDB;
+}
+#cocinemos a{
+color: #FFFFFF !important;
+text-align: center;
+}
+#aprendamos .ui-btn-up-a {
+border: 1px solid #D3813E/*{a-bup-border}*/;
+background: #D3813E /*{a-bup-background-color}*/;
+font-weight: bold;
+color: #FFFFFF /*{a-bup-color}*/;
+text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #9C9692 /*{a-bup-shadow-color}*/;
+background-image: -webkit-gradient(linear, left top, left bottom, from( #D3813E /*{a-bup-background-start}*/), to( rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/));
+background-image: -webkit-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
+background-image: -moz-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9)/*{a-bup-background-end}*/);
+background-image: -ms-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
+background-image: -o-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
+background-image: linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
+}
+#cocinemos .ui-btn-up-a {
+border: 1px solid #F6E29A/*{a-bup-border}*/;
+background: #F6E29A/*{a-bup-background-color}*/;
+font-weight: bold;
+color: #FFFFFF /*{a-bup-color}*/;
+text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #9C9692 /*{a-bup-shadow-color}*/;
+background-image: -webkit-gradient(linear, left top, left bottom, from( #D3813E /*{a-bup-background-start}*/), to( rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/));
+background-image: -webkit-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
+background-image: -moz-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9)/*{a-bup-background-end}*/);
+background-image: -ms-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
+background-image: -o-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
+background-image: linear-gradient( #F6E29A/*{a-bup-background-start}*/, rgba(228, 159, 104, 0.9) /*{a-bup-background-end}*/);
+}
+.sugar {
+background: #FEFCDB;
+}
+.footer img{
+position:fixed;
+width:100%;
+height:100%;
+}
+.headerGuia [data-rel="back"]{
+float: left;
+width: 30px;
+height: 23px;
+min-width: 0px;
+padding: 0;
+margin: 0px;
+background: none;
+border: none;
+box-shadow: none;
+border-top: 0;
+}
+.headerGuia [data-rel="back"] span{
+
+
+border: none;
+box-shadow: none;
+border-top: 0;
+}
+#imgpro {
+max-height: 206px!important;
+max-width: 224px!important;
+margin: 0 auto!important;
+position:relative!important;
+}
+#listasuperdisp2 {
+text-align:center;
+}
+.ui-mobile [data-url="sugarVariedadDetail&ui-page=sugar"]{
+
+background: #FEFCDB;
+}
+#ProductosSugar{
+
+height: 377px;
+position: relative;
+padding-bottom: 44px;
+}
+#contenScrollP1,#contenScrollP2,#contenScrollP3,#contenScrollP4{
+position:relative;
+height: 390px;
+overflow: hidden;
+}
+.cucharaditas{
+text-align: center;
+}
+#titulos{
+background: rgba(221, 221, 221, 0.79);
+}
+#contenScrollP1 p,#contenScrollP2 p,#contenScrollP3 p,#contenScrollP4 p{
+color:#7F4738;
 
 }
 }

@@ -14,6 +14,7 @@
 		tx.executeSql('DROP TABLE IF EXISTS glutenPrimerosPasos');
 		tx.executeSql('DROP TABLE IF EXISTS tipoRecetaCeliacos');
 		tx.executeSql('DROP TABLE IF EXISTS recetasCeliacos');
+	
 		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComCat (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, pais TEXT)');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenComProd (id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT)');
 		tx.executeSql('CREATE TABLE IF NOT EXISTS glutenPrimerosPasos (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, info TEXT)');
@@ -82,6 +83,7 @@ function SincronizarDB(finSincro){
 			});
 		});
 	},finSincro);
+	
 	}
 function obtenerCatRecetasGluten(){
 	var data = new Array();

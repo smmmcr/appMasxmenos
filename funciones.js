@@ -10,7 +10,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
 //checkConnection();
-
     }
 
 window.addEventListener('load', function() {
@@ -25,6 +24,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
 	appDB();
+
 });
 	 function checkConnection() {
             var networkState = navigator.connection.type;
@@ -55,12 +55,22 @@ function populateRecetasDB(tx) {
 	/*CREACION TABLA CLIENTES*/
 	 tx.executeSql('DROP TABLE IF EXISTS tipoReceta');
 	 tx.executeSql('DROP TABLE IF EXISTS recomendaciones');
+	 tx.executeSql('DROP TABLE IF EXISTS banner');
+	 tx.executeSql('DROP TABLE IF EXISTS conocersugar');
+	 tx.executeSql('DROP TABLE IF EXISTS categoriassugar');
 	 tx.executeSql('DROP TABLE IF EXISTS recetas');
 	 tx.executeSql('DROP TABLE IF EXISTS guia');
+	 tx.executeSql('DROP TABLE IF EXISTS productosVariedadSugar');
+	 	tx.executeSql('DROP TABLE IF EXISTS recetasSugerFree');
 	 tx.executeSql('DROP TABLE IF EXISTS miercolesFrescos');
+	tx.executeSql('CREATE TABLE IF NOT EXISTS productosVariedadSugar (id INTEGER PRIMARY KEY, nombre TEXT,categoria TEXT,marca TEXT,fabricante INTEGER, estado INTEGER,pais INTEGER,imagen TEXT)');
+	tx.executeSql('CREATE TABLE IF NOT EXISTS recetasSugerFree (id INTEGER PRIMARY KEY, titulo TEXT,ingredientes TEXT,preparacion TEXT,categoria INTEGER, estado INTEGER,pais INTEGER,chef TEXT,nutricionales TEXT,imagen TEXT)');
+	 tx.executeSql('CREATE TABLE IF NOT EXISTS conocersugar (id INTEGER PRIMARY KEY, titulo TEXT, texto TEXT, estado INTEGER)');
+	 tx.executeSql('CREATE TABLE IF NOT EXISTS categoriassugar (id INTEGER PRIMARY KEY, nombre TEXT, estado INTEGER, pais INTEGER)');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS tipoReceta (id INTEGER PRIMARY KEY, nombre TEXT, pais INTEGER, estado INTEGER)');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS recomendaciones (id INTEGER PRIMARY KEY, recomendacion TEXT, estado INTEGER, pais_local INTEGER, idreceta INTEGER)');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS recetas (id INTEGER PRIMARY KEY, pais_local INTEGER, nombre TEXT,ingredientes TEXT,preparacion TEXT, img TEXT, estado INTEGER,nombreChef TEXT,actvsemana INTEGER,tiporeceta INTEGER,patrocinador TEXT,dificultad TEXT,tiempo TEXT,porciones TEXT,costo TEXT)');
+	 tx.executeSql('CREATE TABLE IF NOT EXISTS banner (id INTEGER PRIMARY KEY, nombreBanner TEXT, estado INTEGER)');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS guia (id INTEGER PRIMARY KEY, nombreImg TEXT, estado INTEGER)');
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS miercolesFrescos (id INTEGER PRIMARY KEY,  nombreImg TEXT, estado INTEGER)');
 	 //tx.executeSql('CREATE TABLE IF NOT EXISTS glutenRectCat ()');
@@ -86,7 +96,52 @@ function SincronizarDBrecetas(finSincro){
 		});
 	
 	},finSincro);
-	/*SINCRONIZA RECOMENDACIONES*/
+	
+	$.getJSON(url,{accion:"banner"}).done(function( data ) {
+		console.log('Iniciando Sincronizacion de Recomendaciones...');
+		$.each(data, function(index, item) {			
+			db.transaction(function (tx) {  
+			  tx.executeSql('INSERT INTO banner (id,nombreBanner, estado) VALUES (?,?,?)', [item.id,item.nombreBanner,item.estado]);
+			});
+		});	
+	mostrarBanner();		
+	},finSincro);
+	$.getJSON(url,{accion:"recetaSugar"}).done(function( data ) {
+		//console.log(data);
+		console.log('Iniciando Sincronizacion de Recetas Suger Free...');
+		$.each(data, function(index, item) {	
+			db.transaction(function (tx) { 
+			  tx.executeSql('INSERT INTO recetasSugerFree (id,titulo,ingredientes,preparacion,categoria,estado,pais,chef,nutricionales,imagen) VALUES (?,?,?,?,?,?,?,?,?,?)', [item.id,item.titulo,item.ingredientes ,item.preparacion , item.categoria , item.estado ,item.pais ,item.chef ,item.nutricionales ,item.imagen]);
+			});
+		});
+	},finSincro);
+	$.getJSON(url,{accion:"productosSugar"}).done(function( data ) {
+		console.log('Iniciando Sincronizacion de sugar...');
+		$.each(data, function(index, item) {			
+			db.transaction(function (tx) {  
+			  tx.executeSql('INSERT INTO productosVariedadSugar (id,nombre,categoria,marca,fabricante,estado,pais,imagen) VALUES (?,?,?,?,?,?,?,?)', [item.id,item.nombre,item.categoria,item.marca,item.fabricante,item.estado,item.pais,item.imagen]);
+			});
+		});
+		
+	},finSincro);
+	$.getJSON(url,{accion:"sugar"}).done(function( data ) {
+		console.log('Iniciando Sincronizacion de sugar...');
+		$.each(data, function(index, item) {			
+			db.transaction(function (tx) {  
+			  tx.executeSql('INSERT INTO conocersugar (id, titulo, texto, estado) VALUES (?,?,?,?)', [item.id,item.titulo,item.texto, item.estado]);
+			});
+		});
+		
+	},finSincro);
+	$.getJSON(url,{accion:"categoriassugar"}).done(function( data ) {
+		console.log('Iniciando Sincronizacion de Categoriasugar...');
+		$.each(data, function(index, item) {			
+			db.transaction(function (tx) {  
+			  tx.executeSql('INSERT INTO categoriassugar (id, nombre, estado, pais) VALUES (?,?,?,?)', [item.id,item.nombre,item.estado, item.pais]);
+			});
+		});
+		
+	},finSincro);
 	$.getJSON(url,{accion:"recomendaciones"}).done(function( data ) {
 		console.log('Iniciando Sincronizacion de Recomendaciones...');
 		$.each(data, function(index, item) {			
@@ -126,6 +181,7 @@ function SincronizarDBrecetas(finSincro){
 		});
 	
 	},finSincro);
+	
 }
 function finSincro(){
 SyncCount++; 
@@ -301,6 +357,59 @@ tx.executeSql('SELECT * FROM recetas where id="'+id+'"', [], function (tx, resul
 });				
 
 }
+function agregarContenidosugar(id){
+$.mobile.changePage( "#recetaSelecsugar", {
+  changeHash: false
+});	
+		var data = new Array();			
+db.transaction(function (tx) {
+tx.executeSql('SELECT * FROM recetasSugerFree where id="'+id+'"', [], function (tx, results) {
+				$("#recetaSelecsugar #tituloreceta").html("");
+		$("#recetaSelecsugar #recetafinal ul").html("");
+		$("#recetaSelecsugar #recetafinal").append("<a id='regresar' href='#' data-rel='back'>Regresar</a>");
+		$("#recetaSelecsugar #tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).titulo+"</h3></div>"+
+		"<img src='https://smmcr.net/fb/masxmenos/sugarfree/images/recetas/"+results.rows.item(0).imagen+"' alt='imgreceta' />");
+		$("#recetaSelecsugar #recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes+"</div>");
+		$("#recetaSelecsugar #recetafinal ul").append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+results.rows.item(0).preparacion+"</div>");
+		$("#recetaSelecsugar #recetafinal ul").append("<div id='nutricionales'><h3 id='tituingre'>Nutricionales</h3>"+results.rows.item(0).nutricionales+"</div>");
+		$("#recetaSelecsugar #recetafinal ul").append("<div class='clear'><li class='clear'></li></div>");
+
+	 $("#recetaSelecsugar #recetafinal ul").listview('refresh')
+	});
+});	
+
+}
+function mostrarBanner(){
+	var data = new Array();
+		db.transaction(function (tx) {  
+					tx.executeSql('SELECT * FROM banner WHERE estado = 1',[], function (tx, results) {
+						var len = results.rows.length;
+						for (var i=0; i<len; i++){
+							data[i] = results.rows.item(i);
+						}						
+					cambiodebaner(data);
+					});					
+				});
+}
+var  i=0;
+function cambiodebaner(nombre){
+						if(i<nombre.length){
+						 $('.footer').animate({opacity: "0"},2000);				
+						 $('.footer').html("<img src='https://smmcr.net/fb/masxmenos/banners/"+nombre[i].nombreBanner+"' alt='bannerfooter' />");
+						setTimeout( function() {
+						  $('.footer').animate({opacity: "1"}, 1000);	
+						},3000);
+						i+=1;
+						setTimeout( function() {
+							cambiodebaner(nombre);
+						},5000);
+						}else{						
+						i=0;
+						setTimeout( function() {
+						cambiodebaner(nombre);
+						},5000);
+						}
+}
 function obtenerCatRecetas(){
 	var data = new Array();
 	db.transaction(function (tx) {  
@@ -316,6 +425,129 @@ function obtenerCatRecetas(){
 		  $('#selectrecetas').selectmenu("refresh");
 		});
 	});				
+}
+function SugarVariedad(){
+		var data = new Array();
+		db.transaction(function (tx) {  
+			tx.executeSql('SELECT * FROM productosVariedadSugar', [], function (tx, results) {
+				var len = results.rows.length;
+				for (var i=0; i<len; i++){
+					data[i] = results.rows.item(i);
+				}
+			$('#sugarProductos').empty();
+			  $.each(data, function(index, item) {		
+				  $('#sugarProductos').append('<li><a href="javascript:mostrarProductoSugar('+item.id+')">'+item.nombre+'</a></li>');
+				  });
+				    if (  $("#sugarProductos").hasClass('ui-listview')) {
+				  $("#sugarProductos").listview("refresh");
+				  }
+				});
+			});	
+	}
+function mostrarProductoSugar(id){
+var data = new Array();
+		db.transaction(function (tx) {  
+					tx.executeSql('SELECT * FROM productosVariedadSugar WHERE id = ?', [id], function (tx, results) {
+						var len = results.rows.length;
+						for (var i=0; i<len; i++){
+							data[i] = results.rows.item(i);
+						}
+						//id INTEGER PRIMARY KEY AUTOINCREMENT, id_categoria INTEGER, nombre TEXT, categoria TEXT, marca TEXT, fabricante TEXT, pais TEXT, imagen TEXT, presentacion TEXT
+						  $('#sugarVariedadDetail h2').html(data[0].nombre);
+						  $('#sugarVariedadDetail #imgproducto img').attr("src","https://smmcr.net/fb/masxmenos/sugarfree/images/productos/"+data[0].imagen);
+						  $('#sugarVariedadDetail #NombreProductoSugar').html(data[0].nombre);
+
+					});	
+					 if ( $("#sugarVariedadDetail").hasClass('ui-listview')) {
+					$("#sugarVariedadDetail").listview("refresh");
+					}
+				});
+				 setTimeout( function() {
+	$.mobile.changePage( "#sugarVariedadDetail", {
+  changeHash: false
+});	
+$(".ui-li-thumb, .ui-listview .ui-li-icon, .ui-li-content").removeAttr("float");
+	}, 500);
+	}
+function obtenerpregunta(id){
+	var data = new Array();
+	db.transaction(function (tx) {  
+	tx.executeSql('SELECT * FROM conocersugar where id="'+id+'"', [], function (tx, results) {
+	results.rows.length;
+	//$('#scrollp1').empty();
+	switch(id){
+	case 1:
+	$('#Cuanta #scrollp1').html(results.rows.item(0).texto);
+		setTimeout( function() {
+		myScroll3 = new iScroll('contenScrollP1', {hScrollbar: false});
+	}, 500);
+	
+    break;
+	case 2:
+	$('#Que #scrollp1').html(results.rows.item(0).texto);
+		setTimeout( function() {
+		myScroll3 = new iScroll('contenScrollP2', {hScrollbar: false});
+	}, 500);
+    break;
+	case 3:
+	$('#Como #scrollp1').html(results.rows.item(0).texto);
+		setTimeout( function() {
+		myScroll3 = new iScroll('contenScrollP3', {hScrollbar: false});
+	}, 500);
+    break;
+	case 4:
+	$('#Pequennos #scrollp1').html(results.rows.item(0).texto);
+		setTimeout( function() {
+		myScroll3 = new iScroll('contenScrollP4', {hScrollbar: false});
+	}, 500);
+    break;
+	}
+		
+	});				
+	});				
+}
+function obtenerCatRecetasSugar(){
+	var data = new Array();
+	db.transaction(function (tx) {
+	tx.executeSql('SELECT * FROM categoriassugar where estado=1', [], function (tx, results) {
+		var len = results.rows.length;
+		for (var i=0; i<len; i++){
+			data[i] = results.rows.item(i);
+		}
+	$('#cocinemos #contenidoulbusqueda2 ul').empty();
+	  $.each(data, function(index, item) {	  
+		  $('#cocinemos #contenidoulbusqueda2 ul').append('<li><a href="javascript:mostraListaRecetassugar('+item.id+')">'+item.nombre+'</a></li>');
+		  });
+		    $('#cocinemos #contenidoulbusqueda2 ul').attr('data-role', 'listview');
+		
+		    if (   $('#cocinemos #contenidoulbusqueda2 ul').hasClass('ui-listview')) {
+		  $('#cocinemos #contenidoulbusqueda2 ul').listview("refresh");
+		  }
+		});
+	});				
+}
+function mostraListaRecetassugar(idcat){
+var data = new Array();			
+db.transaction(function (tx) {
+tx.executeSql('SELECT * FROM recetasSugerFree where estado=1 and categoria="'+idcat+'"', [], function (tx, results) {
+	var len = results.rows.length;
+	for (var i=0; i<len; i++){
+		data[i] = results.rows.item(i);
+	}				
+$('#SugarList').empty();
+  $.each(data, function(index, item){		
+	clases='ui-li ui-li-static ui-btn-up-a';
+	//alert(item.id);
+		$("#SugarList").append("<li onclick='agregarContenidosugar("+item.id+")' class='"+clases+"'>"+item.titulo+"</li>");			
+	 });
+	 setTimeout( function() {
+			 $("#SugarList").listview('refresh');
+			 }, 900);
+	});
+});
+setTimeout( function() {
+$.mobile.changePage("#SugarRecetasList");
+}, 500);
 }
 function obtenerGuia(){
 	var data = new Array();
