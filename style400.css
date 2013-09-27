@@ -509,7 +509,7 @@ background-image: linear-gradient( #F6E29A/*{a-bup-background-start}*/, rgba(228
 background: #FEFCDB;
 }
 .footer img{
-position:fixed;
+position:absolute;
 width:100%;
 height:100%;
 }
