@@ -26,26 +26,35 @@
 				<img src='logoApp.png' alt="imagen de carga"/>
 				</div>
 			<div data-role="header" data-position="inline">
-				<img src="img/logohedermasxmenos.png">
+				<img src="img/logohedermasxmenos.png" alt="logo" />
 			</div>
 			<div data-role="content" data-theme="a">
 				<div id="menuP" >				
-				<!--	<fieldset class="ui-grid-a">-->
-					<div class="ui-grid-a">
-					<div class="ui-block-a"><a href="#guia"><img src='img/btnGuiaCompra.png'></a></div>
-					<div class="ui-block-b"><a href="#supermercados"><img src='img/btnsucursales.png'></a></div>
-					</div><!-- /grid-a -->
-					<div class="ui-grid-a">
-					<div class="ui-block-a"><a href="#contacto"><img src='img/btncontactanos.png'></a></div>
-					<div class="ui-block-b"><a href="#recetas"><img src='img/btnrecetas.png'></a></div>
-					</div><!-- /grid-b -->
-					<div class="ui-grid-a">
-					<div class="ui-block-a"><a href="#sugar"><img src='img/btnSugar.png'></a></div>
-					<div class="ui-block-b"><a href="#gluten"><img src='img/btnGluten.png'></a></div>
-					<div class="ui-block-a"><a href="#miercoles"><img src='img/btnMiercoles.png'></a></div>
-					<!--<div class="ui-block-b"><a href="market://com.scotiabank"><img src='img/btnGluten.png'></a></div>-->
-					</div><!-- /grid-b -->					
-					<!--	</fieldset>-->			
+					<div id="scrollMenu" >
+						<ul>
+						<li id="etapa1" >
+<!--<a href="javascript:next();"> <div id="nextMenu">  </div>		</a>				-->
+								<div class="ui-grid-a">
+									<div class="ui-block-a"><a href="#guia"><img src='img/btnGuiaCompra.png'></a></div>
+									<div class="ui-block-b"><a href="#supermercados"><img src='img/btnsucursales.png'></a></div>
+								</div>
+								<div class="ui-grid-a">
+									<div class="ui-block-a"><a href="#contacto"><img src='img/btncontactanos.png'></a></div>
+									<div class="ui-block-b"><a href="#recetas"><img src='img/btnrecetas.png'></a></div>
+								</div><!-- /grid-b -->
+								<div class="ui-grid-a">
+									<div class="ui-block-a"><a href="#sugar"><img src='img/btnSugar.png'></a></div>
+									<div class="ui-block-b"><a href="#gluten"><img src='img/btnGluten.png'></a></div>
+								</div>
+						</li>
+						<li id="etapa2" >	
+<!--<a href="javascript:prev();"> <div id="prevMenu">  </div>		</a>			-->			
+							<div class="ui-grid-a">
+								<div class="ui-block-a"><a href="#miercoles"><img src='img/btnMiercoles.png'></a></div>	
+							</div>						
+						</li>						
+						</ul>
+					</div>				
 				</div>				
 			</div>
 		<!--<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false"></div>-->
@@ -69,8 +78,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
-	<!--	<div class='btnfooter'><a href="">Compartir</a></div>-->
 		</div>
 		</div>
 		<div id='miercoles' data-role="page" data-theme="a" data-iscroll="enable">
@@ -91,8 +98,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<!--<div class='btnfooter'><a href="">Compartir</a></div>-->
 		</div>
 		</div>
 		<div id='recetas' data-role="page" data-theme="a">
@@ -115,8 +120,6 @@
 				</div>
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
-	<!--	<div class='btnfooter'><a href="">Compartir</a></div>-->
 		</div>
 		</div>
 		<div id='recetaSelec' data-role="page" data-theme="a">
@@ -139,8 +142,6 @@
 				</div>
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<div class='btnfooter'><a href="">Compartir</a></div>
 		</div>
 		</div>
 		<div id='supermercados' data-role="page" data-theme="a" class="contenidoGeneral">
@@ -174,8 +175,6 @@
 			</div>
 			
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<div class='btnfooter'><a href="">Compartir</a></div>
 		</div>
 		</div>
 		<div id='contacto' data-role="page" data-theme="a" >
@@ -197,8 +196,6 @@
 					</div>
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<div class='btnfooter'><a href="">Compartir</a></div>
 		</div>
 		</div>
 		<div id='busquedaRapidaContacto' data-role="page" data-theme="a" class="contenidoGeneral">
@@ -330,8 +327,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<div class='btnfooter'><a href="">Compartir</a></div>	
 		</div>
 		</div>
 		<div id='gluten' class="gluten" data-role="page" data-theme="a">
@@ -352,7 +347,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
 		</div>
 		</div>
 		<div id='glutenRecetasCat' class="gluten" data-role="page" data-theme="a">
@@ -370,7 +364,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='glutenRecetasList' class="gluten" data-role="page" data-theme="a">
@@ -398,7 +391,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='glutenRecetasDetail' class="gluten" data-role="page" data-theme="a">
@@ -423,7 +415,6 @@
 							
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#gluten">Menu</a></div>
 		</div>
 		</div>
 		<div id='gluten2' class="gluten" data-role="page" data-theme="a">
@@ -440,7 +431,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='glutenPasos' class="gluten" data-role="page" data-theme="a">
@@ -461,7 +451,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='gluten3' class="gluten" data-role="page" data-theme="a">
@@ -478,7 +467,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='glutenVariedadList' class="gluten" data-role="page" data-theme="a">
@@ -495,7 +483,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='glutenVariedadDetail' class="gluten" data-role="page" data-theme="a">
@@ -538,7 +525,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='mostrarmapa' data-role="page" data-theme="a" id="mapas" >
@@ -568,7 +554,6 @@
 				</div>
 			</div>
 			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		
 			</div>
 		</div>
 		<div id='sugar' class="sugar" data-role="page" data-theme="a">
@@ -587,7 +572,6 @@
 					</div>			
 				</div>
 			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-			<div class='btnfooter'><a href="#home">Menu</a></div>
 			</div>
 		</div>
 		<div id='aprendamos' class="sugar" data-role="page" data-theme="a">
@@ -609,7 +593,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
 		</div>
 		</div>
 		<div id='Cuanta' class="sugar" data-role="page" data-theme="a">
@@ -635,7 +618,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
 		</div>
 		</div>
 		<div id='Que' class="sugar" data-role="page" data-theme="a">
@@ -661,7 +643,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
 		</div>
 		</div>
 		<div id='Como' class="sugar" data-role="page" data-theme="a">
@@ -687,7 +668,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
 		</div>
 		</div>
 		<div id='Pequennos' class="sugar" data-role="page" data-theme="a">
@@ -713,7 +693,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
 		</div>
 		</div>
 		<div id='cocinemos' class="sugar" data-role="page" data-theme="a">
@@ -732,7 +711,6 @@
 			<img src="img/logoSugarFree.png" class="logo_celiacos">				
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='SugarRecetasList' class="sugar" data-role="page" data-theme="a">
@@ -750,7 +728,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='recetaSelecsugar' class="sugar" data-role="page" data-theme="a">
@@ -773,8 +750,6 @@
 				</div>
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="#home">Menu</a></div>
-		<div class='btnfooter'><a href="">Compartir</a></div>
 		</div>
 		</div>
 		<div id='variedadsugar' class="sugar" data-role="page" data-theme="a">
@@ -795,7 +770,6 @@
 				</div>			
 			</div>
 		<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
-		<div class='btnfooter'><a href="/" data-icon="back" data-rel="back">Anterior</a></div>
 		</div>
 		</div>
 		<div id='sugarVariedadDetail' class="sugar" data-role="page" data-theme="a">
@@ -835,17 +809,28 @@
 						</div>	
 				</div>			
 			</div>
+			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
+		</div>
+		</div>
 	</body>
 	<script>
+/*	function next(){
+		$("#scrollMenu").animate().css("-webkit-transform", "translate(-604px, 0px) scale(1) translateZ(0px)");
+	}
+	function prev(){
+		$("#scrollMenu").animate().css("-webkit-transform","translate(0px, 0px) scale(1) translateZ(0px)");
+	}*/
 $( "#recetas" ).on( "pagebeforeshow", function( event ) {
 	obtenerCatRecetas();
 	mostrarlista(14);
+
 $("#selectrecetas").bind( "change", function() {
 		idcat=$(this).val();
 		mostrarlista(idcat);	
 		$('#selectrecetas').selectmenu('refresh', true);
 	});
 });
+
 $( "#variedadsugar" ).on( "pagebeforecreate", function( event ) {
 	 SugarVariedad();
 	 setTimeout( function() {

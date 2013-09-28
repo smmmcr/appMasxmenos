@@ -188,6 +188,22 @@ SyncCount++;
 if (SyncCount >= 10){
 
 $("#cargaimg" ).hide();
+	
+	var cant = $("#home ul li").size();
+	var width = $(window).width() - 30;
+	var width_overview =  width * cant;
+	$('#home #scrollMenu').css('width', width_overview+'px');
+	setTimeout( function() {
+	
+		var myScroll1 = new iScroll('menuP', {
+			snap: true,
+			momentum: false,
+			hScrollbar: true,
+			vScrollbar: false });
+		$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
+		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));
+	}, 1000);
+		
 }
 }
 var tiendas;
@@ -566,7 +582,7 @@ function obtenerGuia(){
 	var width_overview =  width * cant;
 	$('#guia #scroller').css('width', width_overview+'px');
 		});
-	
+
 		setTimeout( function() {
 	
 		var myScroll1 = new iScroll('wrapper_guia', {

@@ -58,10 +58,35 @@ margin-top: 41%;
 width: 45%;
 }
 #menuP {
-width:98%
+width:98%;
+overflow:hidden;
+z-index: -1;
 }
 #menuP img{
-width:100%
+width:87%;
+}
+#etapa1,#etapa2{
+float:left;
+width:50%;
+position:relative;
+}
+#nextMenu{
+position: absolute;
+right: 0px;
+width: 12%;
+height: 100%;
+background: rgba(0, 0, 0, 0.28);
+padding-top: 50%;
+z-index: 900;
+}
+#prevMenu{
+position: absolute;
+left: 0px;
+width: 12%;
+height: 100%;
+background: rgba(0, 0, 0, 0.28);
+padding-top: 50%;
+z-index: 900;
 }
 .ui-bar-a{
 background-image: url(img/header.png)!important;
@@ -448,7 +473,7 @@ position: absolute;
 margin-top: 0px;
 height: 100%;
 background: #0068a6;
-
+z-index: 999;
 }
 /**************************************** Sugar Free *****************************************************/
 #sugar .headerGuia{
@@ -512,6 +537,18 @@ background: #FEFCDB;
 position:absolute;
 width:100%;
 height:100%;
+}
+.headerGuia [data-rel="back"]{
+float: left;
+width: 30px;
+height: 23px;
+min-width: 0px;
+padding: 0;
+margin: 0px;
+background: none;
+border: none;
+box-shadow: none;
+border-top: 0;
 }
 .headerGuia [data-rel="back"]{
 float: left;

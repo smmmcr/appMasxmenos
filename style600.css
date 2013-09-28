@@ -48,10 +48,36 @@ padding-left: 27px;
 padding-left: 27px;
 }*/
 #menuP {
-width:98%
+width:98%;
+overflow:hidden;
+z-index: -1;
+}
+#nextMenu{
+position: absolute;
+right: 0px;
+width: 12%;
+height: 100%;
+background: rgba(0, 0, 0, 0.28);
+padding-top: 50%;
+z-index: 900;
+
+}
+#prevMenu{
+position: absolute;
+left: 0px;
+width: 12%;
+height: 100%;
+background: rgba(0, 0, 0, 0.28);
+padding-top: 50%;
+z-index: 900;
+}
+#etapa1,#etapa2{
+float:left;
+width:50%;
+position:relative;
 }
 #menuP img{
-width:100%
+width:87%;
 }
 .ui-bar-a{
 background-image: url(img/header.png)!important;
@@ -269,6 +295,7 @@ position: absolute;
 margin-top: 0px;
 height: 100%;
 background: #0068a6;
+z-index: 999;
 }
 .clear{
 height:100px;
