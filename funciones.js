@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-//checkConnection();
+checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -23,7 +23,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	appDB();
+	//appDB();
 
 });
 	 function checkConnection() {
@@ -566,6 +566,7 @@ $.mobile.changePage("#SugarRecetasList");
 }, 500);
 }
 function obtenerGuia(){
+
 	var data = new Array();
 	db.transaction(function (tx) {  
 	tx.executeSql('SELECT * FROM guia', [], function (tx, results) {
