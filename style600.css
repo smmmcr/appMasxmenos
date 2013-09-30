@@ -286,7 +286,7 @@ padding-bottom: 44px;
 width: 568px;
 height: 377px;
 position: relative;
-padding-bottom: 44px;
+
 }
 
 #cargaimg{
@@ -573,16 +573,16 @@ width:100%;
 height:100%;
 }
 .headerGuia [data-rel="back"]{
-float: left;
-width: 30px;
-height: 23px;
-min-width: 0px;
-padding: 0;
-margin: 0px;
-background: none;
-border: none;
-box-shadow: none;
-border-top: 0;
+float: left!important;
+width: 30px!important;
+height: 23px!important;
+min-width: 0px!important;
+padding: 0!important;
+margin: 0px!important;
+background: none!important;
+border: none!important;
+box-shadow: none!important;
+border-top: 0!important;
 }
 .headerGuia [data-rel="back"] span{
 
@@ -611,7 +611,7 @@ color: #FFFFFF !important;
 }
 #contenScrollP1,#contenScrollP2,#contenScrollP3,#contenScrollP4{
 position:relative;
-height: 390px;
+height: 439px;
 overflow: hidden;
 }
 .cucharaditas{

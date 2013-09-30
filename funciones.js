@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -23,7 +23,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-//	appDB();
+	appDB();
 
 });
 	 function checkConnection() {
@@ -198,7 +198,7 @@ $("#cargaimg" ).hide();
 		var myScroll1 = new iScroll('menuP', {
 			snap: true,
 			momentum: false,
-			hScrollbar: true,
+			hScrollbar: false,
 			vScrollbar: false });
 		$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
 		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));

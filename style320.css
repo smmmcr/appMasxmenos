@@ -145,9 +145,8 @@ padding-bottom: 9%;
 #contenidorecetaSugar{
 width: 100%;
 height: 162px;
-
 position: relative;
-padding-bottom: 9%;
+
 }
 #miercolesFrescos, #miercoles {
 background: yellow;
@@ -617,7 +616,7 @@ padding-bottom: 44px;
 }
 #contenScrollP1,#contenScrollP2,#contenScrollP3,#contenScrollP4{
 position:relative;
-height: 390px;
+height: 263px;
 overflow: hidden;
 }
 .cucharaditas{

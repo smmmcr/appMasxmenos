@@ -171,7 +171,7 @@ padding-bottom: 6%;
 width: 100%;
 height: 232px;
 position: relative;
-padding-bottom: 6%;
+
 }
 #contacto .contenidoGeneral {
 width: 83%!important;
@@ -588,8 +588,8 @@ position: relative;
 padding-bottom: 44px;
 }
 #contenScrollP1,#contenScrollP2,#contenScrollP3,#contenScrollP4{
-position:relative;
-height: 390px;
+position: relative;
+height: 290px;
 overflow: hidden;
 }
 .cucharaditas{
