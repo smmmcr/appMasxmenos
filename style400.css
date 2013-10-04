@@ -65,11 +65,7 @@ z-index: -1;
 #menuP img{
 width:87%;
 }
-#etapa1,#etapa2{
-float:left;
-width:50%;
-position:relative;
-}
+
 #nextMenu{
 position: absolute;
 right: 0px;
@@ -587,10 +583,17 @@ height: 377px;
 position: relative;
 padding-bottom: 44px;
 }
+.logo_sugar{
+width: 23%;
+margin: 0 auto;
+margin-left: 34%;
+}
 #contenScrollP1,#contenScrollP2,#contenScrollP3,#contenScrollP4{
 position: relative;
 height: 290px;
 overflow: hidden;
+padding-left: 5%;
+padding-right: 9%;
 }
 .cucharaditas{
 text-align: center;
@@ -600,6 +603,7 @@ background: rgba(221, 221, 221, 0.79);
 }
 #contenScrollP1 p,#contenScrollP2 p,#contenScrollP3 p,#contenScrollP4 p{
 color:#7F4738;
+
 
 }
 }

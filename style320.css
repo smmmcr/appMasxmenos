@@ -33,7 +33,7 @@ font-size:arial;-webkit-user-select:none;
 p{
 color: rgb(247, 11, 11);
 font-weight: bold;
-font-size: 133.4%;
+font-size:  1.3em;
 position: relative;
 }
 
@@ -66,11 +66,7 @@ width:98%;
 overflow:hidden;
 z-index: -1;
 }
-#etapa1,#etapa2{
-float:left;
-width:50%;
-position:relative;
-}
+
 #menuP img{
 width:87%;
 }
@@ -269,10 +265,15 @@ opacity: 0;
 -ms-filter: "alpha(opacity=0)";
 filter: alpha(opacity=0);
 }
+.headerGuia a{
+box-shadow: none;
+background: none;
+border: none;
+}
 /*@media only screen 
 and (max-width : 599px) {*/
 h3, h2 ,#gfcProductosdetail{
-font-size: 13pt!important;
+font-size: 1.0899em!important;
 }
 #imgpro {
 max-height: 206px!important;
@@ -602,6 +603,11 @@ background-image: -ms-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgb
 background-image: -o-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
 background-image: linear-gradient( #F6E29A/*{a-bup-background-start}*/, rgba(228, 159, 104, 0.9) /*{a-bup-background-end}*/);
 }
+.logo_sugar{
+width: 40%;
+margin-left: 26%;
+
+}
 .ui-mobile [data-url="sugarVariedadDetail&ui-page=sugar"]{
 
 background: #FEFCDB;
@@ -618,6 +624,8 @@ padding-bottom: 44px;
 position:relative;
 height: 263px;
 overflow: hidden;
+padding-left: 5%;
+padding-right: 9%;
 }
 .cucharaditas{
 text-align: center;

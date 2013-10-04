@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-//checkConnection();
+checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -23,7 +23,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	appDB();
+//	appDB();
 
 });
 	 function checkConnection() {
@@ -85,7 +85,6 @@ function successCB() {
 	console.log("success create DB!");
 }	
 function SincronizarDBrecetas(finSincro){
-
 	url = 'http://smmcr.net/fb/masxmenos/recetas/recetas.php?callback=?';
 	/*SINCRONIZA CATEGORIAS*/
 	$.getJSON(url,{accion:"tipoReceta"}).done(function( data ) {
@@ -96,7 +95,6 @@ function SincronizarDBrecetas(finSincro){
 		});
 	
 	},finSincro);
-	
 	$.getJSON(url,{accion:"banner"}).done(function( data ) {
 		console.log('Iniciando Sincronizacion de Recomendaciones...');
 		$.each(data, function(index, item) {			
@@ -189,19 +187,26 @@ if (SyncCount >= 10){
 
 $("#cargaimg" ).hide();
 	
-	var cant = $("#home ul li").size();
+/*	var cant = $("#home ul li").size();
 	var width = $(window).width() - 30;
 	var width_overview =  width * cant;
 	$('#home #scrollMenu').css('width', width_overview+'px');
+	//console.log($( "#etapa1" ).css("height"));*/
 	setTimeout( function() {
-	
-		var myScroll1 = new iScroll('menuP', {
+	$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
+		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));
+	myScroll3 = new iScroll('menuP', {hScrollbar: false,vScrollbar: false});
+
+		/*var myScroll1 = new iScroll('menuP', {
 			snap: true,
 			momentum: false,
 			hScrollbar: false,
 			vScrollbar: false });
-		$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
-		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));
+			
+		/*	$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
+		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));*/
+		
+	
 	}, 1000);
 		
 }
@@ -408,7 +413,7 @@ function mostrarBanner(){
 				});
 }
 var  i=0;
-function cambiodebaner(nombre){
+/*function cambiodebaner(nombre){
 						if(i<nombre.length){
 						 $('.footer').animate({opacity: "0"},2000);				
 						 $('.footer').html("<img src='https://smmcr.net/fb/masxmenos/banners/"+nombre[i].nombreBanner+"' alt='bannerfooter' />");
@@ -425,7 +430,24 @@ function cambiodebaner(nombre){
 						cambiodebaner(nombre);
 						},5000);
 						}
+}*/
+function cambiodebaner(nombre){
+			
+							if(i<nombre.length){		
+						 $('.footer').html("<img src='https://smmcr.net/fb/masxmenos/banners/"+nombre[i].nombreBanner+"' alt='bannerfooter' />");
+					
+						i+=1;
+						setTimeout( function() {
+							cambiodebaner(nombre);
+						},5000);
+						}else{						
+						i=0;
+						setTimeout( function() {
+						cambiodebaner(nombre);
+						},5000);
+					}
 }
+
 function obtenerCatRecetas(){
 	var data = new Array();
 	db.transaction(function (tx) {  

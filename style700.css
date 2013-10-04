@@ -54,6 +54,7 @@ padding-left: 27px;
 width:98%;
 overflow:hidden;
 z-index: -1;
+
 }
 #nextMenu{
 position: absolute;
@@ -75,9 +76,9 @@ padding-top: 50%;
 z-index: 900;
 }
 #etapa1,#etapa2{
-float:left;
-width:50%;
-position:relative;
+width: 100%;
+position: relative;
+margin-left: 7%
 }
 #menuP img{
 width:87%;
@@ -278,17 +279,23 @@ width: 45%;
 color: #000;
 }
 #contenidoreceta{
-width: 740px;
+width: 666px;
 height: 355px;
 position: relative;
 padding-bottom: 0;
+padding-left: 5%;
+padding-right: 5%;
+box-shadow: none;
+border: 0;
+border: none;
 }
 
 #contenidorecetaSugar{
-width: 740px;
+width: 665px;
 height: 354px;
 position: relative;
-
+padding-left: 5%;
+padding-right: 5%;
 }
 
 #cargaimg{
@@ -363,10 +370,11 @@ margin: 0 auto;
 /*gluten*/
 #contenidorecetaGluten{
 overflow: hidden;
-width: 100%;
+width: 93%;
 position: relative;
 height: 664px;
 color: #302A2A;
+padding-left: 4%;
 }
 #recetafinalGluten{
 width: 100%;
@@ -518,7 +526,7 @@ height: 100%;
 background: #FEFCDB;
 }
 #contenidoMenuSugar img {
-width: 50%;
+width: 86%;
 }
 #aprendamos .ui-content {
 height: 100%;
@@ -606,6 +614,11 @@ width: 400px!important;
 #listasuperdisp2 {
 text-align:center;
 }
+.logo_sugar {
+width: 23%;
+margin: 0 auto;
+margin-left: 38%;
+}
 #ProductosSugar{
 width: 738px;
 height: 500px;
@@ -617,9 +630,11 @@ margin: 0 auto;
 color: #FFFFFF !important;
 }
 #contenScrollP1,#contenScrollP2,#contenScrollP3,#contenScrollP4{
-position:relative;
+position: relative;
 height: 439px;
 overflow: hidden;
+padding-left: 5%;
+padding-right: 9%;
 }
 .cucharaditas{
 text-align: center;
@@ -631,13 +646,14 @@ background: rgba(221, 221, 221, 0.79);
 color:#7F4738;
 
 }
-}
-
 #contacto .contenidoGeneral {
 width: 96%!important;
 height: 600px;
 margin: 0 auto;
 }
+}
+
+
 /********************************** scroll Guía y miercoles frescos  *****************************************/
 @media only screen 
 and (min-width :600px)and (max-width :767px) {

@@ -71,11 +71,7 @@ background: rgba(0, 0, 0, 0.28);
 padding-top: 50%;
 z-index: 900;
 }
-#etapa1,#etapa2{
-float:left;
-width:50%;
-position:relative;
-}
+
 #menuP img{
 width:87%;
 }
@@ -373,6 +369,8 @@ border-radius: 12px;
 box-shadow: 0px 7px 53px 8px #000;
 position: relative;
 height: 720px;
+padding-left: 5%;
+padding-right: 5%;
 }
 #titulorecetaGluten{
 width: 100%;
@@ -606,13 +604,20 @@ height: 500px;
 position: relative;
 padding-bottom: 44px;
 }
+.logo_sugar{
+width: 23%;
+margin: 0 auto;
+margin-left: 34%;
+}
 #cocinemos a{
 color: #FFFFFF !important;
 }
 #contenScrollP1,#contenScrollP2,#contenScrollP3,#contenScrollP4{
-position:relative;
-height: 439px;
+position: relative;
+height: 399px;
 overflow: hidden;
+padding-left: 5%;
+padding-right: 9%;
 }
 .cucharaditas{
 text-align: center;
