@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -23,7 +23,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	//appDB();
+	appDB();
 
 });
 	 function checkConnection() {
@@ -61,7 +61,7 @@ function populateRecetasDB(tx) {
 	 tx.executeSql('DROP TABLE IF EXISTS recetas');
 	 tx.executeSql('DROP TABLE IF EXISTS guia');
 	 tx.executeSql('DROP TABLE IF EXISTS productosVariedadSugar');
-	 	tx.executeSql('DROP TABLE IF EXISTS recetasSugerFree');
+	tx.executeSql('DROP TABLE IF EXISTS recetasSugerFree');
 	 tx.executeSql('DROP TABLE IF EXISTS miercolesFrescos');
 	tx.executeSql('CREATE TABLE IF NOT EXISTS productosVariedadSugar (id INTEGER PRIMARY KEY, nombre TEXT,categoria TEXT,marca TEXT,fabricante INTEGER, estado INTEGER,pais INTEGER,imagen TEXT)');
 	tx.executeSql('CREATE TABLE IF NOT EXISTS recetasSugerFree (id INTEGER PRIMARY KEY, titulo TEXT,ingredientes TEXT,preparacion TEXT,categoria INTEGER, estado INTEGER,pais INTEGER,chef TEXT,nutricionales TEXT,imagen TEXT)');
@@ -590,7 +590,8 @@ function obtenerGuia(){
 			snap: true,
 			momentum: false,
 			hScrollbar: false,
-			vScrollbar: false });
+			vScrollbar: false
+			});
 	}, 500);	
 	});				
 }
