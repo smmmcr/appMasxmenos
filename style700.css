@@ -588,7 +588,7 @@ position:absolute;
 width:100%;
 height:100%;
 }
-/*
+
 .headerGuia [data-rel="back"]{
 float: left!important;
 width: 30px!important;
@@ -607,7 +607,7 @@ border-top: 0!important;
 border: none;
 box-shadow: none;
 border-top: 0;
-}*/
+}
 #imgpro {
 max-height: 400px!important;
 max-width: 400px!important;
