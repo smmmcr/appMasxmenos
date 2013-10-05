@@ -413,10 +413,10 @@ function mostrarBanner(){
 				});
 }
 var  i=0;
-/*function cambiodebaner(nombre){
+function cambiodebaner(nombre){
 						if(i<nombre.length){
 						 $('.footer').animate({opacity: "0"},2000);				
-						 $('.footer').html("<img src='https://smmcr.net/fb/masxmenos/banners/"+nombre[i].nombreBanner+"' alt='bannerfooter' />");
+						 $('.footer').append("<img src='https://smmcr.net/fb/masxmenos/banners/"+nombre[i].nombreBanner+"' alt='bannerfooter' />");
 						setTimeout( function() {
 						  $('.footer').animate({opacity: "1"}, 1000);	
 						},3000);
@@ -430,7 +430,8 @@ var  i=0;
 						cambiodebaner(nombre);
 						},5000);
 						}
-}*/
+}
+/*
 function cambiodebaner(nombre){
 			
 							if(i<nombre.length){		
@@ -447,7 +448,7 @@ function cambiodebaner(nombre){
 						},5000);
 					}
 }
-
+*/
 function obtenerCatRecetas(){
 	var data = new Array();
 	db.transaction(function (tx) {  

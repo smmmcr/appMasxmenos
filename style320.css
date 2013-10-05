@@ -286,6 +286,7 @@ position:absolute;
 width:100%;
 height:100%;
 }
+/*
 .headerGuia [data-rel="back"]{
 float: left;
 width: 30px;
@@ -304,7 +305,7 @@ border-top: 0;
 border: none;
 box-shadow: none;
 border-top: 0;
-}
+}*/
 #listasuperdisp2 {
 text-align:center;
 }
@@ -386,7 +387,9 @@ color: #302A2A;
 
 }
 
-
+.headerGuia a img{
+width: 80%;
+}
 #busquedarapida{
 margin-left: 12%;
 

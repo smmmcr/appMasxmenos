@@ -533,6 +533,7 @@ position:absolute;
 width:100%;
 height:100%;
 }
+/*
 .headerGuia [data-rel="back"]{
 float: left;
 width: 30px;
@@ -563,7 +564,7 @@ border-top: 0;
 border: none;
 box-shadow: none;
 border-top: 0;
-}
+}*/
 #imgpro {
 max-height: 206px!important;
 max-width: 224px!important;
@@ -576,6 +577,9 @@ text-align:center;
 .ui-mobile [data-url="sugarVariedadDetail&ui-page=sugar"]{
 
 background: #FEFCDB;
+}
+.headerGuia a img{
+width: 80%;
 }
 #ProductosSugar{
 
