@@ -357,9 +357,9 @@ padding-top: 56px;
 color:#000!important;
 }
 #recetafinalGluten img {
-width: 369px;
-height: 217px;
-margin-left: 15px;
+width: 54%;
+height: 10em;
+margin-left: 23%;
 }
 #contenidorecetaGluten {
 overflow: hidden;
@@ -495,7 +495,8 @@ height: 100%;
 
 background: #FEFCDB;
 }
-#cocinemos a{
+
+#cocinemos a,#ProductosSugar a{
 color: #FFFFFF !important;
 text-align: center;
 }

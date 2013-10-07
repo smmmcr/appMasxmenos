@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -23,7 +23,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	//appDB();
+	appDB();
 
 });
 	 function checkConnection() {
@@ -413,6 +413,7 @@ function mostrarBanner(){
 				});
 }
 var  i=0;
+/*
 function cambiodebaner(nombre){
 						if(i<nombre.length){
 						 $('.footer').animate({opacity: "0"},2000);				
@@ -430,8 +431,8 @@ function cambiodebaner(nombre){
 						cambiodebaner(nombre);
 						},5000);
 						}
-}
-/*
+}*/
+
 function cambiodebaner(nombre){
 			
 							if(i<nombre.length){		
@@ -448,7 +449,6 @@ function cambiodebaner(nombre){
 						},5000);
 					}
 }
-*/
 function obtenerCatRecetas(){
 	var data = new Array();
 	db.transaction(function (tx) {  

@@ -374,17 +374,17 @@ margin: 0 auto;
 overflow: hidden;
 width: 93%;
 position: relative;
-height: 664px;
+height: 38em;
 color: #302A2A;
 padding-left: 2%;
 }
 #recetafinalGluten{
-width: 100%;
+width: 90%;
 background: rgba(245, 239, 239, 1);
 border-radius: 12px;
 box-shadow: 0px 7px 53px 8px #000;
 position: relative;
-height: 720px;
+height: auto;
 }
 #titulorecetaGluten{
 width: 100%;
@@ -676,13 +676,7 @@ float: left;
 width: 735px;
 height: 655px;
 }
-#contenidorecetaSugar{
-width: 80%;
-height: 30em;
-position: relative;
-padding-left: 11%;
-padding-right: 7%;
-}
+
 }
 
 

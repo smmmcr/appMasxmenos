@@ -360,7 +360,7 @@ margin: 0 auto;
 overflow: hidden;
 width: 100%;
 position: relative;
-height: 664px;
+height: 32em;
 color: #302A2A;
 }
 #recetafinalGluten{
@@ -589,7 +589,7 @@ width: 23%;
 margin: 0 auto;
 margin-left: 34%;
 }
-#cocinemos a{
+#cocinemos a,#ProductosSugar a{
 color: #FFFFFF !important;
 }
 #contenScrollP1,#contenScrollP2,#contenScrollP3,#contenScrollP4{
