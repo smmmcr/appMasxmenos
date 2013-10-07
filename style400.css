@@ -499,11 +499,11 @@ background: #FEFCDB;
 color: #FFFFFF !important;
 text-align: center;
 }
-#aprendamos .ui-btn-up-a {
+#aprendamos .ui-btn-up-a,#cocinemos .ui-btn-up-a,#SugarRecetasList .ui-btn-up-a,#ProductosSugar .ui-btn-up-a {
 border: 1px solid #D3813E/*{a-bup-border}*/;
 background: #D3813E /*{a-bup-background-color}*/;
 font-weight: bold;
-color: #FFFFFF /*{a-bup-color}*/;
+color: #FFFFFF !important/*{a-bup-color}*/;
 text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #9C9692 /*{a-bup-shadow-color}*/;
 background-image: -webkit-gradient(linear, left top, left bottom, from( #D3813E /*{a-bup-background-start}*/), to( rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/));
 background-image: -webkit-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
@@ -511,19 +511,6 @@ background-image: -moz-linear-gradient( #D3813E /*{a-bup-background-start}*/, rg
 background-image: -ms-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
 background-image: -o-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
 background-image: linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
-}
-#cocinemos .ui-btn-up-a {
-border: 1px solid #F6E29A/*{a-bup-border}*/;
-background: #F6E29A/*{a-bup-background-color}*/;
-font-weight: bold;
-color: #FFFFFF /*{a-bup-color}*/;
-text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #9C9692 /*{a-bup-shadow-color}*/;
-background-image: -webkit-gradient(linear, left top, left bottom, from( #D3813E /*{a-bup-background-start}*/), to( rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/));
-background-image: -webkit-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
-background-image: -moz-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9)/*{a-bup-background-end}*/);
-background-image: -ms-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
-background-image: -o-linear-gradient( #D3813E /*{a-bup-background-start}*/, rgba(240, 175, 123, 0.9) /*{a-bup-background-end}*/);
-background-image: linear-gradient( #F6E29A/*{a-bup-background-start}*/, rgba(228, 159, 104, 0.9) /*{a-bup-background-end}*/);
 }
 .sugar {
 background: #FEFCDB;

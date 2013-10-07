@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-//checkConnection();
+checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -23,7 +23,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	appDB();
+	//appDB();
 
 });
 	 function checkConnection() {
@@ -457,11 +457,11 @@ function obtenerCatRecetas(){
 		for (var i=0; i<len; i++){
 			data[i] = results.rows.item(i);
 		}
-	$('#gfcCategorias').empty();
+	 $('#listaRecetas ul').empty();
 	  $.each(data, function(index, item) {		
-		  $('#selectrecetas').append("<option value='"+item.id+"'>"+item.nombre+"</option>");
+		  $('#listaRecetas ul').append("<li ><a href='javascript:mostrarlista("+item.id+");'>"+item.nombre+"</a></li>");
 		  });
-		  $('#selectrecetas').selectmenu("refresh");
+		  $('#listaRecetas ul').listview("refresh");
 		});
 	});				
 }
@@ -653,14 +653,17 @@ tx.executeSql('SELECT * FROM recetas where estado=1 and tiporeceta="'+idcat+'"',
 	for (var i=0; i<len; i++){
 		data[i] = results.rows.item(i);
 	}				
-$('#listaRecetas ul').empty();
+$('#listaRecetasXcatCon ul').empty();
   $.each(data, function(index, item){		
 	clases='ui-li ui-li-static ui-btn-up-a';
-		$("#listaRecetas ul").append("<li onclick='agregarContenido("+item.id+")' class='"+clases+"'>"+item.nombre+"</li>");			
+		$("#listaRecetasXcatCon ul").append("<li><a href='javascript:agregarContenido("+item.id+")'> "+item.nombre+"</a></li>");			
 	 });
-	 $("#listaRecetas ul").listview('refresh');
+	 $("#listaRecetasXcatCon ul").listview('refresh');
 	});
-});				
+});
+setTimeout( function() {
+$.mobile.changePage("#listaRecetas");
+}, 500);				
 }
 function volverreceta(id){
 location.href="#recetas";
