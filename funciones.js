@@ -24,6 +24,7 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
 	alert($(window).width());
+	alert($(window).height());
 	//appDB();
 
 });
