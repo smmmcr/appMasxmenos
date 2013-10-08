@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -18,6 +18,7 @@ window.addEventListener('load', function() {
 			}, false);
 		}, false);		
 $(document).one("mobileinit", function () {
+  
 	// Setting default page transition to slide
 /*	$.mobile.defaultPageTransition = 'slide'; 
 	$.mobile.defaultDialogTransition = 'slide';*/
@@ -25,7 +26,7 @@ $(document).one("mobileinit", function () {
 	$("#cargaimg" ).show();
 	/*alert($(window).width());
 	alert($(window).height());*/
-	//appDB();
+	appDB();
 
 });
 	 function checkConnection() {
