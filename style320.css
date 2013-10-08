@@ -661,7 +661,7 @@ height: 291px;
 
 }
 @media only screen 
-and (min-width :320px) {
+and (min-width :320px)and (max-width :399px)  {
 #wrapper_guia, #wrapper_miercoles {	
 width: 290px;
 height: 291px;
