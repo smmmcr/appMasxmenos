@@ -364,10 +364,12 @@ margin-left: 13%;
 }
 #contenidorecetaGluten {
 overflow: hidden;
-width: 100%;
+width: 92%;
 position: relative;
 height: 500px;
 color: #302A2A;
+margin-left: 5%;
+margin-right: 8%;
 }
 #Scrollerpasos{
 background: rgba(255, 255, 255, 1)!important;
