@@ -65,7 +65,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-				<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Guía de compras</h3>
+				<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Guía de compras</h3>
 				</div>
 			<div data-role="content" id="guiaconten" data-theme="a" data-iscroll="enable" class="contenidoGeneral">	
 				<div id="wrapper_guia">
@@ -87,7 +87,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-		<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Miercoles Frescos</h3>
+		<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Miercoles Frescos</h3>
 				</div>
 			<div data-role="content" data-theme="a" id="miercolesFrescos" data-iscroll="enable" class="contenidoGeneral">	
 				<div id="wrapper_miercoles">
@@ -107,7 +107,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-				<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Recetas</h3>
+				<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Recetas</h3>
 				</div>
 			<div data-role="content" data-theme="a" class="contenidoGeneral">				
 				<div id="listaRecetas">
@@ -163,7 +163,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
+			<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
 				</div>	
 			<div data-role="content" data-theme="a">
 				<div id='sliderSuper'>
@@ -196,7 +196,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a>	<h2>Contáctenos</h2>
+			<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a>	<h2>Contáctenos</h2>
 				</div>	
 			<div data-role="content" data-theme="a" class="contenidoGeneral">				
 				<a href='#busquedaRapidaContacto' data-role="button" data-theme="a" >Búsqueda rápida por supermercado</a>			
@@ -348,7 +348,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-				<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a><h2>Gluten Free</h2>
+				<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a><h2>Gluten Free</h2>
 				</div>			
 			<div data-role="content" data-theme="a">	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
@@ -574,7 +574,7 @@
 				<div data-role="header" data-position="inline">
 					<img src="img/logohedermasxmenos.png">
 				</div>
-					<div class="headerGuia" data-position="inline"><a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png" alt="retro"/></a></div>			
+					<div class="headerGuia" data-position="inline"><a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png" alt="retro"/></a></div>			
 				<div data-role="content" data-theme="a">	
 					<div id="contenidoMenuSugar" style="width: 100%;position: relative;">
 					<div data-role="controlgroup">
@@ -834,10 +834,11 @@
 	function prev(){
 		$("#scrollMenu").animate().css("-webkit-transform","translate(0px, 0px) scale(1) translateZ(0px)");
 	}*/
-/*$( "#home" ).on( "pagebeforeshow", function( event ) {
-		$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
-		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));
-});*/
+$( "#home" ).on( "pagebeforeshow", function( event ) {
+		$( "#menuP" ).css("height",$( "#home" ).css("height"));
+		$( "#etapa1" ).css("height",$( "#home" ).css("height"));
+		$( "#etapa2" ).css("height",$( "#home" ).css("height"));
+});
 $( "#recetas" ).on( "pagebeforeshow", function( event ) {
 	obtenerCatRecetas();
 	//mostrarlista(14);
