@@ -49,6 +49,7 @@ padding-left: 27px;
 width:98%;
 overflow:hidden;
 z-index: -1;
+margin-left: 3%;
 }
 #nextMenu{
 position: absolute;
