@@ -23,8 +23,8 @@ $(document).one("mobileinit", function () {
 	$.mobile.defaultDialogTransition = 'slide';*/
 	$.mobile.defaultPageTransition = 'none';
 	$("#cargaimg" ).show();
-	alert($(window).width());
-	alert($(window).height());
+	/*alert($(window).width());
+	alert($(window).height());*/
 	//appDB();
 
 });
