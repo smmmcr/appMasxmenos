@@ -7,9 +7,6 @@ list-style-type:none;
 #miercoles{
 background: yellow;
 }
-
-@media only screen 
-and (min-width : 600px) {
 #miercoles{
 background: yellow;
 }
@@ -609,7 +606,7 @@ background: rgba(221, 221, 221, 0.79);
 color:#7F4738;
 
 }
-}
+
 /********************************** scroll Guía y miercoles frescos  *****************************************/
 @media only screen 
 and (min-width :600px)and (max-width :767px) {

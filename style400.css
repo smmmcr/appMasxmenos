@@ -7,7 +7,6 @@ list-style-type:none;
 #miercoles{
 background: yellow;
 }
-@media only screen and (min-width: 400px){
 body {
 background: #000;
 font-size:arial;
@@ -539,7 +538,6 @@ background: rgba(221, 221, 221, 0.79);
 }
 #contenScrollP1 p,#contenScrollP2 p,#contenScrollP3 p,#contenScrollP4 p{
 color:#7F4738;
-}
 }
 /********************************** scroll Guía y miercoles frescos  *****************************************/
 @media only screen and (min-width :400px) and (max-width :450px) {

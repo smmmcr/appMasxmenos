@@ -26,8 +26,6 @@ width: 91%;
 #nutricionales{
 color:#302A2A!important;
 }
-@media only screen 
-and (min-width :220px)and (max-width :399px) {
 body {
 background: #000;
 font-size:arial;-webkit-user-select:none;
@@ -633,8 +631,6 @@ background: rgba(221, 221, 221, 0.79);
 }
 #contenScrollP1 p,#contenScrollP2 p,#contenScrollP3 p,#contenScrollP4 p{
 color:#7F4738;
-
-}
 }
 
 /********************************** scroll Guía y miercoles frescos  *****************************************/
