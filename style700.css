@@ -104,11 +104,6 @@ padding-top:10px;
 .headerGuia a img{
 width: 80%;
 }
-
-/*.contenidoGeneral{
-width: 600px;
-height: 800px;
-}*/
 .ui-footer {
 background-image: url(img/footer.png)!important;
 background-size: 100% 100%!important;
@@ -631,7 +626,6 @@ height: 600px;
 margin: 0 auto;
 }
 }
-
 /********************************** scroll Guía y miercoles frescos  *****************************************/
 @media only screen 
 and (min-width :600px)and (max-width :767px) {
@@ -654,7 +648,6 @@ float:left;
 width: 542px;
 height: 440px;
 }
-
 }
 @media only screen 
 and (min-width :768px) {
@@ -676,8 +669,4 @@ float: left;
 width: 735px;
 height: 655px;
 }
-
 }
-
-
-/**************************************** Fin scroll Guía y miercoles frescos *****************************************************/
