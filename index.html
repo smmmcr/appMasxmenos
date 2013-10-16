@@ -855,13 +855,27 @@ obtenerCatRecetasSugar();
 	
 });
 $( "#recetaSelec" ).on( "pagebeforeshow", function( event ) {
-
+footer=$(".footer").height();
+ventana=$(window).height();
+$("#recetaSelec #recetafinal").css("height",(ventana)-(footer+(ventana/3)+30));
+altoreceta=$("#recetafinal").height();
+altoimg=$("#recetafinal img").height();
+altoreg=$("#regresar").height();
+altotit=$("#titulorec1").height();
+$("#recetaSelec #contenidoreceta").css("height",(altoreceta/3));
 	setTimeout( function() {
 		myScroll3 = new iScroll('contenidoreceta', {hScrollbar: false});
-	}, 500);	
+	}, 900);	
 });
 $( "#recetaSelecsugar" ).on( "pagebeforeshow", function( event ) {
-
+footer=$(".footer").height();
+ventana=$(window).height();
+$("#recetaSelecsugar #recetafinal").css("height",(ventana)-(footer+(ventana/3)+30));
+altoreceta=$("#recetafinal").height();
+altoimg=$("#recetafinal img").height();
+altoreg=$("#regresar").height();
+altotit=$("#titulorec1").height();
+$("#recetaSelecsugar #contenidorecetaSugar").css("height",(altoreceta/3));
 	setTimeout( function() {
 		myScroll3 = new iScroll('contenidorecetaSugar', {hScrollbar: false});
 	}, 500);	
