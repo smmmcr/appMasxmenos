@@ -217,10 +217,14 @@ $("#cargaimg" ).hide();
 var tiendas;
 function mostrarcontenidomapa(idcat){
 tiendas=idcat;
+			
 			$.mobile.changePage( "#mostrarmapa", {
 			reverse: false,
 			changeHash: false
 			});
+		
+			
+			
 }
 function visulamapainfo(lat,longi,nombre,direccion,horario,telefono,imagenes){
  var centerLocation = new google.maps.LatLng(lat,longi);
