@@ -9,7 +9,7 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-checkConnection();
+//checkConnection();
     }
 
 window.addEventListener('load', function() {
@@ -26,7 +26,7 @@ $(document).one("mobileinit", function () {
 	$("#cargaimg" ).show();
 	/*alert($(window).width());
 	alert($(window).height());*/
-	//appDB();
+	appDB();
 
 });
 	 function checkConnection() {
@@ -187,19 +187,17 @@ function SincronizarDBrecetas(finSincro){
 function finSincro(){
 SyncCount++; 
 if (SyncCount >= 10){
-
-$("#cargaimg" ).hide();
-	
 /*	var cant = $("#home ul li").size();
 	var width = $(window).width() - 30;
 	var width_overview =  width * cant;
 	$('#home #scrollMenu').css('width', width_overview+'px');
 	//console.log($( "#etapa1" ).css("height"));*/
 	setTimeout( function() {
-	$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
-		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));
+	$( "#menuP" ).css("height",($(window).height()-($(".ui-header").height()*2)));
+		$( "#etapa1" ).css("height",$( "#menuP" ).height()-15);
+		$( "#etapa2" ).css("height",$( "#menuP" ).height()-15);
 	myScroll3 = new iScroll('menuP', {hScrollbar: false,vScrollbar: false});
-
+$("#cargaimg" ).hide();
 		/*var myScroll1 = new iScroll('menuP', {
 			snap: true,
 			momentum: false,
@@ -207,11 +205,8 @@ $("#cargaimg" ).hide();
 			vScrollbar: false });
 			
 		/*	$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
-		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));*/
-		
-	
-	}, 1000);
-		
+		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));*/	
+	}, 1000);		
 }
 }
 var tiendas;
@@ -467,7 +462,7 @@ function obtenerCatRecetas(){
 	 $('#listaRecetas ul').empty();
 	  $.each(data, function(index, item) {		
 		  $('#listaRecetas ul').append("<li ><a href='javascript:mostrarlista("+item.id+");'>"+item.nombre+"</a></li>");
-		  });
+		  });			
 		  $('#listaRecetas ul').listview("refresh");
 		});
 	});				

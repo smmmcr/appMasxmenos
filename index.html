@@ -8,13 +8,12 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title>App Masxmenos BETA</title>
 		<link rel="stylesheet" href="themes/mxm.css" />
-		<link rel="stylesheet" href="jquery.mobile.structure-1.3.1.css" />
-		
+		<link rel="stylesheet" href="jquery.mobile.structure-1.3.1.css" />		
 		<link rel="stylesheet" media="screen and (max-width: 399px)" href="style320.css" /> 
 		<link rel="stylesheet" media="screen and (min-width: 400px)" href="style400.css" />
 		<link rel="stylesheet" media="screen and (min-width: 600px)" href="style600.css" />
 		<link rel="stylesheet"  media="screen and (min-width: 700px)" href="style700.css" />
-		<script type="text/javascript" src="phonegap.js"></script>
+		<!--<script type="text/javascript" src="phonegap.js"></script>-->
 		<script src="jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="iscroll.js"></script>
 		<script src="funciones.js"></script>
@@ -30,7 +29,7 @@
 			<div data-role="header" data-position="inline">
 				<img src="img/logohedermasxmenos.png" alt="logo" />
 			</div>
-			<div data-role="content" data-theme="a">
+			<div data-role="content">
 				<div id="menuP" >				
 					<div id="scrollMenu" >
 						<ul>
@@ -65,9 +64,9 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-				<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Guía de compras</h3>
+				<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Guía de compras</h3>
 				</div>
-			<div data-role="content" id="guiaconten" data-theme="a" data-iscroll="enable" class="contenidoGeneral">	
+			<div data-role="content" id="guiaconten" data-iscroll="enable" class="contenidoGeneral">	
 				<div id="wrapper_guia">
 					<div id="scroller">
 						<ul id="thelist">					
@@ -87,9 +86,9 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-		<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Miercoles Frescos</h3>
+		<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Miércoles Frescos</h3>
 				</div>
-			<div data-role="content" data-theme="a" id="miercolesFrescos" data-iscroll="enable" class="contenidoGeneral">	
+			<div data-role="content"  id="miercolesFrescos" data-iscroll="enable" class="contenidoGeneral">	
 				<div id="wrapper_miercoles">
 					<div id="scroller">
 						<ul id="thelist">					
@@ -106,12 +105,12 @@
 			<div data-role="header" data-position="inline">
 				<img src="img/logohedermasxmenos.png">
 			</div>
-				<div class="headerGuia" data-position="inline">
-				<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Recetas</h3>
-				</div>
-			<div data-role="content" data-theme="a" class="contenidoGeneral">				
+			<div class="headerGuia" data-position="inline">
+				<a  href="#home"  data-iconpos="left" class="retro"><img src="img/retro.png"></a><h3>Recetas</h3>
+			</div>
+			<div data-role="content"  class="contenidoGeneral">				
 				<div id="listaRecetas">
-					<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorias..." data-inset="true">
+					<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorías..." data-inset="true">
 
 					</ul>
 				</div>
@@ -120,13 +119,13 @@
 		</div>
 		</div>
 		<div id='listaRecetas' data-role="page" data-theme="a">
-		<div data-role="header" data-position="inline">
+			<div data-role="header" data-position="inline">
 				<img src="img/logohedermasxmenos.png">
 			</div>
-				<div class="headerGuia" data-position="inline">
-				<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Recetas</h2>
-				</div>			
-			<div data-role="content" data-theme="a">	
+			<div class="headerGuia" data-position="inline">
+				<a  href="#" data-rel="back" data-iconpos="left"><img src="img/retro.png"></a><h2>Recetas</h2>
+			</div>			
+			<div data-role="content" >	
 				<div id="listaRecetasXcatCon" style="width: 100%;position: relative;">
 				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorias..." data-inset="true">
 					
@@ -140,15 +139,15 @@
 			<div data-role="header" data-position="inline">
 				<img src="img/logohedermasxmenos.png">
 			</div>
-				<div class="headerGuia" data-position="inline">
-			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h3>Recetas</h3>
-				</div>
-			<div data-role="content" data-theme="a">				
+			<div class="headerGuia" data-position="inline">
+				<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h3>Recetas</h3>
+			</div>
+			<div data-role="content">				
 				<div id="recetafinal">
 					<div id="tituloreceta"></div>
 					<div id="contenidoreceta">
 					<div id="scroller">
-						<ul data-role="listview"   data-theme="a"  data-inset="true" id="scrolle1" data-corners="false">
+						<ul data-role="listview"    data-inset="true" id="scrolle1" data-corners="false">
 						
 						</ul>
 					</div>
@@ -163,9 +162,9 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-			<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
+			<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
 				</div>	
-			<div data-role="content" data-theme="a">
+			<div data-role="content">
 				<div id='sliderSuper'>
 				<img src="imagenesSuper/super1.png" alt="SUPERUNO 1">
 				</div>
@@ -196,9 +195,9 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-			<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a>	<h2>Contáctenos</h2>
+			<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a>	<h2>Contáctenos</h2>
 				</div>	
-			<div data-role="content" data-theme="a" class="contenidoGeneral">				
+			<div data-role="content" class="contenidoGeneral">				
 				<a href='#busquedaRapidaContacto' data-role="button" data-theme="a" >Búsqueda rápida por supermercado</a>			
 					<div id='btnsgeneralLlama'>
 					<a href=''  data-role="button" data-theme="a">SAC Servicio al cliente    800 - 8000 - 722</a>
@@ -219,7 +218,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a><h2>Contáctenos</h2>
 				</div>	
-			<div data-role="content" data-theme="a" >	
+			<div data-role="content"  >	
 				<div id="contenidoulbusqueda">
 				<div id="scroller">
 				<ul data-role="listview" data-inset="true" data-theme="a" data-filter="true" data-filter-placeholder="Filtrar Supermercados..." id="scrollercontacto" data-corners="false">
@@ -348,9 +347,9 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-				<a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a><h2>Gluten Free</h2>
+				<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a><h2>Gluten Free</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" data-theme="a" >	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
 				<div data-role="controlgroup">
 					<a href="#glutenRecetasCat" data-role="button" data-icon="arrow-r" data-iconpos="right">Recetas Libres de Gluten</a>
@@ -370,7 +369,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Recetas Gluten Free</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
 				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorias..." data-inset="true">
 
@@ -419,7 +418,7 @@
 					<div id="titulorecetaprincipal"></div>
 					<div id="contenidorecetaGluten">
 					<div id="scrollergluten"  data-theme="a" >
-						<ul  data-role="listview" id="vistaReceta">
+						<ul  id="vistaReceta">
 					
 					
 						</ul>
@@ -438,7 +437,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Primeros pasos con un Celíaco</h3>
 				</div>	
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
 					<ul data-role="listview" data-inset="true" id="pasos_list">
 					</ul>
@@ -454,7 +453,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h3 id="titulo">Primeros pasos con un Celíaco</h3>
 				</div>	
-			<div data-role="content" data-theme="a" id="contenedorpasos">	
+			<div data-role="content" id="contenedorpasos">	
 				<div id="Scrollerpasos" >
 				<div id="scrollerPasos1" >
 						<div id="scroller" >
@@ -474,7 +473,7 @@
 				<div class="headerGuia" data-position="inline">
 	<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>		<h2>Variedad Gluten Free</h2>
 				</div>	
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
 				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Categorias..." data-inset="true" id="gfcCategorias" data-divider-theme="a">
 				</ul>
@@ -490,7 +489,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Variedad Gluten Free</h2>
 				</div>	
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
 				<ul data-role="listview" data-filter="true" data-filter-placeholder="Filtrar Productos..." data-inset="true" id="gfcProductos" data-divider-theme="a">
 				</ul>
@@ -506,7 +505,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h2>Variedad Gluten Free</h2>
 				</div>	
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contenidoDetail" style="width: 100%;position: relative;">
 					<div id="wrapper_gfpro">
 							<div id="scroller">	
@@ -546,9 +545,9 @@
 				<img src="img/logohedermasxmenos.png" />
 			</div>
 				<div class="headerGuia" data-position="inline">
-				<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
+				<a  href="#supermercados" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
 				</div>	
-			<div data-role="content" data-theme="a">
+			<div data-role="content" >
 				<div id="contenidosuper">
 					<div id="listatiendas">
 						<ul id="tiendas2" data-role="listview"></ul>
@@ -561,7 +560,7 @@
 						<li id="horario" class="ui-li ui-li-static ui-btn-up-a"></li>
 						<li id="telefono" class="ui-li ui-li-static ui-btn-up-a"></li>
 						<li id="servicios" class="ui-li ui-li-static ui-btn-up-a ui-last-child"></li>
-							<li ><a href="#" data-rel="back">Regresar</a></li>
+							<li ><a href="#mostrarmapa"  data-iconpos="left">Regresar</a></li>
 						</ul>
 					</li>					
 					</ul>				
@@ -570,12 +569,12 @@
 			<div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false">
 			</div>
 		</div>
-		<div id='sugar' class="sugar" data-role="page" data-theme="a">
+		<div id='sugar' class="sugar" data-role="page" recetaSelecsugar>
 				<div data-role="header" data-position="inline">
 					<img src="img/logohedermasxmenos.png">
 				</div>
 					<div class="headerGuia" data-position="inline"><a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png" alt="retro"/></a></div>			
-				<div data-role="content" data-theme="a">	
+				<div data-role="content" >	
 					<div id="contenidoMenuSugar" style="width: 100%;position: relative;">
 					<div data-role="controlgroup">
 						<a href="#aprendamos"  ><img src="img/btnaprendamos.png" alt="bonton_que_sugar"/></a>
@@ -593,9 +592,9 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Sugar Free</h2>
+			<a  href="#" data-rel="back" data-theme="a" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Sugar Free</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content">	
 				<div id="contentAprender" style="width: 100%;position: relative;">
 				<div data-role="controlgroup">
 					<a href="#Cuanta" data-role="button" data-icon="arrow-r" data-iconpos="right">¿Cuánta Azúcar es mucha Azúcar?</a>
@@ -616,7 +615,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h2>¿Cuánta Azúcar es mucha Azúcar?</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contentAprender" style="width: 100%;position: relative;">
 				<div data-role="controlgroup">
 					<div class="contenScrollP1">
@@ -641,7 +640,7 @@
 				<div class="headerGuia" data-position="inline">
 		<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h2>¿Qué deben comer los diabéticos?</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contentAprender" style="width: 100%;position: relative;">
 				<div data-role="controlgroup">
 					<div class="contenScrollP2">
@@ -666,7 +665,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>¿Cómo sustituyo el azúcar en mis recetas?</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contentAprender" style="width: 100%;position: relative;">
 				<div data-role="controlgroup">
 					<div class="contenScrollP3">
@@ -691,7 +690,7 @@
 				<div class="headerGuia" data-position="inline">
 	<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h2>Pequeños cambios para una vida saludable</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contentAprender" style="width: 100%;position: relative;">
 				<div data-role="controlgroup">
 					<div class="contenScrollP4">
@@ -716,7 +715,7 @@
 				<div class="headerGuia" data-position="inline">
 			<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h2>Cocinemos Juntos</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
 				<ul data-role="listview"  data-inset="true">
 
@@ -734,7 +733,7 @@
 				<div class="headerGuia" data-position="inline">
 		<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h2>Recetas Gluten Free</h2>
 				</div>			
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="listaRecetasXCat" style="width: 100%;position: relative;">
 				<ul data-role="listview" id="SugarList" data-filter="true" data-filter-placeholder="Filtrar Recetas..." data-inset="true" data-divider-theme="a">
 					
@@ -751,7 +750,7 @@
 				<div class="headerGuia" data-position="inline">
 		<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h3>Recetas</h3>
 				</div>
-			<div data-role="content" data-theme="a">				
+			<div data-role="content" >				
 				<div id="recetafinal">
 					<div id="tituloreceta"></div>
 					<div id="contenidorecetaSugar">
@@ -773,7 +772,7 @@
 				<div class="headerGuia" data-position="inline">
 	<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a>	<h2>Variedad Sugar Free</h2>
 				</div>	
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contenidoProductoVarieda" style="width: 100%;position: relative;">
 					<div id="ProductosSugar">
 						<div id="ScrollProductosSugar">
@@ -793,7 +792,7 @@
 				<div class="headerGuia" data-position="inline">
 	<a  href="#" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Variedad Sugar Free</h2>
 				</div>	
-			<div data-role="content" data-theme="a">	
+			<div data-role="content" >	
 				<div id="contenidoDetail" style="width: 100%;position: relative;">
 					<div id="wrapper_gfpro">
 							<div id="scroller">	
@@ -836,9 +835,9 @@
 	}*/
 /*$( "#home" ).on( "pagebeforeshow", function( event ) {
 		//$( "#menuP" ).css("height",$( "#home" ).css("height"));
-		/*$( "#etapa1" ).css("height",$( "#home" ).css("height"));
-		$( "#etapa2" ).css("height",$( "#home" ).css("height"));*/
-//});
+		$( "#etapa1" ).css("height",$( "#home" ).css("height"));
+		$( "#etapa2" ).css("height",$( "#home" ).css("height"));
+		});*/
 $( "#recetas" ).on( "pagebeforeshow", function( event ) {
 	obtenerCatRecetas();
 	//mostrarlista(14);
@@ -857,7 +856,7 @@ obtenerCatRecetasSugar();
 $( "#recetaSelec" ).on( "pagebeforeshow", function( event ) {
 footer=$(".footer").height();
 ventana=$(window).height();
-$("#recetaSelec #recetafinal").css("height",(ventana)-(footer+(ventana/3)+30));
+$("#recetaSelec #recetafinal").css("height",(ventana)-(footer+(ventana/3)));
 altoreceta=$("#recetafinal").height();
 altoimg=$("#recetafinal img").height();
 altoreg=$("#regresar").height();
@@ -870,7 +869,7 @@ $("#recetaSelec #contenidoreceta").css("height",(altoreceta/3));
 $( "#recetaSelecsugar" ).on( "pagebeforeshow", function( event ) {
 footer=$(".footer").height();
 ventana=$(window).height();
-$("#recetaSelecsugar #recetafinal").css("height",(ventana)-(footer+(ventana/3)+30));
+$("#recetaSelecsugar #recetafinal").css("height",(ventana)-(footer+(ventana/3)));
 altoreceta=$("#recetafinal").height();
 altoimg=$("#recetafinal img").height();
 altoreg=$("#regresar").height();
@@ -954,7 +953,7 @@ setTimeout( function() {
 	myScroll3 = new iScroll('wrapper_gfpro', {hScrollbar: false});
 }, 500);
 });
-$("#recetaSelec,#glutenPasos,#glutenVariedadDetail,#glutenRecetasDetail,#recetaSelecsugar").on( "pagebeforehide", function( event ) {
+$("#recetaSelec,#glutenPasos,#glutenVariedadDetail,#glutenRecetasDetail,#recetaSelecsugar,#listaRecetas ul,#recetafinal").on( "pagebeforehide", function( event ) {
 myScroll3.destroy();
 myScroll3 = null;
 });

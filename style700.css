@@ -13,10 +13,23 @@ color: #302A2A!important;
 #miercoles{
 background: yellow;
 }
+.sugar{
+height: 100%;
+background: #FEFCDB!important;
+}
 body {
-background: #000;
+background: #0068a6 /*{a-body-background-color}; */
+ /* background-image: -webkit-gradient(linear, left top, left bottom, from( #0072b6 /*{a-body-background-start}*/), to( #005d95 /*{a-body-background-end}*/));
 font-size:arial;-webkit-user-select:none;
     -webkit-text-size-adjust:none;
+}
+#miercoles{
+background: yellow;
+}
+#wrapper_miercoles{
+background: yellow;
+width: 100%;
+
 }
 p{
 color: rgb(247, 11, 11);
@@ -25,15 +38,18 @@ font-size: 133.4%;
 position: relative;
 }
 .ui-header img{
-margin-left:25%;
-width:50%;
-margin-top: 5px;
+width: 50%;
+display: block;
+margin: 0 auto;
 }
 .ui-content{
-background:url(img/bgSombraFlor.png) no-repeat;
-height:auto;
+
+height: 100%;
 background-size: 100% 100%;
 
+}
+[data-role="page"]{
+background-image: url(img/bgSombraFlor.png) no-repeat!important;
 }
 .ui-header{
 box-shadow: 0px 3px 18px 1px #000;
@@ -65,10 +81,10 @@ background: rgba(0, 0, 0, 0.28);
 padding-top: 50%;
 z-index: 900;
 }
-#etapa1,#etapa2{
-width: 100%;
-position: relative;
-margin-left: 7%
+#etapa1, #etapa2 {
+width: 91%;
+display: block;
+margin: 0 auto;
 }
 #menuP img{
 width:87%;
@@ -239,12 +255,10 @@ margin: 0 auto;
 overflow: hidden;
 }
 #recetafinal img{
-width: 70%;
+width: 46%;
 height: 263px;
-margin-top: 0px;
 border-bottom: 1px solid;
 z-index: 999;
-margin-left: 15%;
 }
 #recetas .contenidoGeneral{
 width: 93%!important;
@@ -403,6 +417,8 @@ border: none;
 }
 #contPasos p{
 color: #000000!important;
+font-size: 1em;
+font-family: Times New Roman;
 }
 #map_canvas{
 height: 228px!important;
@@ -545,16 +561,15 @@ width:100%;
 height:100%;
 }
 .headerGuia [data-rel="back"]{
-float: left!important;
 width: 30px!important;
 height: 23px!important;
 min-width: 0px!important;
-padding: 0!important;
-margin: 0px!important;
 background: none!important;
 border: none!important;
 box-shadow: none!important;
 border-top: 0!important;
+position: absolute;
+left: 0;
 }
 .headerGuia [data-rel="back"] span{
 border: none;
