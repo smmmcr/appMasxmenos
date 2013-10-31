@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		
+		<meta name="apple-mobile-web-app-capable" content="yes">		
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<title>App Masxmenos BETA</title>
 		<link rel="stylesheet" href="themes/mxm.css" />
@@ -13,7 +12,7 @@
 		<link rel="stylesheet" media="screen and (min-width: 400px)" href="style400.css" />
 		<link rel="stylesheet" media="screen and (min-width: 600px)" href="style600.css" />
 		<link rel="stylesheet"  media="screen and (min-width: 700px)" href="style700.css" />
-		<!--<script type="text/javascript" src="phonegap.js"></script>-->
+		<script type="text/javascript" src="phonegap.js"></script>
 		<script src="jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="iscroll.js"></script>
 		<script src="funciones.js"></script>
@@ -64,7 +63,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-				<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Guía de compras</h3>
+				<a  href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Guía de compras</h3>
 				</div>
 			<div data-role="content" id="guiaconten" data-iscroll="enable" class="contenidoGeneral">	
 				<div id="wrapper_guia">
@@ -86,7 +85,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-		<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Miércoles Frescos</h3>
+		<a   href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a><h3>Miércoles Frescos</h3>
 				</div>
 			<div data-role="content"  id="miercolesFrescos" data-iscroll="enable" class="contenidoGeneral">	
 				<div id="wrapper_miercoles">
@@ -162,7 +161,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-			<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
+			<a   href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a><h2>Supermercados y Servicios</h2>
 				</div>	
 			<div data-role="content">
 				<div id='sliderSuper'>
@@ -195,7 +194,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-			<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a>	<h2>Contáctenos</h2>
+			<a  href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a></a>	<h2>Contáctenos</h2>
 				</div>	
 			<div data-role="content" class="contenidoGeneral">				
 				<a href='#busquedaRapidaContacto' data-role="button" data-theme="a" >Búsqueda rápida por supermercado</a>			
@@ -347,7 +346,7 @@
 				<img src="img/logohedermasxmenos.png">
 			</div>
 				<div class="headerGuia" data-position="inline">
-				<a  href="#home" data-rel="back" data-iconpos="left"   ><img src="img/retro.png"></a></a><h2>Gluten Free</h2>
+				<a   href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png"></a></a><h2>Gluten Free</h2>
 				</div>			
 			<div data-role="content" data-theme="a" >	
 				<div id="contenidoulbusqueda2" style="width: 100%;position: relative;">
@@ -573,7 +572,7 @@
 				<div data-role="header" data-position="inline">
 					<img src="img/logohedermasxmenos.png">
 				</div>
-					<div class="headerGuia" data-position="inline"><a  href="index.html" data-rel="back" data-iconpos="left"   ><img src="img/retro.png" alt="retro"/></a></div>			
+					<div class="headerGuia" data-position="inline"><a   href="#home" class="retro" data-iconpos="left"   ><img src="img/retro.png" alt="retro"/></a></div>			
 				<div data-role="content" >	
 					<div id="contenidoMenuSugar" style="width: 100%;position: relative;">
 					<div data-role="controlgroup">
@@ -858,10 +857,11 @@ footer=$(".footer").height();
 ventana=$(window).height();
 $("#recetaSelec #recetafinal").css("height",(ventana)-(footer+(ventana/3)));
 altoreceta=$("#recetafinal").height();
-altoimg=$("#recetafinal img").height();
+/*altoimg=$("#recetafinal img").height();*/
 altoreg=$("#regresar").height();
 altotit=$("#titulorec1").height();
-$("#recetaSelec #contenidoreceta").css("height",(altoreceta/3));
+//alert(altotit*2);
+$("#recetaSelec #contenidoreceta").css("height",altoreceta);
 	setTimeout( function() {
 		myScroll3 = new iScroll('contenidoreceta', {hScrollbar: false});
 	}, 900);	
@@ -874,7 +874,7 @@ altoreceta=$("#recetafinal").height();
 altoimg=$("#recetafinal img").height();
 altoreg=$("#regresar").height();
 altotit=$("#titulorec1").height();
-$("#recetaSelecsugar #contenidorecetaSugar").css("height",(altoreceta/3));
+$("#recetaSelecsugar #contenidorecetaSugar").css("height",altoreceta);
 	setTimeout( function() {
 		myScroll3 = new iScroll('contenidorecetaSugar', {hScrollbar: false});
 	}, 500);	
@@ -944,6 +944,9 @@ obtenerMiercoles();
 });
 /*------------------------------Contacto-------------------------------------------------*/
 $( "#busquedaRapidaContacto" ).on( "pagebeforeshow", function( event ) {
+footer=$(".footer").height();
+ventana=$(window).height();
+$("#busquedaRapidaContacto #contenidoulbusqueda").css("height",(ventana)-(footer+(ventana/3)));
 	setTimeout( function() {
 		myScroll3 = new iScroll('contenidoulbusqueda', {hScrollbar: false});
 	}, 500);

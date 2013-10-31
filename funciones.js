@@ -9,9 +9,8 @@ var fileSystem = {};
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
-//checkConnection();
+checkConnection();
     }
-
 window.addEventListener('load', function() {
 			document.body.addEventListener('touchmove', function(e) {
 				e.preventDefault();
@@ -26,7 +25,7 @@ $(document).one("mobileinit", function () {
 	$("#cargaimg" ).show();
 	/*alert($(window).width());
 	alert($(window).height());*/
-	appDB();
+	//appDB();
 
 });
 	 function checkConnection() {
@@ -198,14 +197,7 @@ if (SyncCount >= 10){
 		$( "#etapa2" ).css("height",$( "#menuP" ).height()-15);
 	myScroll3 = new iScroll('menuP', {hScrollbar: false,vScrollbar: false});
 $("#cargaimg" ).hide();
-		/*var myScroll1 = new iScroll('menuP', {
-			snap: true,
-			momentum: false,
-			hScrollbar: false,
-			vScrollbar: false });
-			
-		/*	$( "#menuP" ).css("height",$( "#etapa1" ).css("height"));
-		$( "#etapa2" ).css("height",$( "#etapa1" ).css("height"));*/	
+
 	}, 1000);		
 }
 }
@@ -368,9 +360,9 @@ db.transaction(function (tx) {
 tx.executeSql('SELECT * FROM recetas where id="'+id+'"', [], function (tx, results) {
 				$("#tituloreceta").html("");
 		$("#recetafinal ul").html("");
-		$("#recetafinal").append("<a id='regresar' href='#recetas'>Regresar</a>");
-		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).nombre+"</h3></div>"+
-		"<img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' />");
+		//$("#recetafinal").append("<a id='regresar' href='#recetas'>Regresar</a>");
+		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).nombre+"</h3></div>");
+		$("#recetafinal ul").append("<div id='imgrecetan'><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' /></div>");
 		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes+"</div>");
 		$("#recetafinal ul").append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+results.rows.item(0).preparacion+"</div>");
 		$("#recetafinal ul").append("<div class='clear'><li class='clear'></li></div>");
@@ -389,9 +381,9 @@ db.transaction(function (tx) {
 tx.executeSql('SELECT * FROM recetasSugerFree where id="'+id+'"', [], function (tx, results) {
 				$("#recetaSelecsugar #tituloreceta").html("");
 		$("#recetaSelecsugar #recetafinal ul").html("");
-		$("#recetaSelecsugar #recetafinal").append("<a id='regresar' href='#' data-rel='back'>Regresar</a>");
-		$("#recetaSelecsugar #tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).titulo+"</h3></div>"+
-		"<img src='https://smmcr.net/fb/masxmenos/sugarfree/images/recetas/"+results.rows.item(0).imagen+"' alt='imgreceta' />");
+		//$("#recetaSelecsugar #recetafinal").append("<a id='regresar' href='#' data-rel='back'>Regresar</a>");
+		$("#recetaSelecsugar #tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).titulo+"</h3></div>");
+		$("#recetaSelecsugar #recetafinal ul").append("<div id='imgrecetan'><img src='https://smmcr.net/fb/masxmenos/sugarfree/images/recetas/"+results.rows.item(0).imagen+"' alt='imgreceta' /></div>");
 		$("#recetaSelecsugar #recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes+"</div>");
 		$("#recetaSelecsugar #recetafinal ul").append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+results.rows.item(0).preparacion+"</div>");
 		$("#recetaSelecsugar #recetafinal ul").append("<div id='nutricionales'><h3 id='tituingre'>Nutricionales</h3>"+results.rows.item(0).nutricionales+"</div>");
