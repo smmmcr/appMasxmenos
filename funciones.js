@@ -5,7 +5,7 @@ var a = 0;
 var SyncCount=0;
 /*-------------------------------------BD-----------------------------------------*/
 var db;
-var fileSystem = {};
+var fileSystem = {}; 
 document.addEventListener("deviceready", onDeviceReady, false);
  function onDeviceReady() {
 //Inicializamos las BD
