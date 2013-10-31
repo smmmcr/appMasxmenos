@@ -354,7 +354,8 @@ function agregarContenido(id){
 $.mobile.changePage( "#recetaSelec", {
   changeHash: false
 });
-			var data = new Array();			
+	
+		var data = new Array();			
 db.transaction(function (tx) {
 tx.executeSql('SELECT * FROM recetas where id="'+id+'"', [], function (tx, results) {
 				$("#tituloreceta").html("");
