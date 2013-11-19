@@ -193,8 +193,8 @@ if (SyncCount >= 10){
 	//console.log($( "#etapa1" ).css("height"));*/
 	setTimeout( function() {
 	$( "#menuP" ).css("height",($(window).height()-($(".ui-header").height()*2)));
-		$( "#etapa1" ).css("height",$( "#menuP" ).height()-15);
-		$( "#etapa2" ).css("height",$( "#menuP" ).height()-15);
+		//$( "#etapa1" ).css("height",$( "#menuP" ).height()-15);
+		$( "#etapa2" ).css("height",$( "#etapa1" ).height()-15);
 	myScroll3 = new iScroll('menuP', {hScrollbar: false,vScrollbar: false});
 $("#cargaimg" ).hide();
 
@@ -357,14 +357,16 @@ $.mobile.changePage( "#recetaSelec", {
 			var data = new Array();			
 db.transaction(function (tx) {
 tx.executeSql('SELECT * FROM recetas where id="'+id+'"', [], function (tx, results) {
-				$("#tituloreceta").html("");
-		$("#recetafinal ul").html("");
-		//$("#recetafinal").append("<a id='regresar' href='#recetas'>Regresar</a>");
-		$("#tituloreceta").append("<div id='titulorec1'><h3 id='nombrereceta'>"+results.rows.item(0).nombre+"</h3></div>");
-		$("#recetafinal ul").append("<div id='imgrecetan'><img src='https://movilmultimediasa.com/masxmenos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' /></div>");
-		$("#recetafinal ul").append("<div id='ingredientes'><h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes+"</div>");
-		$("#recetafinal ul").append("<div id='preparacion'><h3 id='tituingre'>Preparación</h3>"+results.rows.item(0).preparacion+"</div>");
-		$("#recetafinal ul").append("<div class='clear'><li class='clear'></li></div>");
+			/*	$("#tituloreceta").html("");
+		$("#recetafinal ul").html("");*/
+		$("#recetafinal #nombrereceta").html("");
+		$("#recetafinal #imgrecetan").html("");
+		$("#recetafinal #ingredientes").html("");
+		$("#recetafinal #preparacion").html("");
+		$("#recetafinal #nombrereceta").append(results.rows.item(0).nombre);
+		$("#recetafinal #imgrecetan").append("<img src='https://smmcr.net/fb/masxmenos/recetas/images/fotosrecetas/"+results.rows.item(0).img+"' alt='imgreceta' />");
+		$("#recetafinal #ingredientes").append("<h3 id='tituingre'>Ingredientes</h3>"+results.rows.item(0).ingredientes);
+		$("#recetafinal #preparacion").append("<h3 id=''>Preparación</h3>"+results.rows.item(0).preparacion);
 
 	 $("#recetafinal ul").listview('refresh')
 	});
